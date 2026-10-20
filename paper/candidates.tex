@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,graphicx,booktabs,longtable,tabularx,array}
+\usepackage{microtype}
+\usepackage[round,authoryear]{natbib}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Recurring transit-like signals in six TESS fields},pdfauthor={Richard Higgins},pdfsubject={Exploratory candidate assessment; no validated planet}}
+\graphicspath{{figures/}}
+\setlength{\emergencystretch}{2em}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.7}
+\newcommand{\evidence}[2]{\href{https://github.com/relh/exoplanet/tree/0537d585d/#1}{#2}}
+\title{Recurring transit-like signals in six TESS fields:\\evidence, source ambiguity, and limits of validation}
+\author{Richard Higgins\\\small\href{mailto:richard@relh.net}{richard@relh.net}}
+\date{20 October 2026\\\small Preprint draft; scientific evidence assessed through 13 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We report an exploratory search and assessment of six transit-like signals in public TESS photometry. The strongest recurring signals are associated with the catalog fields of TIC~80387959 and TIC~402358350, at investigated periods of 4.19217 and 11.76954 days. A clock fixed before inspecting two later epochs of TIC~80387959 recovers dimming of $621\pm98$ and $651\pm114$ parts per million (ppm). Retrospective local-baseline fits retain positive depths in six sectors. For TIC~402358350, eight usable events remain positive under twelve local-baseline choices, with combined depths of 590--659 ppm. Its later-sector timing uncertainty fails the declared prediction gate. Neither signal has secure source attribution: neighboring stars can supply the missing flux, image models fail shallow known-host controls, and conditional astrophysical scenario calculations do not meet the joint validation thresholds. The other four signals retain single-epoch physical degeneracy, weak or timing-dependent recurrence, or evidence favoring contamination. We provide the adopted clocks, event and processing comparisons, control failures, alternative explanations, and a linked evidence inventory with file hashes. The overlapping searches and selected injections do not establish survey completeness or calibrated false-alarm rates. These results identify follow-up questions rather than validated planets, and catalog non-matches do not establish novelty.
+\end{abstract}
+
+\section{Introduction}
+Public photometry from the Transiting Exoplanet Survey Satellite (TESS; \citealt{ricker2015}) allows searches for repeated dimming beyond the mission's original target lists. A recurring dip is an observable pattern; its astrophysical interpretation requires identifying the star that dims and distinguishing a planetary transit from stellar eclipses, blended variability, and instrumental effects. Repeating a measurement with another reduction of the same exposures tests processing sensitivity but does not supply independent observing evidence.
+
+This paper documents six unresolved signals retained from several related searches. We prioritize TIC~80387959 and TIC~402358350 because their dimming persists across multiple epochs and analysis choices. We also retain the unfavorable evidence that prevents a planetary conclusion. The remaining fields---TIC~241928959, TIC~469309982, TIC~96166003, and TIC~5546257---illustrate distinct limitations rather than four additional validated discoveries. The designation ``ambiguous planetary candidate'' (APC), used in the accompanying research archive, is an internal working category. It is neither an official TESS Object of Interest designation nor a probability statement. TIC~5546257 is retained for its instructive contamination evidence, while its on-target planet interpretation is deprioritized.
+
+Our contribution is an auditable record of the investigated signals and decision rules. It includes failed predictions, unusable observations, negative controls, and superseded interpretations. The six signals were not all selected from one homogeneous survey, so their number cannot be divided by a single target count to estimate occurrence. No signal is claimed as a newly validated or confirmed planet. Methods and control outcomes appear in Section~\ref{sec:methods}, the two priority fields in Section~\ref{sec:primary}, and the remaining fields in Section~\ref{sec:other}.
+
+\section{Data and signal inventory}\label{sec:data}
+We use public TESS-SPOC and Quick-Look Pipeline (QLP) products obtained through MAST \citep{caldwell2020,huang2020}. The saved run records identify the product, sector, flux column, quality selection, timestamp convention, retrieval location, and raw-content SHA-256. Simple-aperture photometry (SAP) and presearch-data-conditioning photometry (PDCSAP, abbreviated PDC below) are reductions of the same exposures. Likewise, QLP and SPOC products for an overlapping sector share observing photons. They are useful processing comparisons, not independent astronomical confirmations. QLP extraction changed from sector~94 \citep{petitpas2026}; an apparent inter-sector depth change cannot be assigned a physical origin without addressing extraction, sampling, and dilution.
+
+Table~\ref{tab:inventory} summarizes the examined epochs and a representative later or local measurement. An ``opened'' sector has already been inspected in this investigation; the label does not establish adequate coverage, successful recovery, or an independent holdout. The sector~64 and~99 cutouts requested for TIC~80387959 contain collateral pixels at the target aperture. They are unusable target observations, not transit non-detections. Metadata-only footprints for TIC~96166003/71 and TIC~5546257/8/63 remain untested and are excluded from the evidence counts.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Retained signals and representative evidence. Errors are conditional on the stated photometric model. A positive fixed-clock depth alone does not satisfy timing or source-attribution requirements.}\label{tab:inventory}
+\begin{tabularx}{\textwidth}{@{}l l X X@{}}
+\toprule
+TIC & Examined usable sectors & Representative evidence & Principal limitation\\
+\midrule
+80387959 & 10,36,37,63,90,100 & Frozen later-sector depths $621\pm98$, $651\pm114$ ppm & Host and depth differences unresolved\\
+402358350 & 40,41,54,81 & Eight local-baseline events; 590--659 ppm combined & Later timing gate fails; host uncertain\\
+241928959 & 92 & Five events; local depth $11992\pm786$ ppm & One epoch; grazing/companion degeneracy\\
+469309982 & 9,10,36,37,63,64,90 & Frozen sector 64: $76\pm26$ ppm; sector 90 primary: $-54\pm32$ ppm & Mixed, clock-dependent recurrence\\
+96166003 & 19,43,44,59,86 & Frozen sector 59 primary: $265\pm52$ ppm & Alternative clocks disagree; timing fails\\
+5546257 & 9,35,36,62,89,99 & Frozen sector 62: $386\pm30$ ppm; neighbor Gaia dimming & Contamination favored; exact alias unresolved\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Catalog identities and positions are given in Table~\ref{tab:stars}. Gaia DR3 coordinates are ICRS at J2016.0 \citep{gaia2023}; observations at other dates require propagation where appropriate. TIC stellar parameters \citep{tic2019} characterize the catalog stars, without establishing that those stars host the dips. We deliberately do not report adopted planet radii or masses. Normal Gaia renormalized unit weight error (RUWE) and absent non-single-star solutions do not exclude unresolved companions. The elevated RUWE of TIC~241928959 is a concern, not a companion detection.
+
+\begin{table}[htbp]
+\centering\scriptsize
+\caption{Catalog context for the named target stars. Coordinates are Gaia DR3 at J2016.0; $T$ magnitudes, temperatures and radii are TIC values. Symmetric errors summarize the stored catalog fields and do not encompass all stellar-model systematics.}\label{tab:stars}
+\begin{tabular}{@{}l r r r r r r r@{}}
+\toprule
+TIC & Gaia DR3 source ID & RA (deg) & Dec (deg) & $T$ & $T_{\rm eff}$ (K) & $R_\star/R_\odot$ & RUWE\\
+\midrule
+80387959 & 5362389543781401216 & 165.310575 & $-48.613881$ & 10.524 & $5220\pm125$ & $0.797\pm0.045$ & 0.828\\
+402358350 & 4318715445843296256 & 295.150929 & $+15.640412$ & 9.432 & $6079\pm138$ & $0.995\pm0.046$ & 1.000\\
+241928959 & 6865254022910168320 & 297.986934 & $-21.503148$ & 12.614 & $3396\pm157$ & $0.651\pm0.020$ & 3.356\\
+469309982 & 5259582389096040960 & 148.847729 & $-56.685744$ & 9.215 & $5445\pm125$ & $0.879\pm0.047$ & 0.978\\
+96166003 & 161856980718462208 & 72.588533 & $+33.707024$ & 10.423 & $5171\pm237$ & $0.825\pm0.049$ & 0.983\\
+5546257 & 5426593115802740992 & 143.087875 & $-40.474512$ & 9.588 & $5826\pm131$ & $0.925\pm0.045$ & 0.913\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Adopted reference clocks, rounded for display. BTJD is ${\rm BJD}_{\rm TDB}-2457000$. Values identify historical predictions, not unique orbital solutions or parameter precision. Full stored values and alternative hypotheses remain in the linked evidence. Durations are fixed box widths, not physical transit-duration posteriors.}\label{tab:clocks}
+\begin{tabular}{@{}l r r r l@{}}
+\toprule
+TIC & $P$ (days) & $t_0$ (BTJD) & $D$ (days) & Training sectors\\
+\midrule
+80387959 & 4.192168718 & 1575.375831 & 0.092736 & 10,36,37,63\\
+402358350 & 11.769544332 & 2392.992869 & 0.144000 & 40,41,54\\
+241928959 & 3.532592898 & 3805.411657 & 0.032000 & 92\\
+469309982 & 2.890464274 & 1545.740130 & 0.144000 & 9,10,36,37\\
+96166003 & 0.955530474 & 1816.967196 & 0.059520 & 19,43,44\\
+5546257 & 1.767290230 & 1545.965336 & 0.133056 & 9,35,36\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\input{sections/methods}
+\clearpage
+\input{sections/primary}
+\clearpage
+\input{sections/other}
+\clearpage
+
+\section{Interpretation and follow-up}\label{sec:discussion}
+The evidence supports different levels of recurrence, without completing the chain from a selected dip to a planetary discovery. TIC~80387959 has the clearest prospective recurrence: its fixed earlier clock recovered dimming in two later sectors, and retrospective native-cadence fits preserve the dip across six sectors. TIC~402358350 has the strongest local-baseline stress test, but its later-sector timing gate fails. The other fields preserve useful patterns or contamination evidence with weaker independent recurrence. These distinctions should guide follow-up rather than be collapsed into a numerical ranking of planet probabilities.
+
+Several checks constrain only particular alternatives. A missing exact-half-phase secondary does not exclude an eccentric or diluted stellar binary. A sinusoidal nuisance model does not span general stellar variability. A normal single spectrum or two consistent survey velocities does not exclude an eclipsing companion. Sparse photometry outside the relevant timing envelope cannot veto an eclipse. Catalog non-matches and failed archive queries must remain separate: neither proves that a star is constant, single, or previously unstudied. Qualitative follow-up priority and agreement among computational checks are not independent validation.
+
+Resolved, time-resolved photometry is the most direct next experiment for the two priority fields. It should measure the target and all viable neighbors through the entire predicted event with sufficient out-of-event baseline. A target-centered dimming would still require constraints on unresolved companions. Appropriate spectroscopy and high-resolution imaging could then reduce blend and stellar-companion ambiguity, as in established validation workflows \citep{giacalone2022,cacciapuoti2022,eisner2021}. Candidate-specific error and throughput calibration are necessary before interpreting an image-model preference as a source probability.
+
+The retained planning packet contains 47 nominal TIC~80387959 windows and 17 nominal TIC~402358350 windows through April~2027. These are predictions, not observed events or telescope allocations. Selected-profile timing envelopes plus one hour of baseline on each side require approximately 5.6 hours for TIC~80387959 and 17.5--18.5 hours for TIC~402358350. They are heuristic timing ranges, not calibrated confidence bounds, and older alternative clocks can imply larger uncertainty. No full conservative LCO one-meter track passes the retained mount-margin assessment. One T17 date passes the tested sky geometry, but the actual instrument horizon, mount constraints, access, and precision remain unverified. No observing time is secured and no inquiry has been sent. A short non-detection under these conditions would be inconclusive.
+
+\section{Conclusions}
+We retain six unresolved TESS signal assessments and an explicit record of the tests that favor or weaken their interpretations. The fixed-clock later-sector recovery of TIC~80387959 and the eight-event baseline robustness of TIC~402358350 justify additional investigation. Their host stars and physical causes remain uncertain. TIC~241928959 lacks a second epoch and permits substantially different companion interpretations; TIC~469309982 and TIC~96166003 have weak or clock-dependent recurrence; TIC~5546257 has strengthened evidence for a neighboring eclipsing source without a complete alias and dilution explanation. None is validated or confirmed as a planet, and novelty is unestablished. The value of the present release is a reproducible starting point for decisive follow-up, including the negative evidence needed to design it.
+
+\section*{Data, code, and provenance}
+The code, saved measurements, figures, run plans, input manifests, and verification reports are available at \url{https://github.com/relh/exoplanet}. This manuscript uses the scientific state assessed on 13 October 2026; its preparation did not open new observing epochs or run a new candidate search. The public evidence baseline is commit \texttt{0537d585d}. Appendix~\ref{app:evidence} links the principal reports. The accompanying \texttt{evidence-manifest.json} records full file paths and SHA-256 hashes for every reproduced figure and the selected numerical, plan, source, and assessment records. The standalone source package includes the figures needed to compile this paper; the full repository retains the larger evidence archive and third-party data credits.
+
+The publication cleanup removed operational host/session metadata and authentication parameters from expired signed download URLs. Original frozen-file hashes are retained, with original-to-sanitized mappings in \path{docs/privacy-edits.json} and \path{docs/release-history-redactions.json}. Edited plans are not new pre-access freezes. Exact original-byte verification can require the translation or the retained private originals; numerical experiment fields and scientific conclusions were preserved. Raw downloads remain outside Git and are identified by the run manifests. Reproducing arithmetic from a saved dataset does not independently validate its scientific model.
+
+\section*{Acknowledgments and software}
+This work uses public TESS observations, TESS-SPOC and QLP products from MAST, ESA Gaia data processed by the Gaia Data Processing and Analysis Consortium, and the external surveys credited in the individual reports, including RAVE, SkyMapper, and ZTF. TESS mission funding is provided by NASA's Science Mission Directorate. The TESS-SPOC dataset is identified by \href{https://doi.org/10.17909/t9-wpz1-8s54}{doi:10.17909/t9-wpz1-8s54}; product-level identities and retrieval hashes remain in the research archive. Third-party material retains its original terms and attribution. Software includes Python, NumPy, SciPy, Matplotlib, Astropy \citep{astropy2022}, batman \citep{kreidberg2015}, and TRICERATOPS \citep{giacalone2021}. AI-assisted tools were used in preparing this manuscript; their output and agreement are not independent scientific validation. The author is responsible for the reported interpretations.
+
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+\clearpage
+\appendix
+\section{Evidence inventory}\label{app:evidence}
+The following reports provide the complete measurements, alternatives, quality failures, and run-specific verification. Links are pinned to the public evidence baseline. File hashes and figure-to-source mappings are in the accompanying manifest; the reports link the underlying plans, numerical arrays, and source snapshots. Historical conclusions are superseded only where the current assessment says so.
+\input{evidence-index}
+
+\clearpage
+\section{Additional diagnostic figures}\label{app:figures}
+These figures retain noise, source-identification, external-photometry, and processing limitations alongside the primary light-curve evidence. Panels from the same exposures are dependent comparisons. Their error bars do not include all source, timing, or instrumental uncertainties.
+\input{diagnostics}
+\end{document}

@@ -4,6 +4,8 @@ We identified six possible exoplanet signals by searching public data from NASAâ
 
 Our strongest leads are **TIC 80387959** and **TIC 402358350**. Their repeated dimming survives several tests, but we still need to establish which star is dimming and why. **None of the six signals is a confirmed planet.**
 
+The [manuscript PDF](paper/candidates.pdf) brings together all six signals, 24 charts, methods and limitations. [LaTeX source and build instructions](paper/README.md) are included.
+
 ## What we found
 
 The table lists the six remaining leads, ordered by follow-up priority. TIC numbers identify stars in the TESS Input Catalog. The periods describe the repeating patterns we investigated.
