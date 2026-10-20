@@ -1,0 +1,15 @@
+# All three weak-seed pilot flags are deprioritized
+
+Additional discovery sectors strengthened three of eight local seeded fits, but follow-up diagnostics give strong variability concerns for every flag. Reserved sectors remain unopened. These results do not change the original below-threshold discovery classifications or establish new planet candidates.
+
+| TIC | Evidence against a simple transit interpretation | Disposition |
+|---|---|---|
+|160163644|The 11.5118-day folded dip is broad and embedded in oscillatory structure. A sinusoid near 5.718 days has 3.25/4.71 times the box likelihood improvement across the two detrending windows. Event depths are inconsistent; alternate detrending increases depth 2.63-fold and gives odd/even mismatch 7.25 sigma.|Deprioritized; known rotational-variable identity verified.|
+|394877426|The 9.3567-day dip has a sharp asymmetric recovery/positive excursion. Odd/even mismatch is 7.14/10.02 sigma and event depths are inconsistent. Alternate detrending gives noise-adjusted SNR 5.89 and a preferred sinusoid.|Deprioritized; known rotational-variable identity verified.|
+|306680120|The 0.722657-day fold shows about three broad oscillations per proposed orbit. Preferred sinusoid period is approximately 0.2408 day, with 2.83/2.70 times the box likelihood improvement. A locally searched inverted curve reaches 0.87 times the box power; fitted duty cycle is 15.3%.|Deprioritized as a likely planet; physical variability and host attribution remain unresolved.|
+
+VSX queries within 60 arcseconds return rotational-variable entries Gaia DR3 1728038451839684864 and 5197514579737549312 for the first two stars. SIMBAD exact TIC identifier queries independently link those DR3 identifiers to the requested stars. VSX provides no period for either entry: this is a classification/identity match, not a catalog period match. A known rotating star may also host planets; the classification supports, but does not prove, the interpretation of the measured broad signals. The third VSX query returns no rows; that does not establish novelty or exclude variability.
+
+All three two-window phase-fold figures were inspected. Diagnostics use the existing implementation, including duration-binned noise and event consistency. The inverted-light-curve search is restricted to the same original-seed local interval; it is not a global null search. The sinusoid frequency range is that of the existing diagnostic. Ratios, nominal sigma values and event-consistency probabilities are conditional heuristics, not calibrated detection significance or physical model probabilities. No pixel source attribution or independent-epoch planet confirmation is claimed.
+
+The verifier reconstructs all six diagnostic windows, checks source record hashes and all five raw catalog-response hashes, verifies exact TIC/Gaia identity, and confirms reserved-sector cache absence. The underlying pilot separately reproduced all 16 local fits and checked all 43 photometry products. Preserve both positive local-search strengths and these negative diagnostics. No pipeline algorithm or running campaign selection was changed.

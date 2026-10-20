@@ -1,0 +1,3 @@
+# TIC 275133703: unusable sector retained separately
+
+The original search failed in empirical-noise estimation. Sector(s) [46] have no finite selected QLP flux; sector(s) [45] load under unchanged preprocessing. Only one assigned sector is usable, so no alternate period search was run. Selection was frozen before any recovery period search, with no choice by period or measured quietness. Raw hashes, identities, selection timing where applicable, and reserved-cache absence were checked by verify.py. The original failure and stream deferral remain retained. This does not add another star or establish a full-original-coverage nondetection. No held-out epoch was opened.

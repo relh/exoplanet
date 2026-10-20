@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-10-13T21:13:13.076209+00:00",
+  "question": "Exploratory model-conditional scenario weights for two unresolved archival signals; no validation or discovery probability.",
+  "observations": {
+    "80387959": [
+      36
+    ],
+    "402358350": [
+      54
+    ]
+  },
+  "selection": "First full 10-minute archival sector with existing native SAP joint-baseline product for 803 (S36); established source/physical-vetting S54 for402. Selection fixed before TRICERATOPS results; not holdouts.",
+  "inputs": {
+    "data/lightcurves/s0036-80387959.fits": "9edd1b4c77303ebfd232031263a6c08862f20ef032a281bbcff108cc7fe88aa1",
+    "data/lightcurves/s0036-80387959.fits.json": "9e11c47c646000ee8a2fc7396cd27c87791811457050a84b12c54cacff6f0a21",
+    "results/paper-host-vetting-20261012/80387959-s36-sap.npz": "14a78b5e6c54b98c085dfe648f2a9c2cff14d2d533e33eab139578870e4e3508",
+    "results/neighbors-80387959-20261009/tic-neighbors.json": "b29d4929173b019d12c22df2424d2332c691f70e1ee33c4a6caee407c62e0559",
+    "results/strongest-80387959-shape-20261012/plan.json": "16397ca59e2cf8ddad9843fb57f626c669156403c33b403c30a762dfbeb51f62",
+    "data/lightcurves/s0054-402358350.fits": "7f36aa2aabf51f2f3e75ed7e4b86cd231600fbdf78e3459e36c1e56f32c914d0",
+    "data/lightcurves/s0054-402358350.fits.json": "6c031b62be4dbf89b8e08c0f539ceac664305c3876226e6ad313cc28b872721a",
+    "results/paper-host-vetting-20261012/402358350-s54-sap.npz": "2f07ee5e402f05154be88f2303a402e29475cb9a563a84bc007113dfc69afc5c",
+    "results/neighbors-402358350-20261011/neighbors.json": "657b3021c83aa75d5950c9fbb8a9f1cc313143dbc62729221c9135274ac8dad5",
+    "results/strongest-402358350-baselines-20261012/plan.json": "ac436dfa5d9da69a323acc5a3e6705cb3e72636368874bb7fb4951f132af1a46",
+    "results/paper-host-vetting-20261012/results.json": "257946ca1e403b7d1a5139e2a25cac769db62f50bbe7cdf8c0e43dd24b402965"
+  },
+  "method": "Bypass constructor only for downloading/initialization: instantiate __new__, set documented state from cached TIC rows and aperture WCS. calc_depths uses original SPOC bit2 aperture, coordinates same local WCS, uncorrected SAP False. Saved joint baseline subtracted additively and normalized by mean baseline. Entire event window \u00b13 durations from previous gate; clock unchanged. Scalar error RMS out-of-transit residual; sensitivity 1.5x and2x. Exposure native median cadence,20 integration samples. No binning unless explicitly separately labeled computational sensitivity. No omitted scenarios. Gaia DR3 field population default0.1sqdeg,G<21 fetched as catalog metadata, never time series. All cached rows within150arcsec retained, native package photometric missing-parameter estimates disclosed.",
+  "execution": "Seeded N=10000 smoke then100000 and1000000 as feasible;3 seeds at final chosen level. Full rows/logs retained. Failure/underflow/nonfinite weights invalidate probabilities. Monte Carlo scatter separate from model uncertainty. Synthetic/noise-only control is computational diagnostic not population calibration.",
+  "limitations": [
+    "No artifact or stochastic variability model",
+    "No contrast curves or spectroscopic binary exclusion",
+    "Single sector selected before computation; does not combine all evidence",
+    "Gaussian aperture PSF not validated source response",
+    "Stellar parameters and missing-parameter estimates uncertain",
+    "No novelty probability"
+  ]
+}

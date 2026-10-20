@@ -1,0 +1,9 @@
+# TIC 438792601: likely contamination from a cataloged eclipsing system
+
+The catalog query included the target and every listed star within one pixel of either Sector 99 or Sector 100 dimming-source moment: 14 TIC entries. All 14 have DR2-to-DR3 neighborhood mappings and Gaia source rows. One source appears in both the variability classifier and eclipsing-binary table: Gaia DR3 6067173709758352000, mapped from TIC 288891067. Its classifier label is ECL. These catalog labels describe a candidate eclipsing system; the classifier score is not treated as calibrated confidence here.
+
+The Gaia geometric-model frequency is 1.2794210917758824 per day, giving a period of 0.7816034974 days. The [Gaia table documentation](https://gaia.aip.de/metadata/gaiadr3/vari_eclipsing_binary/) specifies the frequency units. The TESS discovery fit has period 0.7815502768 days, about 4.60 seconds shorter (0.00681%). This is a close numerical match, not a claim of statistical agreement under a joint uncertainty model. The Gaia-only propagated formal period error is about 0.72 seconds; it does not include uncertainty or systematics in the TESS estimate. No Gaia/TESS phase alignment was attempted.
+
+TIC 288891067 is also the nearest listed source to both inspected raw-image moments, at approximately 0.148 and 0.083 pixels. That combination favors it as the source contaminating TIC 438792601. Other faint stars remain blended at TESS resolution, so unique attribution is not proven. This strengthens the existing contamination classification; it provides no support for a new on-target planet.
+
+Requests, every mapping, parsed responses and raw-response URL/SHA-256 manifests are retained. The other 13 sources' absent variability entries do not exclude variability. No new observations, independent transit confirmation, novelty claim, submission or external contact follows.

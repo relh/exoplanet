@@ -1,0 +1,3 @@
+# Remaining metadata after Sector 69 selection
+
+The hash-verified archive inventory contains 4,949 distinct unused viable targets after excluding all 23,100 prior selections, including the full Sector 69 sample. All 156 coverage chunks were verified. Leading sector overlaps are 27: 456, 58: 448, 85: 445, 18: 443, 67: 403, 55: 395, 92: 393, 87: 375, 33: 371, 54: 369. Counts overlap and must not be summed. Each viable training sector has at least two reserved sectors separated by eight sector numbers. This is metadata coverage, not evidence of scientific novelty, transit detectability, or completeness. No photometry was opened by this audit.

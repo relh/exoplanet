@@ -1,0 +1,84 @@
+{
+  "created_utc": "2026-10-11T23:41:56.929429+00:00",
+  "request": {
+    "service": "Mast.Catalogs.Filtered.Tic.Rows",
+    "params": {
+      "columns": "ID,ra,dec,GAIA,TYC,HIP",
+      "filters": [
+        {
+          "paramName": "ID",
+          "values": [
+            "459244300"
+          ]
+        }
+      ]
+    },
+    "format": "json",
+    "pagesize": 100,
+    "page": 1
+  },
+  "status": "complete",
+  "url": "https://mast.stsci.edu/api/v0/invoke",
+  "path": "data/targeting/tic459244300-exact.json",
+  "sha256": "42bb46b08d9f9078e66de8e0e4af56aa0cf4115ad92d0b3233a593d7dbd4afa6",
+  "response": {
+    "status": "COMPLETE",
+    "msg": "",
+    "data": [
+      {
+        "ID": 459244300,
+        "ra": 215.971795521782,
+        "dec": 54.2534965498316,
+        "GAIA": "1608577509913577472",
+        "TYC": null,
+        "HIP": null
+      }
+    ],
+    "fields": [
+      {
+        "name": "ID",
+        "type": "string"
+      },
+      {
+        "name": "ra",
+        "type": "float"
+      },
+      {
+        "name": "dec",
+        "type": "float"
+      },
+      {
+        "name": "GAIA",
+        "type": "string"
+      },
+      {
+        "name": "TYC",
+        "type": "string"
+      },
+      {
+        "name": "HIP",
+        "type": "int"
+      }
+    ],
+    "paging": {
+      "page": 1,
+      "pageSize": 100,
+      "pagesFiltered": 1,
+      "rows": 1,
+      "rowsFiltered": 1,
+      "rowsTotal": 1
+    }
+  },
+  "mapping": {
+    "query": "select dr2_source_id,dr3_source_id from gaiadr3.dr2_neighbourhood where dr2_source_id=1608577509913577472",
+    "url": "https://gea.esac.esa.int/tap-server/tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=select+dr2_source_id%2Cdr3_source_id+from+gaiadr3.dr2_neighbourhood+where+dr2_source_id%3D1608577509913577472",
+    "path": "data/targeting/tic459244300-dr2-dr3.csv",
+    "sha256": "6af6a5018b3ed8d219462757b8305131a76e67f3922846500098b4fbcbf48d6b",
+    "rows": [
+      {
+        "dr2_source_id": "1608577509913577472",
+        "dr3_source_id": "1608577509913577472"
+      }
+    ]
+  }
+}

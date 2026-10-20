@@ -1,0 +1,105 @@
+{
+  "data": [
+    {
+      "sector": 97,
+      "source": {
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file/?uri=mast:HLSP/qlp/s0097/0000/0004/3940/5270/hlsp_qlp_tess_ffi_s0097-0000000439405270_tess_v01_llc.fits",
+        "retrieved_utc": "2026-10-11T00:12:39.892190+00:00",
+        "sha256": "aa7f1ca39220060795a40668f387e935c123ec030d49fdbef6cf511fcb5c7a82",
+        "bytes": 1388160,
+        "download_attempts": 1,
+        "transient_failures": []
+      },
+      "n_native_quality_points": 18536,
+      "n_clean_points": 4942,
+      "bin_minutes": 10,
+      "flux_column": "DET_FLUX",
+      "n_pre_mask_clean_points": 4942,
+      "masked_signals": [],
+      "error_model": {
+        "kind": "estimated_adjacent_difference_MAD",
+        "n_pairs": 18252,
+        "sigma_flux_units": 0.007405168387748818,
+        "sigma_relative_ppm": 7405.627012497166,
+        "caution": "Equal weights from robust point-to-point scatter; not published uncertainties or calibrated significance"
+      },
+      "star": {
+        "ticid": 439405270,
+        "sector": 97,
+        "crowdsap": null,
+        "fits_integrity": [
+          {
+            "hdu": "PRIMARY",
+            "checksum": "missing"
+          },
+          {
+            "hdu": "LIGHTCURVE",
+            "checksum": "missing"
+          }
+        ],
+        "collection": "QLP",
+        "radius": 0.46125,
+        "crowding_note": "No measured aperture-crowding value if CROWDSAP absent"
+      }
+    }
+  ],
+  "diagnostic": {
+    "status": "measured",
+    "n_trials": 1527,
+    "best_dip": {
+      "phase": 0.13282442748091602,
+      "duration": 0.27,
+      "depth": 0.0026309469596960122,
+      "error": 0.00048358747911377974,
+      "snr": 5.440477831472134,
+      "n": 112
+    },
+    "best_brightening": {
+      "phase": 0.08244274809160305,
+      "duration": 0.27,
+      "depth": -0.002714040720091959,
+      "error": 0.0005623283524808683,
+      "snr": -4.826434072047428,
+      "n": 77
+    },
+    "selected_dip_events": {
+      "total": {
+        "depth": 0.0026309469596960122,
+        "error": 0.00048358747911377974,
+        "snr": 5.440477831472134,
+        "n": 112
+      },
+      "events": [
+        {
+          "event": -1,
+          "center_btjd": 3936.5980282904097,
+          "depth": 0.009275593470638777,
+          "error": 0.0008854408825543817,
+          "snr": 10.475677883632272,
+          "n": 34
+        },
+        {
+          "event": 0,
+          "center_btjd": 3951.323964503096,
+          "depth": -0.0012065181825049454,
+          "error": 0.0008323445426349286,
+          "snr": -1.4495417711102019,
+          "n": 39
+        },
+        {
+          "event": 1,
+          "center_btjd": 3966.049900715782,
+          "depth": -6.692432534127768e-05,
+          "error": 0.0008109167845255849,
+          "snr": -0.08252921461038791,
+          "n": 39
+        }
+      ],
+      "supported_events": 1,
+      "event_scatter_error": 0.0033204415505945105
+    },
+    "depth_ratio_to_primary": 0.3132878447737575,
+    "interpretation": "Exploratory maximum over phase/duration; SNR is selected and uncalibrated. Primary and nearby phases excluded. A dip requires inspection and independent-sector/reduction checks; not an automatic binary or planet classification."
+  },
+  "policy": "Exploratory training-only off-phase scan; selected SNR not calibrated"
+}

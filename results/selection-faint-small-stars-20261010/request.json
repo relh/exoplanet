@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-10T18:47:18.703703+00:00",
+  "request": {
+    "service": "Mast.Catalogs.Filtered.Tic.Rows",
+    "params": {
+      "columns": "ID,ra,dec,Tmag,rad,Teff,d,contratio,disposition,duplicate_id",
+      "filters": [
+        {
+          "paramName": "rad",
+          "values": [
+            {
+              "min": 0.15,
+              "max": 0.5
+            }
+          ]
+        },
+        {
+          "paramName": "Tmag",
+          "values": [
+            {
+              "min": 12,
+              "max": 13.5
+            }
+          ]
+        },
+        {
+          "paramName": "d",
+          "values": [
+            {
+              "min": 0,
+              "max": 120
+            }
+          ]
+        }
+      ]
+    },
+    "format": "json",
+    "pagesize": 100000,
+    "page": 1
+  },
+  "script_sha256": "f050bcb59e8aebddc3f919f41fb6d38c663749efc77777aea35d14cc8292f32e",
+  "policy": "Extend previously Tmag<=12 sample to12<Tmag<=13.5, radius0.15..0.5solar, distance<=120pc. Metadata selection only; reserve independent epochs before opening light curves."
+}

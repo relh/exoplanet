@@ -1,0 +1,44 @@
+{
+  "utc": "2026-10-10T19:21:39.085945+00:00",
+  "source": "data/rv/HD32564.csv",
+  "source_sha256": "fdc6afd6ae40a785f9f7ee0ac1a83678055b7e5d09c807dbcb940a7cc1f97bda",
+  "script_sha256": "61cda995f69f702d51204f1c5a90923550d1e52161481ef85d60c25baacc47f2",
+  "module_sha256": "945a90208199755a91f8ea9a892b4de1a328eb26fb2a5ea5c5329f7bdacc5a62",
+  "periods": [
+    2.55663,
+    11.06327,
+    23.61185,
+    49.10219
+  ],
+  "neighborhood_fraction": 0.01,
+  "reason": "Post-hoc sensitivity: several original +/-0.1% training fits reach a boundary; retain originals and compare +/-1% neighborhoods.",
+  "activity_columns": [
+    "Halpha",
+    "RHKp",
+    "BIS",
+    "FWHM_DRS",
+    "dLW",
+    "CRX"
+  ],
+  "feature_sets": {
+    "none": [],
+    "Halpha": [
+      0
+    ],
+    "RHKp": [
+      1
+    ],
+    "all_six": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "policy": "Common complete pre-upgrade rows for all feature sets; original f_RV==0, RVerror0..100, RHKp>0 and all activity finite with abs<1e6. Nightly RV inverse-variance averages also applied to contemporaneous activity; activity error ignored. Fixed2m/s nightly jitter; training-only predictor scaling and simultaneous linear activity+offset+trend+circular RV fit. Omitted years with>=20nights. All period neighborhoods seeded from known full-data modes +/-1%; retrospective conditional prediction, not blind forecast/confirmation. Held activity values are observed covariates. No GP or lagged model; all outcomes retained.",
+  "references": [
+    "https://arxiv.org/abs/2311.12438"
+  ]
+}

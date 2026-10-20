@@ -1,0 +1,7 @@
+# Single-sector outer-distance pilot with multiple reserved epochs
+
+All seven frozen targets yielded usable searches: six below threshold and one flagged. TIC 62943645 fails event coverage, odd/even, event-depth consistency, single-event-dominance and detrending checks. Neither follow-up policy found an eligible peak, so all reserved light curves remain unopened. No new planet candidate emerged.
+
+Controls used the first three metadata-ranked stars, TIC 265545546, 156692081 and 121821367. Baseline arrays agree exactly at both detrending windows and all 24 injections lie within the actual grids. Short controls yield two period matches, one timing match and no screen passes. Long controls yield three period/timing matches and one pass: three Earth radii at 5.73 days in TIC 265545546. That pass satisfies timing checks. No Earth-radius injection passes. These weak, single-phase controls do not measure completeness or exclude small planets.
+
+Two further untouched stars have one distant reserved sector each: TIC 115624777 uses discovery sector 83 and reserved 56; TIC 292025149 uses discovery 82 and reserved 55. Their splits are frozen and verified before opening photometry. This is weaker replication than multiple validation epochs. The last two pool stars, TIC 9271247 and 335771678, have only one QLP sector each and cannot meet a separate-epoch validation rule from this metadata inventory.

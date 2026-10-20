@@ -1,0 +1,7 @@
+# TIC 267545898: difference-image moments are inconclusive
+
+The discovery-sector images do not yield a consistent source position. Sector 27's positive difference maximum lies near the stamp edge, about 5.34 pixels from the target; sector 28's moment is about 0.77 pixels away. Both contain strong negative residuals elsewhere, and the target region has mixed positive/negative structure. The plots were inspected. These are not reliable source identifications and no nearest catalog star is assigned as the host.
+
+The original pixel_vet routine aborted on a sector-27 event with no positive centroid weight. The failure and original raw hash are retained in failure.json. retained_moments.py copies the existing routine but records such an event's moment as missing instead of aborting; all event images remain in the stack. Event 6 lacks a moment in sector 27. All 15 and 14 raw quality-zero event windows remain in sectors 27 and 28 respectively. No event was excluded to improve localization.
+
+The two successful products are ../pixels-267545898-s27-retained-20261011/ and ../pixels-267545898-s28-retained-20261011/. verify.py reconstructs the stacks, formal errors, every per-event moment or missing-moment error, and catalog projections from hashed raw data. Catalog positions for this diagnostic are unpropagated; scene crowding and background/motion residuals limit simple moments. A more detailed source/motion model is needed. These images do not establish a planet or rule one out.

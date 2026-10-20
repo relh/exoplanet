@@ -1,0 +1,5 @@
+# Remaining faint midradius metadata
+
+Of2,024 unused targets in the existing pool,400 have no returned QLP product,1,485 have only one sector, and139 have multiple sectors but no pair separated by at least8 sector numbers. The139 consist of103 with two sectors,34 with three and2 with four. All identifiers are unique, prior selection and coverage input hashes are retained, and no QLP light curve was opened by this audit. Current cache absence and consecutive blocks were independently verified. Local nonuse is not worldwide underexploration.
+
+The next useful extension is the139-star multi-sector subset, with discovery and reserved sectors selected before opening photometry. Adjacent or more closely separated epochs provide weaker replication than the prior distant-sector design, but can reduce extrapolation uncertainty. Search gates must remain unchanged and synthetic injections should test this design before expanding a pilot. Single-sector stars cannot provide an independent-sector validation under currently available metadata;400 catalog nonmatches are not proof of no available data elsewhere.

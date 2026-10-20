@@ -1,0 +1,6 @@
+{
+  "written_before": "first 100000-draw run completed; only 10000-draw smoke outputs inspected",
+  "criterion": "Exploratory numerical stability only: across three independent seeds at N=1000000, absolute ranges in target-planet/FPP, NFPP and any-host-planet weights each <=0.02, and difference of median weights between100000 and1000000 draws <=0.02. All runs must have finite normalized probabilities, all applicable scenario families present and no degenerate flag.",
+  "interpretation": "Passing does not measure model uncertainty, physical correctness, calibration, or validate a candidate. Failure means unconverged; report ranges and no preferred percentage.",
+  "resource_policy": "One serial candidate probability process at a time;2Numba threads and1OpenBLAS thread. Six1million runs conditional on runtime and availablememory; interrupted/incomplete draws reported, never silently accepted as converged."
+}

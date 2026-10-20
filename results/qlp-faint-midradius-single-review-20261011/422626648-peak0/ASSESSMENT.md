@@ -1,0 +1,9 @@
+# TIC422626648 fit0: unresolved signal
+
+The native discovery plot has a narrow folded dip, substantial scatter and large temporal gaps. The two eligible periods (4.096276 and5.456442 days) share the same fitted epoch and observations; they are competing explanations, not independent confirmations. Primary fit has four supported events; alternate fit only two and retains alternate-detrending/coverage flags.
+
+Visual review is complete. Pixel/source attribution and catalog checks remain pending. No independent observing epoch is reserved. A planet interpretation, host attribution and novelty are not established. Primary-fit source inspection is running; no candidate claim is made.
+
+Initial raw image inspection: all six usable events show dimming near the target region. The stack moment lies0.147pixel from the catalog target, but this is not a calibrated localization probability. Event6 has a broad positive background offset; morphology and amplitude vary. Event1 includes six quality128 samples excluded under the unchanged quality-zero rule. The other usable inside samples are quality zero.125 TIC neighbors returned. Raw/source/fit hashes agree. Close blends and a binary remain possible. Processed images, catalog identities and alias checks remain pending.
+
+Catalog follow-up:15 TIC GaiaDR2 identifiers map through17 returned mappings to15 DR3 sources near the image moment. No classifier or eclipsing-binary rows returned; identity/CSV/hash reconciliation passed. Exact TIC queries returned no matches in TOI, confirmed, CTOI or the archived sectors1–26 EB list. These are scoped nonmatches, not novelty or binary exclusions. The exact processed TESS-SPOC91 target-pixel URL returned404; this does not establish absence of all processed products. Alias, close-blend and further product checks remain pending.

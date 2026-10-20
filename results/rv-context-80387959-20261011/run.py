@@ -1,0 +1,12 @@
+from pathlib import Path
+import csv,json
+from exoplanet.pipeline import fetch,save_json,sha
+out=Path(__file__).parent;read=lambda p:json.loads(p.read_text());gp=Path('results/gaia-80387959-20261009/gaia_source.csv');npth=Path('results/neighbors-80387959-20261009/tic-neighbors.json');src=gp.with_name('gaia_source-source.json');assert sha(gp)==read(src)['sha256']
+tics=[80387959,80387965,80387961,937808821];stars=[next(r for r in read(npth) if int(r['ID'])==tic) for tic in tics];ids=','.join(str(r['GAIA']) for r in stars);q=f'select * from gaiadr3.dr2_neighbourhood where dr2_source_id in ({ids})';mp=Path('data/catalogs/rv-80387959-dr2-neighbourhood.csv');save_json(out/'request.json',{'query':q,'inputs':{str(p):sha(p) for p in [gp,src,npth]},'script_sha256':sha(Path(__file__))})
+source=fetch('https://gea.esac.esa.int/tap-server/tap/sync',mp,{'REQUEST':'doQuery','LANG':'ADQL','FORMAT':'csv','QUERY':q,'MAXREC':10000});save_json(out/'mapping-source.json',source);mapping=list(csv.DictReader(mp.open()));save_json(out/'mapping.json',mapping);rows=list(csv.DictReader(gp.open()));results=[]
+fields=['source_id','radial_velocity','radial_velocity_error','rv_method_used','rv_nb_transits','rv_nb_deblended_transits','rv_visibility_periods_used','rv_renormalised_gof','rv_chisq_pvalue','rv_amplitude_robust','rv_template_teff','rv_time_duration','grvs_mag','ruwe','non_single_star','has_epoch_rv','has_rvs']
+for star in stars:
+ ms=[m for m in mapping if m['dr2_source_id']==str(star['GAIA'])];assert len(ms)==1,'Ambiguous/missing identity: do not infer a match'
+ row=next(r for r in rows if r['source_id']==ms[0]['dr3_source_id']);available=all(row[k] not in ['',None] for k in ['rv_chisq_pvalue','rv_renormalised_gof','rv_nb_transits']);checks=None if not available else {'p_lt_0_01':float(row['rv_chisq_pvalue'])<.01,'gof_gt_4':float(row['rv_renormalised_gof'])>4,'n_ge_10':int(row['rv_nb_transits'])>=10}
+ results.append({'tic':int(star['ID']),'mapping':ms[0],'fields':{k:row[k] or None for k in fields},'variability_cuts':checks,'status':'diagnostic_unavailable' if checks is None else ('passes_variability_cuts' if all(checks.values()) else 'does_not_pass_variability_cuts')})
+save_json(out/'results.json',{'rows':results,'limits':'Failure to meet RV variability cuts is not planet confirmation or a companion-mass bound. Missing diagnostics are unavailable, not nonvariable. No epoch RV phase match or orbital fit.'});print([(r['tic'],r['status']) for r in results])

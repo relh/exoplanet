@@ -1,0 +1,49 @@
+{
+  "rows": [
+    {
+      "sequence_number": 10,
+      "dataURL": "mast:HLSP/tglc/s0010/cam2-ccd1/0053/6238/9543/7814/hlsp_tglc_tess_ffi_gaiaid-5362389543781400192-s0010-cam2-ccd1_tess_v1_llc.fits",
+      "provenance_name": "TGLC",
+      "target_name": "80387965",
+      "obs_id": "hlsp_tglc_tess_ffi_gaiaid-5362389543781400192-s0010-cam2-ccd1_tess_v1_llc"
+    },
+    {
+      "sequence_number": 10,
+      "dataURL": "mast:HLSP/tglc/s0010/cam2-ccd1/0053/6238/9543/7814/hlsp_tglc_tess_ffi_gaiaid-5362389543781401216-s0010-cam2-ccd1_tess_v1_llc.fits",
+      "provenance_name": "TGLC",
+      "target_name": "80387959",
+      "obs_id": "hlsp_tglc_tess_ffi_gaiaid-5362389543781401216-s0010-cam2-ccd1_tess_v1_llc"
+    }
+  ],
+  "source": {
+    "url": "https://mast.stsci.edu/api/v0/invoke",
+    "request": {
+      "service": "Mast.Caom.Filtered",
+      "params": {
+        "columns": "obs_id,target_name,provenance_name,sequence_number,dataURL",
+        "filters": [
+          {
+            "paramName": "target_name",
+            "values": [
+              "80387959",
+              "80387965",
+              "80387961"
+            ]
+          },
+          {
+            "paramName": "provenance_name",
+            "values": [
+              "TGLC"
+            ]
+          }
+        ]
+      },
+      "format": "json",
+      "pagesize": 1000,
+      "page": 1
+    },
+    "retrieved_utc": "2026-10-09T21:07:22.234019+00:00",
+    "sha256": "63feb9913189e1744d28a3da60d52a7bb2a85968dc5e1747ab493756a752202f",
+    "bytes": 939
+  }
+}

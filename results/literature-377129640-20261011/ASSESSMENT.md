@@ -1,0 +1,7 @@
+# Prior literature match: TIC377129640
+
+Kostandyan, Gigoyan and Gigoyan's March9,2026 preprint, [Three Low-mass M-type Eclipsing Variable Stars Found in the Third Catalogue of Dfbs Late-type Stars](https://www.researchsquare.com/article/rs-9006720/v1), identifies TIC377129640 as DFBS J095623.83+064801.9 and reports eclipsing variability with period0.821301days. DOI:10.21203/rs.3.rs-9006720/v1. The repository's Gaia identity3850549957388322816 also matches its table. The name-based coordinate differs from the TIC position by0.304arcsec.
+
+This is an existing reported signal, not our new candidate. The prior report supports deprioritizing a planetary interpretation; it is a preprint and does not independently validate the physical classification. Its period differs from our posthoc0.820527462days by0.000773538day; no exact timing agreement is claimed. Both analyses use TESS data. Prior Gaia variability-table nonmatches were never evidence of novelty and do not contradict the literature identification.
+
+The original photometry, alias checks and inconclusive frozen predictions remain unchanged. Further fine period fitting is deprioritized for the new-candidate search. The downloaded paper stays in ignored data with URL, retrieval time and SHA-256 recorded; verification checks the exact TIC/Gaia strings, unique Gaia mapping, coordinate proximity and period arithmetic. No new scientific algorithm or full-suite test claim.

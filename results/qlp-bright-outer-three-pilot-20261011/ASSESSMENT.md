@@ -1,0 +1,7 @@
+# TIC 392763403: three-sector outer-distance pilot
+
+Discovery uses sectors 101–103, with sectors 13, 27, 67 and 93 reserved. The usable baseline spans 74.535 days. The search completed, but all three peaks fail the original gates: event coverage and segment-edge failures affect all peaks, with single-event dominance or unmeasurable consistency and alternate-detrending disagreements. No peak qualifies for either follow-up policy, and all four reserved light curves remain unopened. No new planet candidate emerged.
+
+Controls use the sole frozen star with one phase per period/radius pair. Baseline arrays agree exactly at both detrending windows. All eight injections lie inside the actual searched grids. Short controls yield two period/timing recoveries and two screen passes: two Earth radii at 0.83 and 2.37 days. Long controls yield two period matches, one timing match and one pass: three Earth radii at 5.73 days. All three passing trials meet timing checks. No Earth-radius injection passes. These controls do not measure completeness or exclude small planets.
+
+The remaining metadata pool has two targets with adjacent discovery sectors and at least two distant reserved sectors. TIC 406767596 is frozen with discovery sectors 84–85 and reserved 17, 57, 58; TIC 376405406 uses the same discovery pair with reserved 17, 18, 24, 57, 58. Both are disjoint from earlier selections and have no cached QLP photometry at verification. Shorter baselines may reduce sensitivity; existing screening gates remain unchanged.

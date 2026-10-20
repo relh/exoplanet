@@ -1,0 +1,11 @@
+# TIC 462575744: artifact-suspect diagnostic, no credible planet candidate
+
+The four-sector discovery search (74–77) selects a 14.126582-day signal with only the missing-aperture-crowding flag. Native refinement gives 14.132484 days, duration 0.216 days and depth approximately 2,687 ± 240 ppm (formal fit error). The local event measurement supports four training events, all in the first two sectors. The discovery plot was inspected: gaps, scatter and additional light-curve structure limit a planet interpretation. The approximately 2.83-Earth-radius estimate is conditional on an on-target transit and is not a planet measurement.
+
+Frozen predictions in reserved sectors 14 and 15 are both timing-inconclusive. Their projected timing spreads are about 3.247 and 3.192 days. Negative fixed-center depths therefore neither confirm nor reliably exclude the proposed signal. An exploratory off-phase scan also finds other structure (selected dip SNR 5.01 and brightening SNR −6.37); these maxima are not calibrated false-alarm probabilities or automatic binary classifications.
+
+Both raw Sector 74 and 75 difference images were inspected. Each combines two event windows and shows broad background changes, without a repeatable compact stellar dimming source. Their formal pixel SNRs and moments must not be interpreted as precise positions or neighboring-source identifications. The raw products use the same observing photons as QLP and are not independent-epoch confirmation.
+
+The requested processed Sector 74 pixel product exists, but its analysis fails with fewer than two valid image events. All 186 in-event exposures carry quality4096, with zero quality-zero exposures in either event. This is the automatic stray-light flag in the [TESS quality definitions](https://lightkurve.github.io/lightkurve/_modules/lightkurve/utils.html#TessQualityFlags). The failure, raw response provenance and exact quality counts are retained in the [processed check](../../spoc-pixels-462575744-s74-20261011). Together with the broad raw residuals, this favors an instrumental explanation. It is not a conclusive astrophysical exclusion or evidence for a particular contaminating star.
+
+Keep as an artifact-suspect diagnostic. Catalog novelty and a stellar host are not established; no new planet claim, submission or external contact follows.

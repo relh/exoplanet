@@ -1,0 +1,15 @@
+# Gaia non-single-star queries: no published solutions; stellar parameters need care
+
+All four Gaia DR3 non-single-star table queries succeeded and returned no rows for the63 distinct DR3 sources in the existing scenes around TIC196681132, TIC241928959 and TIC422626648. This supplies no orbital or acceleration solution for the targets or those checked neighbors. It does not establish that any of them is single, exclude a binary, or validate a planet.
+
+The queried tables are nss_two_body_orbit, nss_acceleration_astro, nss_non_linear_spectro and nss_vim_fl. Their scope is described in [ESA's Gaia DR3 non-single-star data model](https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_non--single_stars_tables/). The queried identity set was fixed from all previously returned Gaia scene entries, without selecting according to NSS outcome. This is a scoped identity query, not an all-sky multiplicity search. CSV headers were validated, so the results are successful empty tables rather than silently treated request failures.
+
+The target rows also have non_single_star=0, consistent with the empty queries. Their RUWE values remain elevated:3.03 for TIC196681132,3.36 for TIC241928959 and8.23 for TIC422626648. These values are reasons for caution, not companion classifications. The earlier RV and eclipse evidence remains relevant.
+
+TIC196681132 has a material stellar-parameter discrepancy. Its old TIC record lists distance98.101pc, radius0.650416solar radii and no parallax value. Its uniquely mapped Gaia DR3 source3611756510240137088 has parallax6.55146±0.33734mas. A naive inverse gives152.64pc, with7.86pc formal linearized uncertainty; this is not a distance posterior and includes no parallax zero-point or excess-noise treatment. The source has high RUWE, so the discrepancy is not resolved by simply accepting the inverse parallax. Gaia-source GSP-Phot temperature/distance fields are unavailable. No replacement stellar radius or companion radius is derived here.
+
+For comparison, the other two targets have much closer TIC versus naive-Gaia distances:118.747 versus116.87pc for TIC241928959 and97.524 versus98.29pc for TIC422626648. This does not validate their radii or exclude unresolved companions. stellar-context.json retains the exact fields, hashes and calculation assumptions.
+
+verify.py validates all four CSV hashes, column headers and parsed rows, checks the63-source input set and archives the stellar context. These are catalog/metadata checks; no new detection algorithm or test-suite run is claimed. Raw query URLs and hashes are committed, while downloaded CSV files remain under ignored data/targeting.
+
+TIC196681132 remains a higher-priority unresolved transit-like signal because of the TESS/ZTF agreement. Published Gaia NSS solutions cannot settle its physical nature, and companion-size interpretations based on the older stellar radius should remain conditional. Further stellar characterization or new binary-sensitive observations are needed.

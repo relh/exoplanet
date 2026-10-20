@@ -1,0 +1,152 @@
+[
+  {
+    "name": "SuperWASPUsage",
+    "requested_utc": "2026-10-13T23:44:21.157925+00:00",
+    "request_url": "https://exoplanetarchive.ipac.caltech.edu/docs/SuperWASPUsage.html",
+    "params": null,
+    "url": "https://exoplanetarchive.ipac.caltech.edu/docs/SuperWASPUsage.html",
+    "status": 200,
+    "bytes": 24337,
+    "sha256": "a07bcd7eedc8588ebd4e84ebc540c375e6486e56714f748e57f78d10520b6ed3",
+    "path": "data/superwasp-metadata-20261013/SuperWASPUsage.txt",
+    "finished_utc": "2026-10-13T23:44:21.290651+00:00"
+  },
+  {
+    "name": "program_interfaces",
+    "requested_utc": "2026-10-13T23:44:21.291580+00:00",
+    "request_url": "https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html",
+    "params": null,
+    "url": "https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html",
+    "status": 200,
+    "bytes": 68592,
+    "sha256": "0208a1e4dad2226defb281bc5ff6b9a23116932431e4f46cc35dfde619f180fb",
+    "path": "data/superwasp-metadata-20261013/program_interfaces.txt",
+    "finished_utc": "2026-10-13T23:44:21.425163+00:00"
+  },
+  {
+    "name": "TAP",
+    "requested_utc": "2026-10-13T23:44:21.746335+00:00",
+    "request_url": "https://exoplanetarchive.ipac.caltech.edu/docs/TAP.html",
+    "params": null,
+    "url": "https://exoplanetarchive.ipac.caltech.edu/docs/TAP.html",
+    "status": 404,
+    "bytes": 196,
+    "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+    "path": "data/superwasp-metadata-20261013/TAP.txt",
+    "finished_utc": "2026-10-13T23:44:22.116582+00:00"
+  },
+  {
+    "name": "tap-tables",
+    "requested_utc": "2026-10-13T23:44:22.135968+00:00",
+    "request_url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync",
+    "params": {
+      "query": "select table_name,description from TAP_SCHEMA.tables where table_name like '%wasp%'",
+      "format": "json"
+    },
+    "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+table_name%2Cdescription+from+TAP_SCHEMA.tables+where+table_name+like+%27%25wasp%25%27&format=json",
+    "status": 200,
+    "bytes": 70,
+    "sha256": "93ec5a34658e4cc2dbde9fe74e3c93b35b37a72216ffcd750f69880d70d2fee9",
+    "path": "data/superwasp-metadata-20261013/tap-tables.txt",
+    "finished_utc": "2026-10-13T23:44:23.227379+00:00"
+  },
+  {
+    "name": "usingTAP",
+    "requested_utc": "2026-10-13T23:44:29.993228+00:00",
+    "request_url": "https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html",
+    "params": null,
+    "url": "https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html",
+    "status": 200,
+    "bytes": 47505,
+    "sha256": "b65ec5e487fa1a7699f0077e6383955b0a2c66795ba3fc65757cc88ed4f297d6",
+    "path": "data/superwasp-metadata-20261013/usingTAP.txt",
+    "finished_utc": "2026-10-13T23:44:30.162004+00:00"
+  },
+  {
+    "name": "tap-columns",
+    "requested_utc": "2026-10-13T23:44:30.238639+00:00",
+    "request_url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync",
+    "params": {
+      "query": "select column_name,datatype,description,unit from TAP_SCHEMA.columns where table_name='superwasptimeseries'",
+      "format": "json"
+    },
+    "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+column_name%2Cdatatype%2Cdescription%2Cunit+from+TAP_SCHEMA.columns+where+table_name%3D%27superwasptimeseries%27&format=json",
+    "status": 200,
+    "bytes": 3339,
+    "sha256": "5586bb4507c0f252a26b95339fc0bcab17c038fc90ff9c5d9fc24dcb67da3b14",
+    "path": "data/superwasp-metadata-20261013/tap-columns.txt",
+    "finished_utc": "2026-10-13T23:44:31.437672+00:00"
+  },
+  {
+    "name": "cone-80387959",
+    "requested_utc": "2026-10-13T23:44:49.865932+00:00",
+    "request_url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync",
+    "params": {
+      "query": "select sourceid,ra,dec,npts,obsstart,obsstop,hjdstart,hjdstop,hjd_ref,wasp_mag,tm_mean,tm_stddevwrtmean,tm_median,tm_stddevwrtmed,tm_medabsdev,tile from superwasptimeseries where contains(point('ICRS',ra,dec),circle('ICRS',165.31057513947022,-48.613881428659525,0.03333333333333333))=1",
+      "format": "json",
+      "MAXREC": 10000
+    },
+    "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+sourceid%2Cra%2Cdec%2Cnpts%2Cobsstart%2Cobsstop%2Chjdstart%2Chjdstop%2Chjd_ref%2Cwasp_mag%2Ctm_mean%2Ctm_stddevwrtmean%2Ctm_median%2Ctm_stddevwrtmed%2Ctm_medabsdev%2Ctile+from+superwasptimeseries+where+contains%28point%28%27ICRS%27%2Cra%2Cdec%29%2Ccircle%28%27ICRS%27%2C165.31057513947022%2C-48.613881428659525%2C0.03333333333333333%29%29%3D1&format=json&MAXREC=10000",
+    "status": 403,
+    "bytes": 4552,
+    "sha256": "5409c6502fc7a1b31b707edfa7a0cd8807621a11e9f08ce43fa15e4f2793a9e6",
+    "path": "data/superwasp-metadata-20261013/cone-80387959.txt",
+    "finished_utc": "2026-10-13T23:44:50.146362+00:00"
+  },
+  {
+    "name": "cone-402358350",
+    "requested_utc": "2026-10-13T23:44:50.368381+00:00",
+    "request_url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync",
+    "params": {
+      "query": "select sourceid,ra,dec,npts,obsstart,obsstop,hjdstart,hjdstop,hjd_ref,wasp_mag,tm_mean,tm_stddevwrtmean,tm_median,tm_stddevwrtmed,tm_medabsdev,tile from superwasptimeseries where contains(point('ICRS',ra,dec),circle('ICRS',295.15092862046833,15.640411694115707,0.03333333333333333))=1",
+      "format": "json",
+      "MAXREC": 10000
+    },
+    "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+sourceid%2Cra%2Cdec%2Cnpts%2Cobsstart%2Cobsstop%2Chjdstart%2Chjdstop%2Chjd_ref%2Cwasp_mag%2Ctm_mean%2Ctm_stddevwrtmean%2Ctm_median%2Ctm_stddevwrtmed%2Ctm_medabsdev%2Ctile+from+superwasptimeseries+where+contains%28point%28%27ICRS%27%2Cra%2Cdec%29%2Ccircle%28%27ICRS%27%2C295.15092862046833%2C15.640411694115707%2C0.03333333333333333%29%29%3D1&format=json&MAXREC=10000",
+    "status": 403,
+    "bytes": 4552,
+    "sha256": "a52df2a630025d951eb95bd422f71cd1c2e39071fbff400a8354501a92e922a1",
+    "path": "data/superwasp-metadata-20261013/cone-402358350.txt",
+    "finished_utc": "2026-10-13T23:44:50.745118+00:00"
+  },
+  {
+    "name": "cone-control",
+    "requested_utc": "2026-10-13T23:44:50.746831+00:00",
+    "request_url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync",
+    "params": {
+      "query": "select sourceid,ra,dec,npts,obsstart,obsstop,hjdstart,hjdstop,hjd_ref,wasp_mag,tm_mean,tm_stddevwrtmean,tm_median,tm_stddevwrtmed,tm_medabsdev,tile from superwasptimeseries where contains(point('ICRS',ra,dec),circle('ICRS',99.97608333333334,35.523805555555555,0.03333333333333333))=1",
+      "format": "json",
+      "MAXREC": 10000
+    },
+    "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+sourceid%2Cra%2Cdec%2Cnpts%2Cobsstart%2Cobsstop%2Chjdstart%2Chjdstop%2Chjd_ref%2Cwasp_mag%2Ctm_mean%2Ctm_stddevwrtmean%2Ctm_median%2Ctm_stddevwrtmed%2Ctm_medabsdev%2Ctile+from+superwasptimeseries+where+contains%28point%28%27ICRS%27%2Cra%2Cdec%29%2Ccircle%28%27ICRS%27%2C99.97608333333334%2C35.523805555555555%2C0.03333333333333333%29%29%3D1&format=json&MAXREC=10000",
+    "status": 403,
+    "bytes": 4552,
+    "sha256": "15e89af8cfda9c7c9f0e334b3732433e5f8df446eaebb0f4dfc5ecb4bd479cb2",
+    "path": "data/superwasp-metadata-20261013/cone-control.txt",
+    "finished_utc": "2026-10-13T23:44:50.855679+00:00"
+  },
+  {
+    "name": "SuperWASPMission",
+    "requested_utc": "2026-10-13T23:47:16.713997+00:00",
+    "request_url": "https://exoplanetarchive.ipac.caltech.edu/docs/SuperWASPMission.html",
+    "params": null,
+    "url": "https://exoplanetarchive.ipac.caltech.edu/docs/SuperWASPMission.html",
+    "status": 200,
+    "bytes": 26184,
+    "sha256": "aadcbbe93e25054f2fcbecede43a5134bdb2bb163395f7f97a87a11cd7d75e6c",
+    "path": "data/superwasp-metadata-20261013/SuperWASPMission.txt",
+    "finished_utc": "2026-10-13T23:47:16.813473+00:00"
+  },
+  {
+    "name": "API_superwasptimeseries_columns",
+    "requested_utc": "2026-10-13T23:47:17.046765+00:00",
+    "request_url": "https://exoplanetarchive.ipac.caltech.edu/docs/API_superwasptimeseries_columns.html",
+    "params": null,
+    "url": "https://exoplanetarchive.ipac.caltech.edu/docs/API_superwasptimeseries_columns.html",
+    "status": 200,
+    "bytes": 29730,
+    "sha256": "c5869256a668725c4404064bc3f5df1f82625872af1cd137e44def620ad8fe38",
+    "path": "data/superwasp-metadata-20261013/API_superwasptimeseries_columns.txt",
+    "finished_utc": "2026-10-13T23:47:17.195340+00:00"
+  }
+]

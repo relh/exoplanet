@@ -1,0 +1,11 @@
+{
+  "scope": "Metadata-only resolved-observation planning for TIC 80387959 and TIC 402358350. No new flux, period fit, submission, booking or outreach.",
+  "date_range": "2026-10-13 through 2027-04-30 inclusive, nominal BJD_TDB dates",
+  "clock_policy": "Keep all existing frozen clocks. Propagate all preserved profile period/epoch pairs with original three-times heuristic epoch floor. Main envelopes are 803 original frozen profile and union of 402 expanded primary/sensitivity profiles; original 402 discovery profiles retained separately as historical sensitivity, not silently substituted.",
+  "formula": "For event n, c=t0+nP, e2 aligned to t0 by nearest whole p2 cycle. Endpoint bounds are min/max(e2+n*p2) +/-3*floor. Original gate uses maximum absolute deviation from each clock's nominal center +3*floor < D/2.",
+  "window": "Full-track span covers profile-union endpoints plus widest applicable duration/2 and one hour baseline each side. No confidence interpretation; selected local profiles can miss other aliases/model errors.",
+  "time_conversion": "BJD_TDB primary. Approximate geocentric UTC obtained by iterative inversion of Earth barycentric dot source / speed of light using Astropy builtin solar-system ephemeris. No site visibility or formal timing accuracy claim; IERS downloads disabled.",
+  "spatial_policy": "Saved TIC neighbors and source budgets only; target Gaia DR3 positions linearly propagated with pmra*cos(dec) convention to epoch2027.0; no catalog refresh. Neighbor coordinates preserved catalog epoch metadata; no blind assumption all are Gaia DR3.",
+  "precision_assumptions": "Illustrative cadence60-120sec; target differential depth precision<=100ppm over event, neighbor precision chosen from conditional lower-bound eclipse/5; not achievable-performance or confidence guarantee. Establish correlated-noise sensitivity empirically before excluding a source.",
+  "metadata_extension": "Add newly investigated TIC80387968 and TIC74037550 to priority packet. Existing paper budget has both sources across four sectors; report those bounds alongside separately labeled corrected-catalog TRICERATOPS single-sector nominal tdepth. No new flux or clock fit."
+}

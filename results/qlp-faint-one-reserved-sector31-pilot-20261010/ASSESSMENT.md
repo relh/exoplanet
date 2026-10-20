@@ -1,0 +1,11 @@
+# Exploratory Sector 31 search: complete selection
+
+All 632 metadata-selected targets were attempted. There are 631 usable searches: 589 below threshold and 42 flagged. Neither the original nor coverage-diagnostic follow-up policy found an eligible signal. The highest formal peaks retain variability, inverted-signal, broad-duty-cycle, secondary or event-consistency flags; no peak is promoted by significance alone. Each target had exactly one distant reserved sector, offering weaker replication than the previous two-reserved tier. Reserved data remain unopened.
+
+TIC 23221841 is a data failure, not a null search. Its integrity-checked QLP file has 1,863 rows, 1,366 with quality zero, but zero usable positive flux samples and zero valid uncertainty samples. The separate same-sector SPOC attempt returned HTTP 404. Both failures, raw URL/hash and software provenance are retained under ../qlp-faint-one-reserved-sector31-recovery-20261010/23221841. Reserved Sector 4 remains unopened.
+
+Controls used the first three frozen ranked targets: TIC 439874904, 328463799 and 461715780. Twelve short-period injections produced ten period and phase recoveries and six screening passes. Twelve longer-period injections produced eleven period and phase recoveries and four screening passes. All 24 periods were in range; baseline loaders matched all three arrays exactly at both detrending windows. All ten screening passes also met the phase criterion. Two Earth-radius injections at 0.83 days passed, on 439874904 and 461715780. None of these fixed-phase, three-star measurements establishes completeness or a calibrated false-positive rate.
+
+The final audit, checkpoint0632 and reconciliation account for every selected target, the explicit failed recovery and both empty follow-up inventories. No scientific algorithm changed. The earlier checkpoint0213 is retained as an interim record.
+
+A metadata-only inventory excluding the whole 632-target selection leaves 5,574 distinct untouched stars in this exploratory pool. Sector 56 ranks next with 555 targets; its selection is frozen before photometry. Counts overlap across sectors. This dated pool and its one-reserved-sector policy do not cover all TESS stars, all sectors of each target or all planet periods.

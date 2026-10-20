@@ -1,0 +1,5 @@
+# TIC96166003: discovery image diagnostic
+
+Both discovery-sector difference images show weak central dimming near the target: offsets0.46 and0.53pixels, peak formal pixel ratios4.86 and3.74. Each stack contains23 image events. Noise and competing residuals remain, so these moments cannot establish the host or exclude nearby sources. Retain as an internal ambiguous planetary candidate pending timing and independent-sector tests. Added19 and reserved59 remain unopened.
+
+The original discovery best clock was saved in `frozen.json` before pixel downloads. No added or reserved observations were opened. Both image plots were visually inspected. The [shared verifier](../source-check-96166003-20261011/verify.py) reconstructs all individual difference images, variances and weighted stacks from hashed raw FITS products with independent arithmetic. This checks the estimator, not its astrometric accuracy or planet probability. Formal image ratios omit systematic residuals and are not discovery significances. Image event counts differ from cleaned photometric event counts because masks and support criteria differ. Raw hashes and verification results are preserved.

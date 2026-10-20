@@ -1,0 +1,456 @@
+{
+  "tic": 129907936,
+  "target": {
+    "tic": 129907936,
+    "star": {
+      "ID": 129907936,
+      "ra": 36.3109162101091,
+      "dec": 36.6865397376524,
+      "Tmag": 12.5797,
+      "rad": 0.590299,
+      "Teff": 3587,
+      "d": 110.588,
+      "contratio": 0.0205199514,
+      "disposition": null,
+      "duplicate_id": null
+    },
+    "priority_noise_proxy": 1.1430996584968163,
+    "sectors": [
+      18,
+      58
+    ],
+    "training_sectors": [
+      58
+    ],
+    "heldout_sectors": [
+      18
+    ],
+    "estimate_missing_errors": true,
+    "qlp_products": {
+      "18": {
+        "sequence_number": 18,
+        "dataURL": "mast:HLSP/qlp/s0018/0000/0001/2990/7936/hlsp_qlp_tess_ffi_s0018-0000000129907936_tess_v01_llc.fits",
+        "provenance_name": "QLP",
+        "target_name": "129907936",
+        "obs_id": "hlsp_qlp_tess_ffi_s0018-0000000129907936_tess_v01_llc"
+      },
+      "58": {
+        "sequence_number": 58,
+        "dataURL": "mast:HLSP/qlp/s0058/0000/0001/2990/7936/hlsp_qlp_tess_ffi_s0058-0000000129907936_tess_v01_llc.fits",
+        "provenance_name": "QLP",
+        "target_name": "129907936",
+        "obs_id": "hlsp_qlp_tess_ffi_s0058-0000000129907936_tess_v01_llc"
+      }
+    }
+  },
+  "started_utc": "2026-10-11T18:20:21.993108+00:00",
+  "status": "screened",
+  "data": [
+    {
+      "sector": 58,
+      "source": {
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file/?uri=mast:HLSP/qlp/s0058/0000/0001/2990/7936/hlsp_qlp_tess_ffi_s0058-0000000129907936_tess_v01_llc.fits",
+        "retrieved_utc": "2026-10-11T18:20:23.265457+00:00",
+        "sha256": "3612f0d5084e745d3d2ce6b3954c16bc38c5e85ab40b0de913f1e7c319891872",
+        "bytes": 711360,
+        "download_attempts": 1,
+        "transient_failures": []
+      },
+      "n_native_quality_points": 9993,
+      "n_clean_points": 2779,
+      "bin_minutes": 10,
+      "flux_column": "DET_FLUX",
+      "n_pre_mask_clean_points": 2779,
+      "masked_signals": [],
+      "error_model": {
+        "kind": "published",
+        "usable_error_pairs": 9993
+      },
+      "star": {
+        "ticid": 129907936,
+        "sector": 58,
+        "crowdsap": null,
+        "fits_integrity": [
+          {
+            "hdu": "PRIMARY",
+            "checksum": "missing"
+          },
+          {
+            "hdu": "LIGHTCURVE",
+            "checksum": "missing"
+          }
+        ],
+        "collection": "QLP",
+        "radius": 0.590299,
+        "crowding_note": "No measured aperture-crowding value if CROWDSAP absent"
+      }
+    }
+  ],
+  "clean_baseline_days": 25.238206275924767,
+  "median_scatter_floor_ppm": 2909.364119721606,
+  "n_trial_periods": 15136,
+  "peaks": [
+    {
+      "period": 6.420125553213987,
+      "duration": 0.092,
+      "transit_time": 2885.688542919081,
+      "depth": 0.09706470340351442,
+      "depth_err": 0.0004035589755387012,
+      "depth_snr": 240.52173111487627,
+      "power": 29489.44183529766
+    },
+    {
+      "period": 8.78646607281674,
+      "duration": 0.132,
+      "transit_time": 2892.104542919081,
+      "depth": 0.09800609356742404,
+      "depth_err": 0.0004753196085146965,
+      "depth_snr": 206.18988110690108,
+      "power": 21552.68615720678
+    },
+    {
+      "period": 10.063606793318119,
+      "duration": 0.132,
+      "transit_time": 2892.104542919081,
+      "depth": 0.0979646244902163,
+      "depth_err": 0.00047532791215357587,
+      "depth_snr": 206.09903602413414,
+      "power": 21533.68796153283
+    }
+  ],
+  "best": {
+    "period": 6.420125553213987,
+    "duration": 0.092,
+    "transit_time": 2885.688542919081,
+    "depth": 0.09706470340351442,
+    "depth_err": 0.0004035589755387012,
+    "depth_snr": 240.52173111487627,
+    "power": 29489.44183529766
+  },
+  "screened_peaks": [
+    {
+      "best": {
+        "period": 6.420125553213987,
+        "duration": 0.092,
+        "transit_time": 2885.688542919081,
+        "depth": 0.09706470340351442,
+        "depth_err": 0.0004035589755387012,
+        "depth_snr": 240.52173111487627,
+        "power": 29489.44183529766
+      },
+      "diagnostics": {
+        "sinusoid": {
+          "period": 1.077458996855321,
+          "delta_log_likelihood": 1976.4611036340696,
+          "power_ratio_to_box": 0.0670226691530094
+        },
+        "events": [
+          {
+            "event": 0,
+            "time": 2885.688542919081,
+            "depth": -0.0014415135577172666,
+            "error": 0.0009022015719766514,
+            "snr": -1.597773272062723,
+            "n": 13
+          },
+          {
+            "event": 1,
+            "time": 2892.108668472295,
+            "depth": 0.21596248225158843,
+            "error": 0.0008727435252400157,
+            "snr": 247.45240268863176,
+            "n": 14
+          },
+          {
+            "event": 2,
+            "time": 2898.528794025509,
+            "depth": 0.16472576329231026,
+            "error": 0.0009712214539453043,
+            "snr": 169.60680040907232,
+            "n": 13
+          },
+          {
+            "event": 3,
+            "time": 2904.9489195787232,
+            "depth": 0.0007597939858844382,
+            "error": 0.0009022352061788856,
+            "snr": 0.8421240721721452,
+            "n": 13
+          }
+        ],
+        "supported_events": 2,
+        "odd_even_sigma": 37.864903455798945,
+        "secondary": {
+          "depth": -4.368289466194497e-05,
+          "error": 0.0005245699933939772,
+          "snr": -0.08327371983158217,
+          "n": 39
+        },
+        "inverted": {
+          "period": 0.5018594183420984,
+          "duration": 0.18,
+          "transit_time": 2884.292542919081,
+          "depth": 0.0038939650478728867,
+          "depth_err": 0.00011509196839890143,
+          "depth_snr": 33.83350812436061,
+          "power": 895.7282886566577
+        },
+        "inverted_power_ratio": 0.030374541968593904
+      },
+      "flags": [
+        "fewer_than_3_supported_events",
+        "odd_even_mismatch",
+        "inconsistent_event_depths",
+        "alternative_detrending_prefers_other_period",
+        "crowding_or_missing_crowding"
+      ],
+      "radius_earth_if_on_target": 20.060045634905556,
+      "alternative_window_best": {
+        "period": 8.781351851263354,
+        "duration": 0.132,
+        "transit_time": 2892.108549979837,
+        "depth": 0.09888759305402593,
+        "depth_err": 0.0004756709239205697,
+        "depth_snr": 207.89076666485244,
+        "power": 21945.17057077326
+      },
+      "extended_vetting": {
+        "noise": {
+          "status": "measured",
+          "n_bins": 202,
+          "bin_duration_days": 0.092,
+          "binned_scatter_ppm": 741.0136289143518,
+          "expected_white_scatter_ppm": 806.8837214191602,
+          "beta": 1.0,
+          "adjusted_snr": 240.52173111487627,
+          "interpretation": "Duration-binned robust scatter ratio; conditional heuristic, not calibrated significance"
+        },
+        "event_consistency": {
+          "status": "measured",
+          "n_events": 4,
+          "weighted_depth": 0.09468438301588634,
+          "chi2": 46700.52474865642,
+          "dof": 3,
+          "conditional_chi2_sf": 0.0,
+          "max_positive_event_snr2_fraction": 0.6803642414987487,
+          "error_inflation_beta": 1.0,
+          "interpretation": "Independent Gaussian event errors inflated by binned beta; not a planet probability"
+        },
+        "supported_event_edge_distances_days": [
+          0.7819737242552947,
+          0.11041448226569628
+        ],
+        "flags": [
+          "inconsistent_event_depths"
+        ]
+      }
+    },
+    {
+      "best": {
+        "period": 8.78646607281674,
+        "duration": 0.132,
+        "transit_time": 2892.104542919081,
+        "depth": 0.09800609356742404,
+        "depth_err": 0.0004753196085146965,
+        "depth_snr": 206.18988110690108,
+        "power": 21552.68615720678
+      },
+      "diagnostics": {
+        "sinusoid": {
+          "period": 1.077458996855321,
+          "delta_log_likelihood": 1976.4611036340696,
+          "power_ratio_to_box": 0.0917037017668065
+        },
+        "events": [
+          {
+            "event": 0,
+            "time": 2892.104542919081,
+            "depth": 0.19722395439810858,
+            "error": 0.0007464288266456721,
+            "snr": 264.2233892337739,
+            "n": 19
+          },
+          {
+            "event": 1,
+            "time": 2900.8910089918977,
+            "depth": 0.001569968201146299,
+            "error": 0.0007463500216475848,
+            "snr": 2.1035280439606048,
+            "n": 19
+          }
+        ],
+        "supported_events": 2,
+        "odd_even_sigma": 194.7764604851744,
+        "secondary": {
+          "depth": 0.0002027227646490548,
+          "error": 0.0005300605171014183,
+          "snr": 0.38245211274671714,
+          "n": 38
+        },
+        "inverted": {
+          "period": 0.5018594183420984,
+          "duration": 0.18,
+          "transit_time": 2884.292542919081,
+          "depth": 0.0038939650478728867,
+          "depth_err": 0.00011509196839890143,
+          "depth_snr": 33.83350812436061,
+          "power": 895.7282886566577
+        },
+        "inverted_power_ratio": 0.04155993745388179
+      },
+      "flags": [
+        "fewer_than_3_supported_events",
+        "odd_even_mismatch",
+        "inconsistent_event_depths",
+        "single_event_dominates",
+        "crowding_or_missing_crowding"
+      ],
+      "radius_earth_if_on_target": 20.15708792667461,
+      "alternative_window_best": {
+        "period": 8.781351851263354,
+        "duration": 0.132,
+        "transit_time": 2892.108549979837,
+        "depth": 0.09888759305402593,
+        "depth_err": 0.0004756709239205697,
+        "depth_snr": 207.89076666485244,
+        "power": 21945.17057077326
+      },
+      "extended_vetting": {
+        "noise": {
+          "status": "measured",
+          "n_bins": 142,
+          "bin_duration_days": 0.132,
+          "binned_scatter_ppm": 590.9379885038442,
+          "expected_white_scatter_ppm": 667.4833844808751,
+          "beta": 1.0,
+          "adjusted_snr": 206.18988110690108,
+          "interpretation": "Duration-binned robust scatter ratio; conditional heuristic, not calibrated significance"
+        },
+        "event_consistency": {
+          "status": "measured",
+          "n_events": 2,
+          "weighted_depth": 0.09938663256809249,
+          "chi2": 34357.096121857045,
+          "dof": 1,
+          "conditional_chi2_sf": 0.0,
+          "max_positive_event_snr2_fraction": 0.9999366237453887,
+          "error_inflation_beta": 1.0,
+          "interpretation": "Independent Gaussian event errors inflated by binned beta; not a planet probability"
+        },
+        "supported_event_edge_distances_days": [
+          0.786099277469475,
+          2.4726294486545157
+        ],
+        "flags": [
+          "inconsistent_event_depths",
+          "single_event_dominates"
+        ]
+      }
+    },
+    {
+      "best": {
+        "period": 10.063606793318119,
+        "duration": 0.132,
+        "transit_time": 2892.104542919081,
+        "depth": 0.0979646244902163,
+        "depth_err": 0.00047532791215357587,
+        "depth_snr": 206.09903602413414,
+        "power": 21533.68796153283
+      },
+      "diagnostics": {
+        "sinusoid": {
+          "period": 1.077458996855321,
+          "delta_log_likelihood": 1976.4611036340696,
+          "power_ratio_to_box": 0.0917846077812943
+        },
+        "events": [
+          {
+            "event": 0,
+            "time": 2892.104542919081,
+            "depth": 0.19722395439810858,
+            "error": 0.0007464288266456721,
+            "snr": 264.2233892337739,
+            "n": 19
+          },
+          {
+            "event": 1,
+            "time": 2902.168149712399,
+            "depth": 0.0019373175647939833,
+            "error": 0.0007463839077667126,
+            "snr": 2.5956046809619924,
+            "n": 19
+          }
+        ],
+        "supported_events": 2,
+        "odd_even_sigma": 194.86096157018673,
+        "secondary": {
+          "depth": -5.032236619695318e-05,
+          "error": 0.0005276943314895808,
+          "snr": -0.09536271889618884,
+          "n": 38
+        },
+        "inverted": {
+          "period": 0.5018594183420984,
+          "duration": 0.18,
+          "transit_time": 2884.292542919081,
+          "depth": 0.0038939650478728867,
+          "depth_err": 0.00011509196839890143,
+          "depth_snr": 33.83350812436061,
+          "power": 895.7282886566577
+        },
+        "inverted_power_ratio": 0.041596603900676994
+      },
+      "flags": [
+        "fewer_than_3_supported_events",
+        "odd_even_mismatch",
+        "inconsistent_event_depths",
+        "single_event_dominates",
+        "alternative_detrending_prefers_other_period",
+        "crowding_or_missing_crowding"
+      ],
+      "radius_earth_if_on_target": 20.152822965964344,
+      "alternative_window_best": {
+        "period": 8.781351851263354,
+        "duration": 0.132,
+        "transit_time": 2892.108549979837,
+        "depth": 0.09888759305402593,
+        "depth_err": 0.0004756709239205697,
+        "depth_snr": 207.89076666485244,
+        "power": 21945.17057077326
+      },
+      "extended_vetting": {
+        "noise": {
+          "status": "measured",
+          "n_bins": 142,
+          "bin_duration_days": 0.132,
+          "binned_scatter_ppm": 590.9379885038442,
+          "expected_white_scatter_ppm": 667.481302307422,
+          "beta": 1.0,
+          "adjusted_snr": 206.09903602413414,
+          "interpretation": "Duration-binned robust scatter ratio; conditional heuristic, not calibrated significance"
+        },
+        "event_consistency": {
+          "status": "measured",
+          "n_events": 2,
+          "weighted_depth": 0.09957475978774515,
+          "chi2": 34226.64933349105,
+          "dof": 1,
+          "conditional_chi2_sf": 0.0,
+          "max_positive_event_snr2_fraction": 0.9999035076971449,
+          "error_inflation_beta": 1.0,
+          "interpretation": "Independent Gaussian event errors inflated by binned beta; not a planet probability"
+        },
+        "supported_event_edge_distances_days": [
+          0.786099277469475,
+          3.7497701691559087
+        ],
+        "flags": [
+          "inconsistent_event_depths",
+          "single_event_dominates"
+        ]
+      }
+    }
+  ],
+  "disposition": "flagged",
+  "finished_utc": "2026-10-11T18:20:23.923428+00:00"
+}

@@ -1,0 +1,17 @@
+# TIC196681132: conditional image-response attribution
+
+The sector91 stacked difference image favors TIC196681132 over the specific viable dilution neighbor TIC196683452. This strengthens target-region attribution; it does not establish a planet or exclude an unresolved eclipsing companion.
+
+Using the previously frozen roughly0.7246-day clock, the existing difference-image workflow combines22 usable events. Four official STScI TESS PRF grid files and the raw cutout are recorded with source URLs and SHA-256 hashes in models.json. The16-source scene includes catalog stars through T=18. Both competing positions use Gaia DR3 proper motions propagated to the observation epoch; the other scene stars use the existing TIC-coordinate convention. The propagated pair separation is1.7486pixels (different from the earlier unpropagated catalog dilution calculation).
+
+The scene registration is [+0.1033,−0.0568]pixels, away from the fit boundary. Its residual RMS is0.98% of the scene peak. At that registration the target hypothesis has conditional chi-square424.10 versus3888.55 for the neighbor, each with117 degrees of freedom. Both amplitudes are positive. A freely shifted source fit moves0.2307pixel from the registered target and reduces chi-square to240.35, also without reaching its boundary. These residuals demonstrate that diagonal formal errors and the adopted PRF do not fully describe the images; chi-square differences are not calibrated host odds.
+
+All17 registration perturbations from−0.2 through+0.2pixel along the pair direction favor the target. The smallest conditional chi-square advantage is2806.28. This is a limited one-dimensional sensitivity check, not a registration confidence region or an exhaustive scene-model test.
+
+Deterministic identical-PRF Gaussian injections recover each injected host100/100 times. Injections into41 shifted-phase real difference images recover each host41/41 times. Real dip windows were masked in those controls. Shifted controls overlap, share observations, and omit PRF mismatch; their success is not an independent-epoch confirmation or a false-positive probability.
+
+The three panels in prf-fits.png were inspected: the principal positive difference feature lies near the target; the free-source model reproduces it, with structured residuals and a broad background contribution. The source comparison covers only these two hypotheses, with omitted faint/outside sources, linear proper motion and no parallax correction. The Gaia target's elevated RUWE and unresolved binary interpretation remain relevant. Same-sector raw images and QLP share photons.
+
+Verification: verify.py checks input hashes and physical detector coordinates, reconstructs the22-event stack and both fixed-template fits, and checks the control totals and17-step sensitivity output. It passed. The first verification attempt incorrectly expected physical-coordinate cards in extension2; inspection confirmed the actual extension1 table WCS cards, and the verifier was corrected. The analysis already used those fallback cards correctly. No scientific fitting module changed. Scripts and generated evidence are hashed in verification.json.
+
+Next discriminating checks include per-event source consistency and alternative empirical scene models. Independent observations and physical binary vetting are still needed. Do not label this a securely attributed new planet candidate or a discovery.

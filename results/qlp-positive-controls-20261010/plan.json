@@ -1,0 +1,1579 @@
+{
+  "utc": "2026-10-10T17:57:30.834929+00:00",
+  "truth": {
+    "307210830": {
+      "L 98-59 c": 3.6906716,
+      "L 98-59 e": 12.8115,
+      "L 98-59 d": 7.4507313,
+      "L 98-59 b": 2.2531138,
+      "L 98-59 f": 23.066499999999998
+    },
+    "259377017": {
+      "TOI-270 c": 5.66051,
+      "TOI-270 b": 3.3601169,
+      "TOI-270 d": 11.37969912166
+    },
+    "150428135": {
+      "TOI-700 d": 37.42396,
+      "TOI-700 e": 27.80978,
+      "TOI-700 b": 9.977219,
+      "TOI-700 c": 16.051107989225002
+    },
+    "101955023": {
+      "GJ 1132 b": 1.6289302,
+      "GJ 1132 c": 8.929
+    }
+  },
+  "catalog_path": "results/selection-small-stars-20261009/catalog_confirmed.csv",
+  "catalog_sha256": "a37a6cb35285753e2d6fa5490fff38ea717a4c3868f6d9b7ae189804e2d52dd6",
+  "tic_source": {
+    "url": "https://mast.stsci.edu/api/v0/invoke",
+    "request": {
+      "service": "Mast.Catalogs.Filtered.Tic.Rows",
+      "params": {
+        "columns": "ID,ra,dec,Tmag,rad,Teff,d,contratio,disposition,duplicate_id",
+        "filters": [
+          {
+            "paramName": "rad",
+            "values": [
+              {
+                "min": 0.15,
+                "max": 0.8
+              }
+            ]
+          },
+          {
+            "paramName": "Tmag",
+            "values": [
+              {
+                "min": 6,
+                "max": 12
+              }
+            ]
+          },
+          {
+            "paramName": "d",
+            "values": [
+              {
+                "min": 0,
+                "max": 120
+              }
+            ]
+          }
+        ]
+      },
+      "format": "json",
+      "pagesize": 100000,
+      "page": 1
+    },
+    "retrieved_utc": "2026-10-09T18:26:22.908023+00:00",
+    "sha256": "f76ee12e05b906064718c71a1f4365eeb02005032c9d9f20854be073a96ca82f",
+    "bytes": 10742932
+  },
+  "observations": {
+    "url": "https://mast.stsci.edu/api/v0/invoke",
+    "request": {
+      "service": "Mast.Caom.Filtered",
+      "params": {
+        "columns": "obs_id,target_name,provenance_name,sequence_number,dataURL",
+        "filters": [
+          {
+            "paramName": "target_name",
+            "values": [
+              "101955023",
+              "150428135",
+              "259377017",
+              "307210830"
+            ]
+          },
+          {
+            "paramName": "provenance_name",
+            "values": [
+              "QLP"
+            ]
+          }
+        ]
+      },
+      "format": "json",
+      "pagesize": 50000,
+      "page": 1
+    },
+    "retrieved_utc": "2026-10-10T17:57:30.832787+00:00",
+    "sha256": "52d745c6d2953e749baf255d97680f90c225afc44fc46b1722f857f7097b571a",
+    "bytes": 19252
+  },
+  "items": [
+    {
+      "label": "early",
+      "target": {
+        "tic": 307210830,
+        "star": {
+          "ID": 307210830,
+          "ra": 124.531756290083,
+          "dec": -68.3129998725044,
+          "Tmag": 9.41242,
+          "rad": 0.31416,
+          "Teff": 3429,
+          "d": 10.6194,
+          "contratio": 0.00293248775,
+          "disposition": null,
+          "duplicate_id": null
+        },
+        "sectors": [
+          2,
+          5,
+          8,
+          9,
+          10,
+          11,
+          12,
+          28,
+          29,
+          32,
+          35,
+          36,
+          37,
+          38,
+          39,
+          61,
+          62,
+          63,
+          64,
+          65,
+          69,
+          87,
+          88,
+          89,
+          90,
+          96,
+          98
+        ],
+        "training_sectors": [
+          8,
+          9
+        ],
+        "heldout_sectors": [],
+        "estimate_missing_errors": true,
+        "qlp_products": {
+          "12": {
+            "sequence_number": 12,
+            "dataURL": "mast:HLSP/qlp/s0012/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0012-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0012-0000000307210830_tess_v01_llc"
+          },
+          "11": {
+            "sequence_number": 11,
+            "dataURL": "mast:HLSP/qlp/s0011/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0011-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0011-0000000307210830_tess_v01_llc"
+          },
+          "10": {
+            "sequence_number": 10,
+            "dataURL": "mast:HLSP/qlp/s0010/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0010-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0010-0000000307210830_tess_v01_llc"
+          },
+          "9": {
+            "sequence_number": 9,
+            "dataURL": "mast:HLSP/qlp/s0009/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0009-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0009-0000000307210830_tess_v01_llc"
+          },
+          "5": {
+            "sequence_number": 5,
+            "dataURL": "mast:HLSP/qlp/s0005/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0005-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0005-0000000307210830_tess_v01_llc"
+          },
+          "2": {
+            "sequence_number": 2,
+            "dataURL": "mast:HLSP/qlp/s0002/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0002-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0002-0000000307210830_tess_v01_llc"
+          },
+          "8": {
+            "sequence_number": 8,
+            "dataURL": "mast:HLSP/qlp/s0008/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0008-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0008-0000000307210830_tess_v01_llc"
+          },
+          "28": {
+            "sequence_number": 28,
+            "dataURL": "mast:HLSP/qlp/s0028/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0028-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0028-0000000307210830_tess_v01_llc"
+          },
+          "29": {
+            "sequence_number": 29,
+            "dataURL": "mast:HLSP/qlp/s0029/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0029-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0029-0000000307210830_tess_v01_llc"
+          },
+          "32": {
+            "sequence_number": 32,
+            "dataURL": "mast:HLSP/qlp/s0032/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0032-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0032-0000000307210830_tess_v01_llc"
+          },
+          "35": {
+            "sequence_number": 35,
+            "dataURL": "mast:HLSP/qlp/s0035/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0035-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0035-0000000307210830_tess_v01_llc"
+          },
+          "36": {
+            "sequence_number": 36,
+            "dataURL": "mast:HLSP/qlp/s0036/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0036-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0036-0000000307210830_tess_v01_llc"
+          },
+          "37": {
+            "sequence_number": 37,
+            "dataURL": "mast:HLSP/qlp/s0037/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0037-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0037-0000000307210830_tess_v01_llc"
+          },
+          "38": {
+            "sequence_number": 38,
+            "dataURL": "mast:HLSP/qlp/s0038/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0038-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0038-0000000307210830_tess_v01_llc"
+          },
+          "39": {
+            "sequence_number": 39,
+            "dataURL": "mast:HLSP/qlp/s0039/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0039-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0039-0000000307210830_tess_v01_llc"
+          },
+          "61": {
+            "sequence_number": 61,
+            "dataURL": "mast:HLSP/qlp/s0061/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0061-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0061-0000000307210830_tess_v01_llc"
+          },
+          "62": {
+            "sequence_number": 62,
+            "dataURL": "mast:HLSP/qlp/s0062/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0062-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0062-0000000307210830_tess_v01_llc"
+          },
+          "63": {
+            "sequence_number": 63,
+            "dataURL": "mast:HLSP/qlp/s0063/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0063-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0063-0000000307210830_tess_v01_llc"
+          },
+          "64": {
+            "sequence_number": 64,
+            "dataURL": "mast:HLSP/qlp/s0064/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0064-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0064-0000000307210830_tess_v01_llc"
+          },
+          "65": {
+            "sequence_number": 65,
+            "dataURL": "mast:HLSP/qlp/s0065/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0065-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0065-0000000307210830_tess_v01_llc"
+          },
+          "69": {
+            "sequence_number": 69,
+            "dataURL": "mast:HLSP/qlp/s0069/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0069-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0069-0000000307210830_tess_v01_llc"
+          },
+          "87": {
+            "sequence_number": 87,
+            "dataURL": "mast:HLSP/qlp/s0087/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0087-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0087-0000000307210830_tess_v01_llc"
+          },
+          "88": {
+            "sequence_number": 88,
+            "dataURL": "mast:HLSP/qlp/s0088/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0088-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0088-0000000307210830_tess_v01_llc"
+          },
+          "89": {
+            "sequence_number": 89,
+            "dataURL": "mast:HLSP/qlp/s0089/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0089-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0089-0000000307210830_tess_v01_llc"
+          },
+          "90": {
+            "sequence_number": 90,
+            "dataURL": "mast:HLSP/qlp/s0090/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0090-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0090-0000000307210830_tess_v01_llc"
+          },
+          "96": {
+            "sequence_number": 96,
+            "dataURL": "mast:HLSP/qlp/s0096/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0096-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0096-0000000307210830_tess_v01_llc"
+          },
+          "98": {
+            "sequence_number": 98,
+            "dataURL": "mast:HLSP/qlp/s0098/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0098-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0098-0000000307210830_tess_v01_llc"
+          }
+        }
+      }
+    },
+    {
+      "label": "late",
+      "target": {
+        "tic": 307210830,
+        "star": {
+          "ID": 307210830,
+          "ra": 124.531756290083,
+          "dec": -68.3129998725044,
+          "Tmag": 9.41242,
+          "rad": 0.31416,
+          "Teff": 3429,
+          "d": 10.6194,
+          "contratio": 0.00293248775,
+          "disposition": null,
+          "duplicate_id": null
+        },
+        "sectors": [
+          2,
+          5,
+          8,
+          9,
+          10,
+          11,
+          12,
+          28,
+          29,
+          32,
+          35,
+          36,
+          37,
+          38,
+          39,
+          61,
+          62,
+          63,
+          64,
+          65,
+          69,
+          87,
+          88,
+          89,
+          90,
+          96,
+          98
+        ],
+        "training_sectors": [
+          89,
+          90
+        ],
+        "heldout_sectors": [],
+        "estimate_missing_errors": true,
+        "qlp_products": {
+          "12": {
+            "sequence_number": 12,
+            "dataURL": "mast:HLSP/qlp/s0012/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0012-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0012-0000000307210830_tess_v01_llc"
+          },
+          "11": {
+            "sequence_number": 11,
+            "dataURL": "mast:HLSP/qlp/s0011/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0011-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0011-0000000307210830_tess_v01_llc"
+          },
+          "10": {
+            "sequence_number": 10,
+            "dataURL": "mast:HLSP/qlp/s0010/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0010-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0010-0000000307210830_tess_v01_llc"
+          },
+          "9": {
+            "sequence_number": 9,
+            "dataURL": "mast:HLSP/qlp/s0009/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0009-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0009-0000000307210830_tess_v01_llc"
+          },
+          "5": {
+            "sequence_number": 5,
+            "dataURL": "mast:HLSP/qlp/s0005/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0005-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0005-0000000307210830_tess_v01_llc"
+          },
+          "2": {
+            "sequence_number": 2,
+            "dataURL": "mast:HLSP/qlp/s0002/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0002-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0002-0000000307210830_tess_v01_llc"
+          },
+          "8": {
+            "sequence_number": 8,
+            "dataURL": "mast:HLSP/qlp/s0008/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0008-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0008-0000000307210830_tess_v01_llc"
+          },
+          "28": {
+            "sequence_number": 28,
+            "dataURL": "mast:HLSP/qlp/s0028/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0028-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0028-0000000307210830_tess_v01_llc"
+          },
+          "29": {
+            "sequence_number": 29,
+            "dataURL": "mast:HLSP/qlp/s0029/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0029-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0029-0000000307210830_tess_v01_llc"
+          },
+          "32": {
+            "sequence_number": 32,
+            "dataURL": "mast:HLSP/qlp/s0032/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0032-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0032-0000000307210830_tess_v01_llc"
+          },
+          "35": {
+            "sequence_number": 35,
+            "dataURL": "mast:HLSP/qlp/s0035/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0035-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0035-0000000307210830_tess_v01_llc"
+          },
+          "36": {
+            "sequence_number": 36,
+            "dataURL": "mast:HLSP/qlp/s0036/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0036-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0036-0000000307210830_tess_v01_llc"
+          },
+          "37": {
+            "sequence_number": 37,
+            "dataURL": "mast:HLSP/qlp/s0037/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0037-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0037-0000000307210830_tess_v01_llc"
+          },
+          "38": {
+            "sequence_number": 38,
+            "dataURL": "mast:HLSP/qlp/s0038/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0038-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0038-0000000307210830_tess_v01_llc"
+          },
+          "39": {
+            "sequence_number": 39,
+            "dataURL": "mast:HLSP/qlp/s0039/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0039-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0039-0000000307210830_tess_v01_llc"
+          },
+          "61": {
+            "sequence_number": 61,
+            "dataURL": "mast:HLSP/qlp/s0061/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0061-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0061-0000000307210830_tess_v01_llc"
+          },
+          "62": {
+            "sequence_number": 62,
+            "dataURL": "mast:HLSP/qlp/s0062/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0062-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0062-0000000307210830_tess_v01_llc"
+          },
+          "63": {
+            "sequence_number": 63,
+            "dataURL": "mast:HLSP/qlp/s0063/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0063-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0063-0000000307210830_tess_v01_llc"
+          },
+          "64": {
+            "sequence_number": 64,
+            "dataURL": "mast:HLSP/qlp/s0064/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0064-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0064-0000000307210830_tess_v01_llc"
+          },
+          "65": {
+            "sequence_number": 65,
+            "dataURL": "mast:HLSP/qlp/s0065/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0065-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0065-0000000307210830_tess_v01_llc"
+          },
+          "69": {
+            "sequence_number": 69,
+            "dataURL": "mast:HLSP/qlp/s0069/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0069-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0069-0000000307210830_tess_v01_llc"
+          },
+          "87": {
+            "sequence_number": 87,
+            "dataURL": "mast:HLSP/qlp/s0087/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0087-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0087-0000000307210830_tess_v01_llc"
+          },
+          "88": {
+            "sequence_number": 88,
+            "dataURL": "mast:HLSP/qlp/s0088/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0088-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0088-0000000307210830_tess_v01_llc"
+          },
+          "89": {
+            "sequence_number": 89,
+            "dataURL": "mast:HLSP/qlp/s0089/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0089-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0089-0000000307210830_tess_v01_llc"
+          },
+          "90": {
+            "sequence_number": 90,
+            "dataURL": "mast:HLSP/qlp/s0090/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0090-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0090-0000000307210830_tess_v01_llc"
+          },
+          "96": {
+            "sequence_number": 96,
+            "dataURL": "mast:HLSP/qlp/s0096/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0096-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0096-0000000307210830_tess_v01_llc"
+          },
+          "98": {
+            "sequence_number": 98,
+            "dataURL": "mast:HLSP/qlp/s0098/0000/0003/0721/0830/hlsp_qlp_tess_ffi_s0098-0000000307210830_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "307210830",
+            "obs_id": "hlsp_qlp_tess_ffi_s0098-0000000307210830_tess_v01_llc"
+          }
+        }
+      }
+    },
+    {
+      "label": "early",
+      "target": {
+        "tic": 259377017,
+        "star": {
+          "ID": 259377017,
+          "ra": 68.4155009405299,
+          "dec": -51.9562322933249,
+          "Tmag": 10.4981,
+          "rad": 0.374358,
+          "Teff": 3532,
+          "d": 22.4793,
+          "contratio": 0.0103179086,
+          "disposition": null,
+          "duplicate_id": null
+        },
+        "sectors": [
+          3,
+          4,
+          5,
+          30,
+          32,
+          97,
+          98
+        ],
+        "training_sectors": [
+          3,
+          4
+        ],
+        "heldout_sectors": [],
+        "estimate_missing_errors": true,
+        "qlp_products": {
+          "5": {
+            "sequence_number": 5,
+            "dataURL": "mast:HLSP/qlp/s0005/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0005-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0005-0000000259377017_tess_v01_llc"
+          },
+          "4": {
+            "sequence_number": 4,
+            "dataURL": "mast:HLSP/qlp/s0004/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0004-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0004-0000000259377017_tess_v01_llc"
+          },
+          "3": {
+            "sequence_number": 3,
+            "dataURL": "mast:HLSP/qlp/s0003/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0003-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0003-0000000259377017_tess_v01_llc"
+          },
+          "30": {
+            "sequence_number": 30,
+            "dataURL": "mast:HLSP/qlp/s0030/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0030-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0030-0000000259377017_tess_v01_llc"
+          },
+          "32": {
+            "sequence_number": 32,
+            "dataURL": "mast:HLSP/qlp/s0032/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0032-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0032-0000000259377017_tess_v01_llc"
+          },
+          "97": {
+            "sequence_number": 97,
+            "dataURL": "mast:HLSP/qlp/s0097/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0097-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0097-0000000259377017_tess_v01_llc"
+          },
+          "98": {
+            "sequence_number": 98,
+            "dataURL": "mast:HLSP/qlp/s0098/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0098-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0098-0000000259377017_tess_v01_llc"
+          }
+        }
+      }
+    },
+    {
+      "label": "late",
+      "target": {
+        "tic": 259377017,
+        "star": {
+          "ID": 259377017,
+          "ra": 68.4155009405299,
+          "dec": -51.9562322933249,
+          "Tmag": 10.4981,
+          "rad": 0.374358,
+          "Teff": 3532,
+          "d": 22.4793,
+          "contratio": 0.0103179086,
+          "disposition": null,
+          "duplicate_id": null
+        },
+        "sectors": [
+          3,
+          4,
+          5,
+          30,
+          32,
+          97,
+          98
+        ],
+        "training_sectors": [
+          97,
+          98
+        ],
+        "heldout_sectors": [],
+        "estimate_missing_errors": true,
+        "qlp_products": {
+          "5": {
+            "sequence_number": 5,
+            "dataURL": "mast:HLSP/qlp/s0005/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0005-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0005-0000000259377017_tess_v01_llc"
+          },
+          "4": {
+            "sequence_number": 4,
+            "dataURL": "mast:HLSP/qlp/s0004/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0004-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0004-0000000259377017_tess_v01_llc"
+          },
+          "3": {
+            "sequence_number": 3,
+            "dataURL": "mast:HLSP/qlp/s0003/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0003-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0003-0000000259377017_tess_v01_llc"
+          },
+          "30": {
+            "sequence_number": 30,
+            "dataURL": "mast:HLSP/qlp/s0030/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0030-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0030-0000000259377017_tess_v01_llc"
+          },
+          "32": {
+            "sequence_number": 32,
+            "dataURL": "mast:HLSP/qlp/s0032/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0032-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0032-0000000259377017_tess_v01_llc"
+          },
+          "97": {
+            "sequence_number": 97,
+            "dataURL": "mast:HLSP/qlp/s0097/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0097-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0097-0000000259377017_tess_v01_llc"
+          },
+          "98": {
+            "sequence_number": 98,
+            "dataURL": "mast:HLSP/qlp/s0098/0000/0002/5937/7017/hlsp_qlp_tess_ffi_s0098-0000000259377017_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "259377017",
+            "obs_id": "hlsp_qlp_tess_ffi_s0098-0000000259377017_tess_v01_llc"
+          }
+        }
+      }
+    },
+    {
+      "label": "early",
+      "target": {
+        "tic": 150428135,
+        "star": {
+          "ID": 150428135,
+          "ra": 97.0967865903209,
+          "dec": -65.5793115481931,
+          "Tmag": 10.9102,
+          "rad": 0.419457,
+          "Teff": 3494,
+          "d": 31.1265,
+          "contratio": 0.0109307412,
+          "disposition": null,
+          "duplicate_id": null
+        },
+        "sectors": [
+          1,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          27,
+          28,
+          30,
+          31,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          68,
+          69,
+          87,
+          88,
+          89,
+          90,
+          93,
+          95,
+          96,
+          97
+        ],
+        "training_sectors": [
+          4,
+          5
+        ],
+        "heldout_sectors": [],
+        "estimate_missing_errors": true,
+        "qlp_products": {
+          "13": {
+            "sequence_number": 13,
+            "dataURL": "mast:HLSP/qlp/s0013/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0013-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0013-0000000150428135_tess_v01_llc"
+          },
+          "11": {
+            "sequence_number": 11,
+            "dataURL": "mast:HLSP/qlp/s0011/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0011-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0011-0000000150428135_tess_v01_llc"
+          },
+          "10": {
+            "sequence_number": 10,
+            "dataURL": "mast:HLSP/qlp/s0010/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0010-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0010-0000000150428135_tess_v01_llc"
+          },
+          "9": {
+            "sequence_number": 9,
+            "dataURL": "mast:HLSP/qlp/s0009/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0009-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0009-0000000150428135_tess_v01_llc"
+          },
+          "7": {
+            "sequence_number": 7,
+            "dataURL": "mast:HLSP/qlp/s0007/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0007-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0007-0000000150428135_tess_v01_llc"
+          },
+          "6": {
+            "sequence_number": 6,
+            "dataURL": "mast:HLSP/qlp/s0006/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0006-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0006-0000000150428135_tess_v01_llc"
+          },
+          "5": {
+            "sequence_number": 5,
+            "dataURL": "mast:HLSP/qlp/s0005/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0005-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0005-0000000150428135_tess_v01_llc"
+          },
+          "4": {
+            "sequence_number": 4,
+            "dataURL": "mast:HLSP/qlp/s0004/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0004-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0004-0000000150428135_tess_v01_llc"
+          },
+          "1": {
+            "sequence_number": 1,
+            "dataURL": "mast:HLSP/qlp/s0001/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0001-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0001-0000000150428135_tess_v01_llc"
+          },
+          "8": {
+            "sequence_number": 8,
+            "dataURL": "mast:HLSP/qlp/s0008/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0008-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0008-0000000150428135_tess_v01_llc"
+          },
+          "33": {
+            "sequence_number": 33,
+            "dataURL": "mast:HLSP/qlp/s0033/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0033-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0033-0000000150428135_tess_v01_llc"
+          },
+          "27": {
+            "sequence_number": 27,
+            "dataURL": "mast:HLSP/qlp/s0027/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0027-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0027-0000000150428135_tess_v01_llc"
+          },
+          "28": {
+            "sequence_number": 28,
+            "dataURL": "mast:HLSP/qlp/s0028/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0028-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0028-0000000150428135_tess_v01_llc"
+          },
+          "30": {
+            "sequence_number": 30,
+            "dataURL": "mast:HLSP/qlp/s0030/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0030-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0030-0000000150428135_tess_v01_llc"
+          },
+          "31": {
+            "sequence_number": 31,
+            "dataURL": "mast:HLSP/qlp/s0031/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0031-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0031-0000000150428135_tess_v01_llc"
+          },
+          "34": {
+            "sequence_number": 34,
+            "dataURL": "mast:HLSP/qlp/s0034/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0034-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0034-0000000150428135_tess_v01_llc"
+          },
+          "35": {
+            "sequence_number": 35,
+            "dataURL": "mast:HLSP/qlp/s0035/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0035-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0035-0000000150428135_tess_v01_llc"
+          },
+          "36": {
+            "sequence_number": 36,
+            "dataURL": "mast:HLSP/qlp/s0036/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0036-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0036-0000000150428135_tess_v01_llc"
+          },
+          "37": {
+            "sequence_number": 37,
+            "dataURL": "mast:HLSP/qlp/s0037/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0037-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0037-0000000150428135_tess_v01_llc"
+          },
+          "38": {
+            "sequence_number": 38,
+            "dataURL": "mast:HLSP/qlp/s0038/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0038-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0038-0000000150428135_tess_v01_llc"
+          },
+          "62": {
+            "sequence_number": 62,
+            "dataURL": "mast:HLSP/qlp/s0062/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0062-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0062-0000000150428135_tess_v01_llc"
+          },
+          "61": {
+            "sequence_number": 61,
+            "dataURL": "mast:HLSP/qlp/s0061/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0061-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0061-0000000150428135_tess_v01_llc"
+          },
+          "63": {
+            "sequence_number": 63,
+            "dataURL": "mast:HLSP/qlp/s0063/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0063-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0063-0000000150428135_tess_v01_llc"
+          },
+          "64": {
+            "sequence_number": 64,
+            "dataURL": "mast:HLSP/qlp/s0064/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0064-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0064-0000000150428135_tess_v01_llc"
+          },
+          "65": {
+            "sequence_number": 65,
+            "dataURL": "mast:HLSP/qlp/s0065/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0065-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0065-0000000150428135_tess_v01_llc"
+          },
+          "66": {
+            "sequence_number": 66,
+            "dataURL": "mast:HLSP/qlp/s0066/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0066-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0066-0000000150428135_tess_v01_llc"
+          },
+          "68": {
+            "sequence_number": 68,
+            "dataURL": "mast:HLSP/qlp/s0068/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0068-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0068-0000000150428135_tess_v01_llc"
+          },
+          "69": {
+            "sequence_number": 69,
+            "dataURL": "mast:HLSP/qlp/s0069/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0069-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0069-0000000150428135_tess_v01_llc"
+          },
+          "87": {
+            "sequence_number": 87,
+            "dataURL": "mast:HLSP/qlp/s0087/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0087-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0087-0000000150428135_tess_v01_llc"
+          },
+          "88": {
+            "sequence_number": 88,
+            "dataURL": "mast:HLSP/qlp/s0088/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0088-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0088-0000000150428135_tess_v01_llc"
+          },
+          "89": {
+            "sequence_number": 89,
+            "dataURL": "mast:HLSP/qlp/s0089/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0089-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0089-0000000150428135_tess_v01_llc"
+          },
+          "90": {
+            "sequence_number": 90,
+            "dataURL": "mast:HLSP/qlp/s0090/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0090-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0090-0000000150428135_tess_v01_llc"
+          },
+          "93": {
+            "sequence_number": 93,
+            "dataURL": "mast:HLSP/qlp/s0093/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0093-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0093-0000000150428135_tess_v01_llc"
+          },
+          "95": {
+            "sequence_number": 95,
+            "dataURL": "mast:HLSP/qlp/s0095/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0095-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0095-0000000150428135_tess_v01_llc"
+          },
+          "96": {
+            "sequence_number": 96,
+            "dataURL": "mast:HLSP/qlp/s0096/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0096-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0096-0000000150428135_tess_v01_llc"
+          },
+          "97": {
+            "sequence_number": 97,
+            "dataURL": "mast:HLSP/qlp/s0097/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0097-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0097-0000000150428135_tess_v01_llc"
+          }
+        }
+      }
+    },
+    {
+      "label": "late",
+      "target": {
+        "tic": 150428135,
+        "star": {
+          "ID": 150428135,
+          "ra": 97.0967865903209,
+          "dec": -65.5793115481931,
+          "Tmag": 10.9102,
+          "rad": 0.419457,
+          "Teff": 3494,
+          "d": 31.1265,
+          "contratio": 0.0109307412,
+          "disposition": null,
+          "duplicate_id": null
+        },
+        "sectors": [
+          1,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          27,
+          28,
+          30,
+          31,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          68,
+          69,
+          87,
+          88,
+          89,
+          90,
+          93,
+          95,
+          96,
+          97
+        ],
+        "training_sectors": [
+          96,
+          97
+        ],
+        "heldout_sectors": [],
+        "estimate_missing_errors": true,
+        "qlp_products": {
+          "13": {
+            "sequence_number": 13,
+            "dataURL": "mast:HLSP/qlp/s0013/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0013-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0013-0000000150428135_tess_v01_llc"
+          },
+          "11": {
+            "sequence_number": 11,
+            "dataURL": "mast:HLSP/qlp/s0011/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0011-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0011-0000000150428135_tess_v01_llc"
+          },
+          "10": {
+            "sequence_number": 10,
+            "dataURL": "mast:HLSP/qlp/s0010/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0010-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0010-0000000150428135_tess_v01_llc"
+          },
+          "9": {
+            "sequence_number": 9,
+            "dataURL": "mast:HLSP/qlp/s0009/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0009-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0009-0000000150428135_tess_v01_llc"
+          },
+          "7": {
+            "sequence_number": 7,
+            "dataURL": "mast:HLSP/qlp/s0007/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0007-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0007-0000000150428135_tess_v01_llc"
+          },
+          "6": {
+            "sequence_number": 6,
+            "dataURL": "mast:HLSP/qlp/s0006/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0006-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0006-0000000150428135_tess_v01_llc"
+          },
+          "5": {
+            "sequence_number": 5,
+            "dataURL": "mast:HLSP/qlp/s0005/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0005-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0005-0000000150428135_tess_v01_llc"
+          },
+          "4": {
+            "sequence_number": 4,
+            "dataURL": "mast:HLSP/qlp/s0004/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0004-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0004-0000000150428135_tess_v01_llc"
+          },
+          "1": {
+            "sequence_number": 1,
+            "dataURL": "mast:HLSP/qlp/s0001/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0001-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0001-0000000150428135_tess_v01_llc"
+          },
+          "8": {
+            "sequence_number": 8,
+            "dataURL": "mast:HLSP/qlp/s0008/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0008-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0008-0000000150428135_tess_v01_llc"
+          },
+          "33": {
+            "sequence_number": 33,
+            "dataURL": "mast:HLSP/qlp/s0033/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0033-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0033-0000000150428135_tess_v01_llc"
+          },
+          "27": {
+            "sequence_number": 27,
+            "dataURL": "mast:HLSP/qlp/s0027/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0027-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0027-0000000150428135_tess_v01_llc"
+          },
+          "28": {
+            "sequence_number": 28,
+            "dataURL": "mast:HLSP/qlp/s0028/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0028-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0028-0000000150428135_tess_v01_llc"
+          },
+          "30": {
+            "sequence_number": 30,
+            "dataURL": "mast:HLSP/qlp/s0030/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0030-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0030-0000000150428135_tess_v01_llc"
+          },
+          "31": {
+            "sequence_number": 31,
+            "dataURL": "mast:HLSP/qlp/s0031/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0031-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0031-0000000150428135_tess_v01_llc"
+          },
+          "34": {
+            "sequence_number": 34,
+            "dataURL": "mast:HLSP/qlp/s0034/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0034-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0034-0000000150428135_tess_v01_llc"
+          },
+          "35": {
+            "sequence_number": 35,
+            "dataURL": "mast:HLSP/qlp/s0035/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0035-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0035-0000000150428135_tess_v01_llc"
+          },
+          "36": {
+            "sequence_number": 36,
+            "dataURL": "mast:HLSP/qlp/s0036/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0036-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0036-0000000150428135_tess_v01_llc"
+          },
+          "37": {
+            "sequence_number": 37,
+            "dataURL": "mast:HLSP/qlp/s0037/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0037-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0037-0000000150428135_tess_v01_llc"
+          },
+          "38": {
+            "sequence_number": 38,
+            "dataURL": "mast:HLSP/qlp/s0038/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0038-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0038-0000000150428135_tess_v01_llc"
+          },
+          "62": {
+            "sequence_number": 62,
+            "dataURL": "mast:HLSP/qlp/s0062/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0062-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0062-0000000150428135_tess_v01_llc"
+          },
+          "61": {
+            "sequence_number": 61,
+            "dataURL": "mast:HLSP/qlp/s0061/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0061-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0061-0000000150428135_tess_v01_llc"
+          },
+          "63": {
+            "sequence_number": 63,
+            "dataURL": "mast:HLSP/qlp/s0063/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0063-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0063-0000000150428135_tess_v01_llc"
+          },
+          "64": {
+            "sequence_number": 64,
+            "dataURL": "mast:HLSP/qlp/s0064/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0064-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0064-0000000150428135_tess_v01_llc"
+          },
+          "65": {
+            "sequence_number": 65,
+            "dataURL": "mast:HLSP/qlp/s0065/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0065-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0065-0000000150428135_tess_v01_llc"
+          },
+          "66": {
+            "sequence_number": 66,
+            "dataURL": "mast:HLSP/qlp/s0066/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0066-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0066-0000000150428135_tess_v01_llc"
+          },
+          "68": {
+            "sequence_number": 68,
+            "dataURL": "mast:HLSP/qlp/s0068/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0068-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0068-0000000150428135_tess_v01_llc"
+          },
+          "69": {
+            "sequence_number": 69,
+            "dataURL": "mast:HLSP/qlp/s0069/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0069-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0069-0000000150428135_tess_v01_llc"
+          },
+          "87": {
+            "sequence_number": 87,
+            "dataURL": "mast:HLSP/qlp/s0087/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0087-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0087-0000000150428135_tess_v01_llc"
+          },
+          "88": {
+            "sequence_number": 88,
+            "dataURL": "mast:HLSP/qlp/s0088/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0088-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0088-0000000150428135_tess_v01_llc"
+          },
+          "89": {
+            "sequence_number": 89,
+            "dataURL": "mast:HLSP/qlp/s0089/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0089-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0089-0000000150428135_tess_v01_llc"
+          },
+          "90": {
+            "sequence_number": 90,
+            "dataURL": "mast:HLSP/qlp/s0090/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0090-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0090-0000000150428135_tess_v01_llc"
+          },
+          "93": {
+            "sequence_number": 93,
+            "dataURL": "mast:HLSP/qlp/s0093/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0093-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0093-0000000150428135_tess_v01_llc"
+          },
+          "95": {
+            "sequence_number": 95,
+            "dataURL": "mast:HLSP/qlp/s0095/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0095-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0095-0000000150428135_tess_v01_llc"
+          },
+          "96": {
+            "sequence_number": 96,
+            "dataURL": "mast:HLSP/qlp/s0096/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0096-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0096-0000000150428135_tess_v01_llc"
+          },
+          "97": {
+            "sequence_number": 97,
+            "dataURL": "mast:HLSP/qlp/s0097/0000/0001/5042/8135/hlsp_qlp_tess_ffi_s0097-0000000150428135_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "150428135",
+            "obs_id": "hlsp_qlp_tess_ffi_s0097-0000000150428135_tess_v01_llc"
+          }
+        }
+      }
+    },
+    {
+      "label": "early",
+      "target": {
+        "tic": 101955023,
+        "star": {
+          "ID": 101955023,
+          "ra": 153.715743119623,
+          "dec": -47.1567193690054,
+          "Tmag": 10.8372,
+          "rad": 0.226407,
+          "Teff": 3261,
+          "d": 12.613,
+          "contratio": 0.121343426,
+          "disposition": null,
+          "duplicate_id": null
+        },
+        "sectors": [
+          9,
+          10,
+          36,
+          63,
+          90,
+          99
+        ],
+        "training_sectors": [
+          9,
+          10
+        ],
+        "heldout_sectors": [],
+        "estimate_missing_errors": true,
+        "qlp_products": {
+          "10": {
+            "sequence_number": 10,
+            "dataURL": "mast:HLSP/qlp/s0010/0000/0001/0195/5023/hlsp_qlp_tess_ffi_s0010-0000000101955023_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "101955023",
+            "obs_id": "hlsp_qlp_tess_ffi_s0010-0000000101955023_tess_v01_llc"
+          },
+          "9": {
+            "sequence_number": 9,
+            "dataURL": "mast:HLSP/qlp/s0009/0000/0001/0195/5023/hlsp_qlp_tess_ffi_s0009-0000000101955023_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "101955023",
+            "obs_id": "hlsp_qlp_tess_ffi_s0009-0000000101955023_tess_v01_llc"
+          },
+          "36": {
+            "sequence_number": 36,
+            "dataURL": "mast:HLSP/qlp/s0036/0000/0001/0195/5023/hlsp_qlp_tess_ffi_s0036-0000000101955023_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "101955023",
+            "obs_id": "hlsp_qlp_tess_ffi_s0036-0000000101955023_tess_v01_llc"
+          },
+          "63": {
+            "sequence_number": 63,
+            "dataURL": "mast:HLSP/qlp/s0063/0000/0001/0195/5023/hlsp_qlp_tess_ffi_s0063-0000000101955023_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "101955023",
+            "obs_id": "hlsp_qlp_tess_ffi_s0063-0000000101955023_tess_v01_llc"
+          },
+          "90": {
+            "sequence_number": 90,
+            "dataURL": "mast:HLSP/qlp/s0090/0000/0001/0195/5023/hlsp_qlp_tess_ffi_s0090-0000000101955023_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "101955023",
+            "obs_id": "hlsp_qlp_tess_ffi_s0090-0000000101955023_tess_v01_llc"
+          },
+          "99": {
+            "sequence_number": 99,
+            "dataURL": "mast:HLSP/qlp/s0099/0000/0001/0195/5023/hlsp_qlp_tess_ffi_s0099-0000000101955023_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "101955023",
+            "obs_id": "hlsp_qlp_tess_ffi_s0099-0000000101955023_tess_v01_llc"
+          }
+        }
+      }
+    },
+    {
+      "label": "late",
+      "target": {
+        "tic": 101955023,
+        "star": {
+          "ID": 101955023,
+          "ra": 153.715743119623,
+          "dec": -47.1567193690054,
+          "Tmag": 10.8372,
+          "rad": 0.226407,
+          "Teff": 3261,
+          "d": 12.613,
+          "contratio": 0.121343426,
+          "disposition": null,
+          "duplicate_id": null
+        },
+        "sectors": [
+          9,
+          10,
+          36,
+          63,
+          90,
+          99
+        ],
+        "training_sectors": [
+          9,
+          10
+        ],
+        "heldout_sectors": [],
+        "estimate_missing_errors": true,
+        "qlp_products": {
+          "10": {
+            "sequence_number": 10,
+            "dataURL": "mast:HLSP/qlp/s0010/0000/0001/0195/5023/hlsp_qlp_tess_ffi_s0010-0000000101955023_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "101955023",
+            "obs_id": "hlsp_qlp_tess_ffi_s0010-0000000101955023_tess_v01_llc"
+          },
+          "9": {
+            "sequence_number": 9,
+            "dataURL": "mast:HLSP/qlp/s0009/0000/0001/0195/5023/hlsp_qlp_tess_ffi_s0009-0000000101955023_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "101955023",
+            "obs_id": "hlsp_qlp_tess_ffi_s0009-0000000101955023_tess_v01_llc"
+          },
+          "36": {
+            "sequence_number": 36,
+            "dataURL": "mast:HLSP/qlp/s0036/0000/0001/0195/5023/hlsp_qlp_tess_ffi_s0036-0000000101955023_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "101955023",
+            "obs_id": "hlsp_qlp_tess_ffi_s0036-0000000101955023_tess_v01_llc"
+          },
+          "63": {
+            "sequence_number": 63,
+            "dataURL": "mast:HLSP/qlp/s0063/0000/0001/0195/5023/hlsp_qlp_tess_ffi_s0063-0000000101955023_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "101955023",
+            "obs_id": "hlsp_qlp_tess_ffi_s0063-0000000101955023_tess_v01_llc"
+          },
+          "90": {
+            "sequence_number": 90,
+            "dataURL": "mast:HLSP/qlp/s0090/0000/0001/0195/5023/hlsp_qlp_tess_ffi_s0090-0000000101955023_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "101955023",
+            "obs_id": "hlsp_qlp_tess_ffi_s0090-0000000101955023_tess_v01_llc"
+          },
+          "99": {
+            "sequence_number": 99,
+            "dataURL": "mast:HLSP/qlp/s0099/0000/0001/0195/5023/hlsp_qlp_tess_ffi_s0099-0000000101955023_tess_v01_llc.fits",
+            "provenance_name": "QLP",
+            "target_name": "101955023",
+            "obs_id": "hlsp_qlp_tess_ffi_s0099-0000000101955023_tess_v01_llc"
+          }
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "sensitivity.py": "035702d2394fb17b252c5b321cf0e83bac19f72b7b745984090b96c9ed17653c",
+    "pipeline.py": "e55272e7610552eaa6c7088f779dd3e085fae33c8f546cd2dfd866f26b04ed49",
+    "rv_search.py": "71faab026b68132a2e6f02107b2aba2bda521b82a8debd53a41408033e1734c7",
+    "plots.py": "72ee74e37cdc29210a062889404f2adc29d03804bb6890a2094d605ac0a91c43",
+    "rescreen.py": "34c8ebf691bf71a6583c2077c93d57fc9bef11778a6e066b663446d3138c99f4",
+    "targeting.py": "8b4974e3ea9f47e3409d24d4f899553d1829a1e70087a4e1857f9271b51bbb6e",
+    "null_controls.py": "8d220ac60f3748bd7dd9050ba81b1513ff53a1856d423701fc78189ee7001b4c",
+    "residual.py": "64e685703d468aa637691ea9079737a3c1b0672917996e617cf48ab9cbe6e50d",
+    "campaign.py": "6e37b998db90d1684cab0962bb89cdfdfaca5328efd083d8dfad4f0b45120943",
+    "rv_campaign.py": "63ee976de5b11dca460a0279d4dca75bd62918309c1fbdcceb7a4cae691fbec4",
+    "transit_model.py": "a0144c36a66f96a5cf5e4f6d88c09f42321663f79117d799f1186713ff1e8c79",
+    "qlp_check.py": "1bcbae4c5ab7c703cfab122f8c4a0af6862c59d593cd5ac58ae2abef7fa9674f",
+    "vetting.py": "f5f5cc7f98e64a211778c2c4e3fb8b34e27812fd840a43bcf7d34ef7e7b994dd",
+    "model_audit.py": "c036fd1ffbfb18ae86ce2fde0cac7f1077a6febfe0ac8d5dcca290a61c809cac",
+    "qlp_campaign.py": "50cf5a4c47f833bce7067a6ee64de641cb4cdbb10274648b3d7aa4bff5c579dd",
+    "pixel_injection.py": "3e8d127e4ee837f9359402e5abf9413c66ec9fe21e16638bf22709ea378c1a1d",
+    "integrity.py": "13234c3882ab2973714ceb7a4a25ff98636e86bee2675eca870bab9007f9d2b9",
+    "pixel_vet.py": "41d1c09be72a45e04cb9bf223556f39b03ebd7d42e9beae89279227fc9744e54",
+    "compare_qlp.py": "ad98536edf3624ac961bb4cfb6f736c22239bacbc45b478c41f2314586112925",
+    "model_rescreen.py": "a529346e223f80810e5b3648a8c543672f0cd04ef0379668b4ba4cc46e52c1ff",
+    "archive.py": "7e2e209fabdfe80730b4e7844afe3f9b24f424476b73b1bdd4471969292e0cca",
+    "secondary.py": "ed396637a78885337707e360ff01049281d36dc72870064b1457f380b3178001",
+    "__init__.py": "1979bfc5c97738bae4f78909b1a1b11670b698967aae6ce349d6be71f8b41e0f",
+    "injection_grid.py": "8ebc93f6e0f06c6488f886d3fed5cdf3ee9627ade879eecea9ff09c6d7570ac6",
+    "qlp_followup.py": "e4cff1b2b19e4e48a3e42d2adb647142857223efb593a1b8452aa074ac579ed8",
+    "followup.py": "e1943a55374915b3bec1032b52bb8266ca212ac0a09b6c3b80816198b63a2388",
+    "prf_fit.py": "22339e5c543449449a21fa1abd0340973514c4506dc9654f54313919a5bead01",
+    "physical_fit.py": "acac33e105097cdc65db9cda89f0f99b2e2271fdacaf1551622611211ba3943c",
+    "search.py": "90cca4c1a2d46ba12e338402a8e011001723bbf1062cfeb00924fad53576c6bf"
+  },
+  "policy": "Known positive controls, never discoveries. Earliest and latest available adjacent QLP sectors, selected before photometry. Test period recovery within1% among top3 peaks and retain every screen flag. No completeness estimate or threshold tuning."
+}

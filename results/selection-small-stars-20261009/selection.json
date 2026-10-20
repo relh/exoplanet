@@ -1,0 +1,88 @@
+{
+  "created_utc": "2026-10-09T18:26:45.732876+00:00",
+  "tic": {
+    "url": "https://mast.stsci.edu/api/v0/invoke",
+    "request": {
+      "service": "Mast.Catalogs.Filtered.Tic.Rows",
+      "params": {
+        "columns": "ID,ra,dec,Tmag,rad,Teff,d,contratio,disposition,duplicate_id",
+        "filters": [
+          {
+            "paramName": "rad",
+            "values": [
+              {
+                "min": 0.15,
+                "max": 0.8
+              }
+            ]
+          },
+          {
+            "paramName": "Tmag",
+            "values": [
+              {
+                "min": 6,
+                "max": 12
+              }
+            ]
+          },
+          {
+            "paramName": "d",
+            "values": [
+              {
+                "min": 0,
+                "max": 120
+              }
+            ]
+          }
+        ]
+      },
+      "format": "json",
+      "pagesize": 100000,
+      "page": 1
+    },
+    "retrieved_utc": "2026-10-09T18:26:22.908023+00:00",
+    "sha256": "f76ee12e05b906064718c71a1f4365eeb02005032c9d9f20854be073a96ca82f",
+    "bytes": 10742932
+  },
+  "catalogs": {
+    "toi": {
+      "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+tid%2Ctoi%2Ctoipfx%2Cpl_orbper%2Ctfopwg_disp+from+toi&format=csv",
+      "retrieved_utc": "2026-10-09T18:09:52.236386+00:00",
+      "sha256": "26f5ce70b6118a3b0f1212a9728f7501c9dab9d6eccb6a908104e7ebe3220be2",
+      "bytes": 339723
+    },
+    "confirmed": {
+      "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+distinct+tic_id%2Cpl_name%2Cpl_orbper+from+ps+where+tic_id+is+not+null&format=csv",
+      "retrieved_utc": "2026-10-09T18:09:54.316995+00:00",
+      "sha256": "a37a6cb35285753e2d6fa5490fff38ea717a4c3868f6d9b7ae189804e2d52dd6",
+      "bytes": 1146041
+    },
+    "ctoi": {
+      "url": "https://exofop.ipac.caltech.edu/tess/download_ctoi.php?sort=ctoi&output=csv",
+      "retrieved_utc": "2026-10-09T18:24:36.488798+00:00",
+      "sha256": "1059ac9235aa11d4bf914153ddc0278431709f090607497325a9b7c208911bb4",
+      "bytes": 2334680
+    },
+    "eb": {
+      "url": "https://archive.stsci.edu/hlsps/tess-ebs/hlsp_tess-ebs_tess_lcf-ffi_s0001-s0026_tess_v1.0_cat.csv",
+      "retrieved_utc": "2026-10-09T18:24:34.991645+00:00",
+      "sha256": "97e81f6c01716a431379ab6bd37d1182b611a485107110e0eba830f817ba7a8f",
+      "bytes": 1898138
+    }
+  },
+  "n_stars": 60026,
+  "exclusions": {
+    "insufficient_training_or_holdout": 30871,
+    "contamination_or_missing": 14682,
+    "known_catalog_match": 894,
+    "temperature_or_missing": 1454,
+    "tic_disposition": 60,
+    "duplicate_id": 214
+  },
+  "n_eligible": 11851,
+  "n_selected": 300,
+  "rule": "radius 0.15..0.8 solar; Tmag 6..12; distance <=120pc; contamination <=0.2; Teff<=5300; >=2 adjacent sectors <=55 and >=1 sector >=56; no matched TOI/confirmed/CTOI/archived EB TIC",
+  "ranking": "radius^2 * 10^(0.2*(Tmag-10)) / sqrt(number of training sectors); photometric noise proxy, not measured quietness",
+  "coverage_limit": "All target lists linked by the fetched MAST TESS-SPOC page; not all TESS products or all observing sectors",
+  "eb_limit": "MAST v1.0 EB catalog only; current Villanova and positional checks still required for promising signals"
+}

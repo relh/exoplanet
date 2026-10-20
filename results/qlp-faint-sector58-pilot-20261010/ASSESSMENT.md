@@ -1,0 +1,3 @@
+# Sector 58 pilot complete: no eligible leads
+
+All 100 pilot targets have usable searches: 74 below threshold and 26 flagged. Both follow-up policies have empty terminal inventories. Final checkpoint verifies frozen inputs, raw hashes and reserved-cache absence. Short/long controls recover five/eight of 12 periods with checked phase, with two/four non-crowding passes. All trials are in-grid, but every injection on one star is missed and no one-Earth-radius short trial passes. Retain the uneven sensitivity; no completeness or candidate claim. Extend to the remaining 348 frozen stars with unchanged gates.

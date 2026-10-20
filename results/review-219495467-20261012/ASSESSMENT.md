@@ -1,0 +1,11 @@
+# TIC219495467: broad variable-star residual deprioritized
+
+Deprioritize the9.16523-day screening feature as a likely new planet. Percent-level, multi-day modulation dominates the discovery light curves; the selected residual extends well beyond the0.18-day maximum search box and changes strongly with detrending. Its original437.5ppm depth becomes902.3ppm at an alternate9.11256-day period. A stable narrow transit is not established.
+
+The inspected sector24/25 folds retain broad depressions, particularly under2.5-day detrending. Fixed original-clock local-baseline measurements are265±58 and319±70ppm in24/25 at1.5days,192±68 and353±71ppm at2.5days. These local contrasts differ from whole-search box depths because broad structure affects the nearby baseline; positive local contrasts alone do not resolve the morphology concern. Three original events pass the support criterion; odd/even discrepancy2.65sigma and half-phase SNR−0.25 do not independently exclude a binary or stellar variability.
+
+SIMBAD's exact TIC query succeeds but returns no identifiers. A fresh exact-ID MAST TIC query supplies Gaia identifier1382399927901469184, numerically the same source named by the VSX ROT entry within60arcsec. TIC's Gaia field historically refers to DR2; this review has not independently audited the DR2-to-DR3 neighborhood mapping. Therefore retain this as a strong catalog association, not a fully reconciled exact DR3 identity. The VSX period is blank and cannot confirm9.17days. Morphology supports deprioritization even without relying on that match.
+
+Only discovery24/25 were used. Sectors50/51/52/77/78 remain unopened. No future heldout opening is currently justified for this broad feature absent a distinct narrow component or other discriminating evidence. This is a signal-level interpretation; additional planets around the star are not excluded.
+
+Raw and catalog responses, exact-query nonmatch, MAST identity response, both detrending series and the original discovery record are preserved. verify.py reconstructs four processed arrays and independently checks weighted bins and all saved local-baseline total/event measurements. Its identity assertions preserve the explicit DR2/DR3 limitation rather than treating an empty SIMBAD response as a match. No shared scientific code changed.

@@ -1,0 +1,9 @@
+# TIC 429034844: local timing-grid refinement
+
+The retained coarse fit was refined locally using the existing algorithm with the full joint baseline for search width. The original duration seed was retained so the tested durations stayed unchanged. Native sectors42/43/70 and original frozen timing tests were unchanged. This is posthoc analysis of opened data.
+
+The best period remains0.4669951316864187days, epoch2448.7831701026535BTJD and duration0.0256days. The finer spacing is5.584e−8days, versus9.526e−7days in the coarse run. Six non-contiguous grid points meet the conditional likelihood threshold, spanning0.466994573295–0.466995187526days; the search boundary is not hit. This resolves the prior single-grid-point limitation locally. The range is conditional on the box model and white errors, excludes neither remote cycle-count aliases nor correlated-noise/model error, and must not be used as a calibrated prediction uncertainty. The epoch-floor heuristic remains0.000512days.
+
+All six fold panels were inspected and are unchanged in interpretation: alternating events align across the three sectors, with depth contrast clearest in70 and less clear in43. A shared target-region signal is supported by the previous image checks, but close blends and an eclipsing binary remain possible. No likely planet or unique physical classification is established. Further timing-grid tightening alone is unlikely to settle this; independent physical information or more discriminating binary diagnostics would be needed. Continue the remaining initial source queue.
+
+[Fold panels](folds.png). Provenance checks and two deterministic gapped synthetic joint-clock controls passed. Comparison verifies the unchanged best fit and improved grid resolution. Existing scientific algorithms were reused unchanged; no new full-suite claim.

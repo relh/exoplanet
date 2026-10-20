@@ -1,0 +1,100 @@
+{
+  "frozen_utc": "2026-10-12T19:28:59.085067+00:00",
+  "tic": 80387959,
+  "sectors": [
+    64,
+    99
+  ],
+  "ra": 165.31041473672,
+  "dec": -48.6136321332977,
+  "best": {
+    "period": 4.192168718052227,
+    "duration": 0.092736,
+    "transit_time": 1575.375831123655,
+    "depth": 0.0008188718061925736,
+    "depth_err": 4.528331274474599e-05,
+    "depth_snr": 18.083301696773134,
+    "power": 167.11333350331662
+  },
+  "timing_ranges": {
+    "period_min": 4.192142433471754,
+    "period_max": 4.192208144922937,
+    "profile_timing_pairs": [
+      [
+        4.192142433471754,
+        1575.380247123655
+      ],
+      [
+        4.192155575761991,
+        1575.375831123655
+      ],
+      [
+        4.192168718052227,
+        1575.375831123655
+      ],
+      [
+        4.192181860342464,
+        1575.371415123655
+      ],
+      [
+        4.192208144922937,
+        1575.362583123655
+      ]
+    ],
+    "search_boundary_hit": false,
+    "period_grid_spacing": 1.3142290236523024e-05,
+    "conditional_epoch_floor_days": 0.005128267036353667,
+    "interpretation": "Delta log likelihood <=4.5 period profile; epoch floor heuristic; ignores red noise and model mismatch"
+  },
+  "historical_opened": [
+    10,
+    36,
+    37,
+    63,
+    90,
+    100
+  ],
+  "training": "Original frozen SPOC10/36/37/63 clock, before90/100; timing profile unchanged. Newly accessed64/99 not refitted. New epochs near existing years, not independent new-year claims.",
+  "input_hashes": {
+    "results/solar-radius-terminal-audit-20261012/ASSESSMENT.md": "0b2783cf933ff6f163d251a087cdee20a359637d1128afb843c47e3220be5993",
+    "results/scoped-completion-20261012/ASSESSMENT.md": "6fc846dfa5dd53ac6473045a1cfbd399a3a8ce1138a0468fd072f753ad40f575",
+    "results/coverage-six-extension-20261012/results.json": "e1e7413207341ac06204c63d4e82d53c113aec5d84ed8b6d8d86f65d48b33bea",
+    "results/followup-80387959-qlp90-100-20261009/frozen.json": "2188710eb24bbe34ccd952b0517e97657a8bf1b1bc3288387db07ff7e6a5d2c6"
+  },
+  "request": {
+    "endpoint": "https://mast.stsci.edu/tesscut/api/v0.1/astrocut",
+    "x": 15,
+    "y": 15,
+    "units": "px",
+    "sector_must_be_explicit": true
+  },
+  "extraction": {
+    "center": "Catalog position through each FITS WCS; fixed throughout, no brightestpixel recenter",
+    "aperture_radii_pixels": [
+      1.5,
+      2.5
+    ],
+    "primary_radius": 1.5,
+    "background": "median finite pixels in fixed radial annulus4to6 pixels eachcadence; require>=20 finitebackground andallaperturepixels finite; reject truncatedaperture or targetoffdetector; nofluxoptimized masks",
+    "quality": "QUALITY==0 finiteTIME, positive extractedflux; errors propagated FLUX_ERR plusmedianbackground uncertainty1.253*MAD/sqrtN; if errors unavailable use sector adjacentdifferenceMAD, explicitlyflag; no clipping or detrending",
+    "binning": "Nativecadence; localbaseline only"
+  },
+  "fit": {
+    "masks": "Inside absphase<duration/2; baseline duration<absphase<3duration; excludeintermediategap. Fit commondepth plusindividualeventintercept andlinear timebaseline. Each retainedevent>=5inside,>=10baseline,>=5oneachside.",
+    "error": "Published propagatederrors or declaredempiricalfallback; bootstrap200 residualcircular0.1dayblocks independentlyperevent; usemax(formal,bootstrapSD) as conditionalerror. Keepallevents/individualdepths anddeleteoneevent sensitivity.",
+    "rng_seed": 8036499
+  },
+  "gates": {
+    "minimum_events": 2,
+    "timing": "Frozenprofile fullspread <duration/2 and no originalboundaryflag",
+    "positive_depth_snr": 5,
+    "majority_events_positive": true,
+    "max_event_inverse_variance_weight_fraction": 0.5,
+    "apertures": "Bothradii positive, depthdifference<=3combinedconditionalerrors, norescuebyposthocaperturechoice",
+    "interpretation": "Allgatesrequired for qualifiedfixed-clockrecurrence; stillnothostvalidation. Failuremayreflect edge/noise/dilution, notplanetexclusion. No newperiod,phase ordepth tuning."
+  },
+  "history": "Metadata and full results/cache audit completed before download; attach history-audit.json and metadata.json before access.",
+  "live_processes": [
+    "[Host process details omitted in the 2026-10-20 privacy edit; original freeze and hashes remain in private Git history. See docs/privacy-edits.json.]"
+  ]
+}

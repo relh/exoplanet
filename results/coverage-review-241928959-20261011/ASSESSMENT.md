@@ -1,0 +1,20 @@
+# TIC241928959: independent-epoch avenues and current limits
+
+No currently verified second TESS epoch is available in the checked coverage metadata. This review does not establish that all archival observations are exhausted. It identifies an untested ASAS-SN photometry route, presently blocked by service connectivity, and closes the Gaia DR3 epoch-photometry route for this exact source. No new light curves or epoch fluxes were downloaded or opened.
+
+| Avenue | Evidence checked | Consequence |
+|---|---|---|
+| TESS QLP inventory | `../qlp-faint-midradius-single-remaining-20261011/targets/241928959.json` lists only sector92. | A different reduction of92 cannot add an observing epoch. |
+| TESS full-frame coverage | `../ffi-coverage-single-signals-20261011/results.json` and its verification: position-based TESScut service returned only92. | No known additional FFI sector to open under this snapshot. No redundant TESScut or failed SPOC URL request was made. |
+| ZTF | `../ztf-original-clocks-two-20261011/ASSESSMENT.md`:779 quality-screened points, five nominal in-window points, formal combined SNR1.12, uncertain timing. | Already inspected and inconclusive; repeating unchanged nominal folding is not new evidence. Catalog/cloud count discrepancy also remains recorded. |
+| Gaia DR3 | New exact-ID metadata query returns `has_epoch_photometry=false`, `phot_variable_flag=NOT_AVAILABLE` for6865254022910168320. | No published DR3 epoch-photometry product indicated for this target; NOT_AVAILABLE is not a constant-star classification. |
+| ASAS-SN | Previous query was only the II/366/catv2021 variable-star compilation; it did not query Sky Patrol master_list or retrieve photometry. | A catalog nonmatch has not exhausted the survey's measurements. |
+| ASAS-SN Sky Patrol service | Both HTTP and HTTPS official-client schema endpoint attempts on port9006 fail with connection refused. | Target coverage remains unknown. Network errors are retained, not recast as no data. |
+
+The [official Sky Patrol client](https://github.com/asas-sn/skypatrol) supports catalog-only cone queries with `download=False`. The next useful external action is a metadata-only master_list cone query when an operational documented endpoint is available, preserving positions and identifiers for the target and close neighbors. A successful row alone would not demonstrate sufficient cadence, precision or phase coverage. Do not launch a bulk photometry request just because the old variable catalog returned no rows.
+
+Before opening any such flux, freeze the existing TESS period/epoch/duration profile, source-association criteria, time-system conversion, quality policy and per-camera/filter baselines. Timing uncertainty must be propagated across the actual external dates. The earlier timing audit gives about0.147day spread at one year versus0.016day half-duration, so a precise nominal-clock non-detection is unlikely to be decisive. A period/phase search would be explicitly exploratory and require controls of the complete search and a genuinely separate validation subset; it must not be represented as a fixed prediction. Sparse or blended ASAS-SN photometry could still test deep eclipsing-source alternatives but is not guaranteed to resolve a roughly1% target-region signal.
+
+Other time-domain archives have not been exhaustively checked. No claim of all-archive exhaustion or no planets follows. Better-timed independent photometry or an independently justified physical/binary test remains more decisive than additional variable-catalog nonmatches. Existing companion and tentative-youth evidence remains relevant and unchanged.
+
+The Gaia flag semantics are documented in the [official DR3 epoch-photometry description](https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_photometry/ssec_dm_epoch_photometry.html). `metadata.json` retains the exact query, URL, response hash and both ASAS-SN connectivity failures. `verification.json` checks the raw Gaia row, exact identity, flag and referenced local evidence hashes.

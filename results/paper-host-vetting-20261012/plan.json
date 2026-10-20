@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-10-12T20:23:17.681352+00:00",
+  "inputs": {
+    "data/lightcurves/s0010-80387959.fits": "d9711d24adf75254b2c44735208e5203feb4ff4553706bb93a9142ae5699e4cf",
+    "data/lightcurves/s0036-80387959.fits": "9edd1b4c77303ebfd232031263a6c08862f20ef032a281bbcff108cc7fe88aa1",
+    "data/lightcurves/s0037-80387959.fits": "5db6f4ee4513753dc237d7c14c0e79af65a67ec3f48490db4bd8dbc577f525f8",
+    "data/lightcurves/s0063-80387959.fits": "cc169aeed01af3d18542b07ad4b47f4bf8e45554479927113f88002edf6bc99c",
+    "data/lightcurves/s0040-402358350.fits": "a066e575ef160524594fbbace414f919ea7f992cd8a5ef525b4a84aa8df26c48",
+    "data/lightcurves/s0041-402358350.fits": "c3bda662b91bf3cc5255c1039a5ed3e9a015b1c57048d7d0bc6f98dbf0bc9b02",
+    "data/lightcurves/s0054-402358350.fits": "7f36aa2aabf51f2f3e75ed7e4b86cd231600fbdf78e3459e36c1e56f32c914d0",
+    "data/lightcurves/s0081-402358350.fits": "2b569e219f9496208495679616979059df51acc0680b39e0472615a96304f7fd",
+    "results/neighbors-80387959-20261009/tic-neighbors.json": "b29d4929173b019d12c22df2424d2332c691f70e1ee33c4a6caee407c62e0559",
+    "results/neighbors-80387959-20261009/source.json": "c4dd2303a4d435748214c30af538c0eaed4ee4d7e4fd6ccfb88b75470c5ff952",
+    "results/neighbors-402358350-20261011/neighbors.json": "657b3021c83aa75d5950c9fbb8a9f1cc313143dbc62729221c9135274ac8dad5",
+    "results/neighbors-402358350-20261011/source.json": "f501e974c28f4e758350fc89f7f8b8fb9fbd09d158b14151c09a506d3c38b36f",
+    "results/strongest-80387959-shape-20261012/plan.json": "16397ca59e2cf8ddad9843fb57f626c669156403c33b403c30a762dfbeb51f62",
+    "results/strongest-402358350-baselines-20261012/plan.json": "ac436dfa5d9da69a323acc5a3e6705cb3e72636368874bb7fb4951f132af1a46",
+    "data/paper-host-vetting-20261012/giacalone2022.html": "d090d8424622294daba617b81609c156fbe956eda6d4dee34ad050941035fac2"
+  },
+  "paper": {
+    "url": "https://arxiv.org/html/2201.12661",
+    "raw_path": "data/paper-host-vetting-20261012/giacalone2022.html",
+    "sha256": "d090d8424622294daba617b81609c156fbe956eda6d4dee34ad050941035fac2"
+  },
+  "question": "How deep must each possible nearby star eclipse, as a function of unknown aperture throughput, to supply the observed SAP dip? Conditional brightness feasibility, not host inference or probability.",
+  "method": "Already-opened native SAP only. Four SPOC sectors each; unchanged clocks from preceding shape/baseline plans. Quality-zero finite-positive SAP/error/time. Normalize by sector median. Each event within +/-3D requires >=2 transit samples and >=5 outside samples on each side. Joint shared exposure-integrated box + per-event linear intercept/slope. Median native cadence approximates exposure. Error covariance scaled by max(1,chi2/dof); divide decrement by mean fitted event intercept, propagate full covariance. No new data, period fit, event selection or cutout model.",
+  "neighbor_policy": "Every cached TIC row within 150 arcsec including target; preserve missing Tmag and duplicate/ambiguous entries; each row an alternative, never sum catalog flux. Use catalog T-band ratios only, not Gaia G as T. No new Gaia queries or image flux.",
+  "formula": "r=10**(-0.4*(T_neighbor-T_target)); c=CROWDSAP model target aperture fraction; eta=FLFRCSAP model target throughput; q=neighbor throughput / target throughput; e=d_SAP/(c*r*q). q physically <=1/eta conditional on header model. Compute q_min=d/(c*r) for e<=1 and optimistic minimum e=d*eta/(c*r). Feasibility additionally requires c*r*q<=1-c for a neighbor; target has r=q=1. No claimed physical clearance from conditional bounds.",
+  "sensitivity": "q values0.25,0.5,1,1/eta; formal +/-3sigma depth; +/-3 catalog sigma delta-mag using hypot; missing magnitude errors retained unknown, not zero for clearance. Header c and eta each +/-10percent relative clipped0.001..1 as arbitrary sensitivity not confidence interval. Brightest-neighbor magnitude, shallowest depth, lowest eta, highest c yield optimistic bound. No statistical calibration or exclusions.",
+  "verification": "Independent algebra using direct synthetic flux loss and inverse equations, exact raw/hash identity, normal equations, reconstruct fit masks/design and coefficients independently; preserve all sector/source/assumption alternatives."
+}

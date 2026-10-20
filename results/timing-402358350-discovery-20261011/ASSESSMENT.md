@@ -1,0 +1,18 @@
+# TIC402358350: discovery-only timing is too uncertain for distant nominal recovery
+
+Cached discovery sectors40/41 were locally refined at the predeclared1.5-day primary and2.5-day sensitivity detrending windows. No sector54 or81 observations were downloaded or opened. Both additional light-curve caches were absent at execution and verification. Source ambiguity remains unchanged.
+
+| Window | Refined period (d) | Returned duration (d) | Depth (ppm) | Saved profile pairs | Allowed period range (d) |
+|---|---|---|---|---|---|
+|1.5day primary|11.76863140|0.18144|477.96|134|11.76406671–11.78072780|
+|2.5day sensitivity|11.76920198|0.18144|478.45|139|11.76429495–11.78107015|
+
+The original11.77273961-day clock is retained and measured in both reductions. No preferred clock was selected using later observations. Both refinement grids have2049 points at0.000114117-day spacing, centered on the original period with a width derived from its duration and discovery baseline. The three input durations are0.144,0.18,0.216day; Astropy's discretized BLS returns0.18144day for both maxima. The saved grid, all correlated period/epoch pairs within4.5 log-likelihood units, and heuristic epoch floors are retained. Neither profile reaches the period-search boundary. These local profiles do not explore every alias or constitute a physical posterior.
+
+For hypothetical27-day windows beginning30,365,730 and1095days after the training ends, primary propagated spreads are0.1224,0.4731,0.8481 and1.2231days. The required half-duration is0.09072day; even the earliest illustrative window is imprecise. The secondary forecasts are similar. These are illustrative offsets, not actual sector54/81 coverage dates. Actual timestamps must be used when those data are deliberately opened. The inspected profile/forecast plot makes the extrapolation limitation explicit.
+
+`prospective-protocol.json` freezes the primary clock, secondary sensitivity, original-clock reference, intended sectors and decision rules before additional observations. A successful parent-batch terminal audit and coordinator launch remain prerequisites. This training-only script cannot invoke automatic follow-up. Fixed nominal measurements must retain timing-inconclusive outcomes; optimizing later phases or taking a maximum across134 profile pairs cannot be called a nominal prediction recovery. Retrieval or preprocessing failures remain errors, and insufficient coverage is distinguished from a sensitivity-qualified non-recovery. Numerical SNR is not a planet probability.
+
+A useful later design would treat sector54 explicitly as additional training, preserve this original prediction on54, then freeze the expanded-training clock and uncertainty before opening81. That would require its own plan and provenance; this protocol does not silently change the81 prediction after seeing54. It should not be launched before the running batch's integrity audit. A new independent epoch could improve timing without resolving the host, so source and physical checks remain necessary.
+
+Verification reconstructs both raw/preprocessed arrays, rebuilds the complete local grids without the refinement helper, reproduces both BLS maxima and all profile masks/pairs, independently checks weighted total/event measurements and timing propagation, and verifies hashes and freeze chronology. Both grid reconstructions use Astropy BLS; arithmetic agreement is not independent astrophysical validation. `verification.json` retains exact scope. Formal timing ranges ignore red noise, model mismatch and selection effects from the original period-family search.

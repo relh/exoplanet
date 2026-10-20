@@ -1,0 +1,9 @@
+# TIC 429034844: provisional joint timing model
+
+A posthoc joint application of the existing native-cadence refinement to sectors42/43/70 finds P=0.466995132days, epoch2448.783170BTJD and duration0.0256days. All six panels were inspected: the dips align in all three sectors. Twice the selected period is0.933990263days, useful for displaying alternating events, but not an established binary orbital period.
+
+The search width was determined using the sector70 baseline; grid spacing uses the full combined baseline. The best solution is not at the boundary, but its likelihood-profile region contains only one grid point (spacing9.53e−7days). The apparent zero-width interval is a resolution limitation, not an uncertainty measurement. Fine local refinement and assessment of alternate cycle counts are still needed before precise predictions. The original frozen timing tests remain unchanged and inconclusive.
+
+Alternating fixed-window depth fractions (formal errors) are0.018354±0.000444 versus0.016732±0.000482 in sector42;0.019333±0.000380 versus0.018828±0.000384 in43; and0.019251±0.000307 versus0.017046±0.000300 in70. Event-scatter errors are larger than formal errors in most cases and are retained in results.json. Depth contrast is not equally clear in all sectors; it is not by itself a calibrated binary classification. Varying cadence, baseline subtraction, stellar variability and blending remain possible contributors. These are aperture box depths, not radius measurements.
+
+This aligns a recurring target-region signal, but uses previously opened data and is not blind confirmation. An eclipsing binary remains plausible. No likely planet or unique host is established. [All folds](folds.png). Input/raw/source/plot hashes passed, and two deterministic gapped synthetic controls recovered injected periodic signals and equal/unequal alternating depths. Existing scientific algorithms were reused unchanged.

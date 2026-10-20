@@ -1,0 +1,7 @@
+# TIC 430216116: discovery telemetry does not identify a common artifact
+
+At the fixed discovery event centers, the five-channel diagnostic finds no consistent event-centered displacement across all sectors. Background residual offsets range from −1.69 to +0.71 times the scatter outside the event. Position-correction offsets remain within 0.53 times that scatter; moment-centroid offsets remain within 0.98. These are descriptive ratios, not standard-error significances or exclusion limits.
+
+All 15 quality-zero raw event windows were inspected. This includes windows not retained as supported events after discovery flattening/clipping. Background varies substantially in some windows, especially events 11 and 14. Sector-dependent centroid drifts are visible, including broad trends around events 6–11, but no common localized shift establishes the origin of the dip. The absence of such a pattern does not exclude contaminating sources or a small instrumental effect.
+
+The routine fits a local linear trend outside the box but within three durations, then measures mean residuals inside half a duration. Nonlinear trends and correlation limit interpretation. A deterministic synthetic offset check passed; all 75 event/channel measurements were reconstructed using independent polynomial fits and hashed raw inputs. No new sector is used here. The independent-sector non-recovery and timing uncertainty remain material; this diagnostic neither confirms a planet nor localizes its host.

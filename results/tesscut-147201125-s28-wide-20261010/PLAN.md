@@ -1,0 +1,1 @@
+Widen to 21x21 because the compact positive difference source reaches the bottom edge. Keep the original Sector28 frozen ephemeris and all original outputs. Same photons, post-hoc source check, not independent validation.

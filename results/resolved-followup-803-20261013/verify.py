@@ -1,0 +1,14 @@
+from pathlib import Path
+import json,hashlib,csv,io,math
+from datetime import datetime
+R=Path(__file__).parent;checks=[]
+def check(name,ok):
+ checks.append({'name':name,'pass':bool(ok)});assert ok,name
+for name in ['gaia','gaia-class','skymapper-metadata','photometry','images']:
+ r=json.loads((R/(name+'.json')).read_text());raw=Path(r['path']).read_bytes();check(name+' raw hash',hashlib.sha256(raw).hexdigest()==r['sha256']);check(name+' successful response',r['status']==200 and r['error'] is None);check(name+' rows',list(csv.DictReader(io.StringIO(raw.decode())))==r['rows'])
+p=json.loads((R/'plan.json').read_text());a=json.loads((R/'analysis.json').read_text());check('frozen plan hash',hashlib.sha256((R/'plan.json').read_bytes()).hexdigest()==(R/'plan.sha256').read_text().strip()==a['plan_sha256']);check('plan precedes flux',datetime.fromisoformat(p['utc'])<datetime.fromisoformat(json.loads((R/'photometry.json').read_text())['utc']));check('training hash',hashlib.sha256(Path(p['training_source']).read_bytes()).hexdigest()==p['training_sha256']);rows=a['rows'];raw=json.loads((R/'photometry.json').read_text())['rows'];images={x['image_id']:x for x in json.loads((R/'images.json').read_text())['rows']};check('47 unique detections',len(rows)==len(raw)==47 and len(set(x['image_id'] for x in rows))==47)
+for r,s in zip(rows,raw):
+ check('object identity '+r['image_id'],s['object_id']=='411683754' and r['image_id']==s['image_id']);check('image filter '+r['image_id'],s['filter']==images[s['image_id']]['filter']);event=round((r['btjd']-p['clock']['transit_time'])/p['clock']['period']);phase=r['btjd']-p['clock']['transit_time']-event*p['clock']['period'];check('phase '+r['image_id'],math.isclose(phase,r['phase'],abs_tol=1e-12));centers=[e+event*period for period,e in p['timing_ranges']['profile_timing_pairs']];half=p['clock']['duration']/2;floor=p['timing_ranges']['conditional_epoch_floor_days'];exp=float(images[s['image_id']]['exp_time']);robust=all(abs(r['btjd']-c)+floor+exp/172800<half for c in centers);check('robust timing '+r['image_id'],robust==r['robust_in'])
+for c in json.loads((R/'comparisons.json').read_text()):
+ rr=[r for r in rows if r[c['quality']] and r['band']==c['band']];inside=[r for r in rr if r['robust_in']];check(c['quality']+c['band']+' one event',len(inside)==1);r=inside[0];base=[x for x in rr if x['night']!=r['night'] and not x['possible_in']];w=[1/x['error']**2 for x in base];mean=sum(x['mag']*v for x,v in zip(base,w))/sum(w);err=math.sqrt(r['error']**2+1/sum(w));check(c['quality']+c['band']+' depth',abs(r['mag']-mean-c['delta_mag'])<1e-12);check(c['quality']+c['band']+' error',abs(err-c['formal_error'])<1e-12)
+(R/'verification.json').write_text(json.dumps({'status':'passed','count':len(checks),'checks':checks,'limitations':'Checks saved provenance, identities and arithmetic; not calibration/passband accuracy or independent astrophysical validation.'},indent=2));print(len(checks),'checks passed')

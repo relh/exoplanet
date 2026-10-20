@@ -1,0 +1,5 @@
+from pathlib import Path
+import json,datetime,hashlib
+R=Path('results/triceratops-20261013');files=['data/lightcurves/s0040-137151335.fits','results/neighbors-137151335-20261011/neighbors.json','results/strongest-host-identifiability-20261012/plan.json']
+p={'created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'control':'Known planet Kepler-93b / TIC137151335 sector40, already opened. Does not establish population calibration.','method':'Use cached nativeSAP and originalSPOC aperture, same Gaussianaperture and localSAP convention as candidates. At unchanged clock from strongest-host plan, fit shared exposurebox plus perevent linearbaseline in ±3duration, >=2in and>=5eachside. Estimate scalar sigma from outoftransit residual. Fullscenarios with nativecatalog and Gaia population, seed13 N100k then1m if feasible. No supplementary highresolutionimaging priors; this control may remain unvalidated with intentionally absentpublishedconstraints.','inputs':{s:hashlib.sha256(Path(s).read_bytes()).hexdigest() for s in files}}
+(R/'control-plan.json').write_text(json.dumps(p,indent=2))

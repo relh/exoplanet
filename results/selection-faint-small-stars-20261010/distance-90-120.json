@@ -1,0 +1,51 @@
+{
+  "distance_min": 90,
+  "distance_max": 120,
+  "utc": "2026-10-10T18:52:31.471988+00:00",
+  "status": "complete",
+  "n_rows": 15300,
+  "source": {
+    "url": "https://mast.stsci.edu/api/v0/invoke",
+    "request": {
+      "service": "Mast.Catalogs.Filtered.Tic.Rows",
+      "params": {
+        "columns": "ID,ra,dec,Tmag,rad,Teff,d,contratio,disposition,duplicate_id",
+        "filters": [
+          {
+            "paramName": "rad",
+            "values": [
+              {
+                "min": 0.15,
+                "max": 0.5
+              }
+            ]
+          },
+          {
+            "paramName": "Tmag",
+            "values": [
+              {
+                "min": 12,
+                "max": 13.5
+              }
+            ]
+          },
+          {
+            "paramName": "d",
+            "values": [
+              {
+                "min": 90,
+                "max": 120
+              }
+            ]
+          }
+        ]
+      },
+      "format": "json",
+      "pagesize": 100000,
+      "page": 1
+    },
+    "retrieved_utc": "2026-10-10T18:52:52.234946+00:00",
+    "sha256": "f8e9769388ce165a35c2c6b1a86ad7ca5451d67cf69c7fb527069cc3b7b9398f",
+    "bytes": 2736832
+  }
+}

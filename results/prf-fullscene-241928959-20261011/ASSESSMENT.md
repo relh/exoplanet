@@ -1,0 +1,15 @@
+# TIC241928959: fuller scene recovered with an alternative solver
+
+Including catalog sources through T=18 still favors TIC241928959 over TIC241928961. The earlier non-convergence is resolved for this fit using an alternative bounded least-squares solver. The original failure is preserved in ../prf-241928959-s92-20261011/initial-failure.json.
+
+solver.py is a local copy of the existing PRF fitting module with the nonnegative linear solve changed from SciPy's default trust-region method to bounded-variable least squares (BVLS), with max_iter=1000 and the same tolerance. The objective, source nonnegativity, unconstrained background plane, registration bounds and three starting points are unchanged. No global fitting module or historical results were rewritten. The original raw-data/PRF download manifest is copied from the parent analysis; its downloader hash refers to that parent's download_models.py.
+
+The full scene contains67 sources versus21 in the T<=16 fit. Registration is[-0.00431,−0.07174]pixels, away from its boundary. Scene residual RMS falls from1.40% to0.8845% of the scene peak. No catalog flux-ratio prior is imposed. More flexible fits can absorb model errors; a lower scene residual alone does not validate its astrometry.
+
+At the adopted registration, target and neighbor difference-image chi-square are109.16 and437.05 (117 degrees of freedom each), with positive amplitudes. The free-source fit is0.02712pixel from the registered target. All17 alignment perturbations along the pair direction from−0.2 to+0.2pixel favor the target; minimum conditional chi-square advantage61.44. The inspected three-panel plot reproduces the principal target-region feature and retains the residual image.
+
+Formal Gaussian injections recover each host100/100 times. Fixed-PRF injections into41 shifted real difference images recover each host41/41 times. Two additional deterministic synthetic full-scene tests recover the injected registration vectors[0.08,−0.11] and[−0.13,0.09] to numerical precision and source amplitudes within2e−10. These noiseless tests check the solver, not the empirical PRF accuracy. They do not establish host probabilities.
+
+Verification checks provenance, reconstructs the five-event stack and both source fits using the existing independent linear-fit implementation, and audits control totals and alignment outcomes. Solver-control inputs and scripts are hashed. All49 repository tests passed in22.45seconds. The prior five-event consistency analysis remains a result under the brighter-scene registration; it is not relabeled as a test of this new registration.
+
+The convergence obstacle no longer prevents this particular fuller-scene comparison. Nevertheless, both hypotheses share the same photons, model PRF, catalog conventions and fixed clock. Fainter/outside sources, PRF mismatch, parallax and per-event registration changes remain incompletely modeled. The result weakens this particular neighbor alternative without excluding an unresolved binary or demonstrating an independent transit recovery. No new planet is claimed. Physical binary vetting and independent observations remain the useful next evidence.

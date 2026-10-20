@@ -1,0 +1,7 @@
+# Exploratory Sector 23 complete selection
+
+All 521 targets have usable searches: 485 below threshold and 36 flagged, with zero data failures. The original follow-up policy admitted one diagnostic-only peak on TIC 390650992 because alternative detrending prefers another period; no full screening pass was promoted. The coverage follow-up inventory is empty. Both image products locate that signal off target near ambiguous split/duplicate catalog entries. Its final follow-up assessment favors neighboring-source contamination while preserving uncertainty about the exact variable and period. Reserved-sector timing was inconclusive.
+
+The first three frozen ranked stars received 24 deterministic injections. Short controls recovered 12 periods, 11 phases and seven screening passes; long controls recovered seven periods, five phases and zero passes. All 24 periods were in range, all seven passes also met the phase check, and baseline loaders matched time/flux/error arrays exactly at both windows. One Earth-radius short-period case passed; no completeness claim follows from these fixed-phase controls.
+
+The full audit and checkpoint0521 account for every target. Reconciliation verifies the complete terminal inventories and follow-up artifacts. No scientific algorithm changed. The remaining exploratory metadata inventory has 4,498 untouched stars; Sector 55's 486-target selection is frozen, with no photometry opened. One distant reserved sector per target limits replication; this is not all-TESS coverage.

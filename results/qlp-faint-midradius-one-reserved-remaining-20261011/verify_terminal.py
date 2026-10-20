@@ -1,0 +1,45 @@
+from pathlib import Path
+import json
+from collections import Counter
+from exoplanet.pipeline import sha,save_json
+out=Path(__file__).parent;read=lambda p:json.loads(p.read_text());cp=out/'checkpoint-2810.json';c=read(cp);plan=read(out/'plan.json');expected={t['tic']:t for t in plan['targets']};counts=Counter()
+assert c['n_completed']==2810 and c['n_planned']==2810 and c['plan_sha256']==sha(out/'plan.json')
+for name,h in plan['source_hashes'].items():assert sha(Path('src/exoplanet')/name)==h
+for item in c['inventory']:
+ p=Path(item['path']);assert sha(p)==item['sha256'];r=read(p);assert r['target']==expected[r['tic']];counts[r.get('disposition') or r['status']]+=1
+ for d in r.get('data',[]):assert sha(Path(f"data/qlp/{r['tic']}-s{d['sector']:04d}.fits"))==d['source']['sha256']
+assert dict(counts)==c['counts']
+errors=read(out/'checkpoint-2810-errors.json')['rows']
+assert {r['tic'] for r in errors}=={r['tic'] for r in c['inventory'] if r['status']=='error'}
+for r in errors:
+ assert r['finite_selected_flux']==r['finite_selected_errors']==r['usable_positive_flux_q0']==0
+ assert sha(out/'targets'/f"{r['tic']}.json")==r['result_sha256'] and sha(Path(f"data/qlp/{r['tic']}-s{r['sector']:04d}.fits"))==r['raw_sha256']
+assert len(c['review'])==11
+reviews={}
+for item in c['review']:
+ tic=item['tic'];idx=item['screened_peak_index'];suffix='coverage-followup' if item['category']=='coverage_diagnostic' else 'followup'
+ case=Path(f'results/qlp-faint-midradius-one-reserved-remaining-{suffix}-20261011/{tic}-peak{idx}');r=read(case/'review.json')
+ for n,h in r['artifacts'].items():assert sha(case/n)==h
+ f=read(case/'frozen.json');held=read(case/'heldout.json');assert len(held)==1 and held[0]['sector']==f['heldout_sectors'][0] and held[0]['conclusion']=='timing_prediction_inconclusive'
+ for d in f['training_data']+held[0]['data']:assert sha(Path(f"data/qlp/{tic}-s{d['sector']:04d}.fits"))==d['source']['sha256']
+ if (case/'source_review.json').exists():
+  for path,h in read(case/'source_review.json')['artifacts'].items():assert sha(Path(path))==h
+ reviews[str(case/'review.json')]=sha(case/'review.json')
+
+assert len(c['inventory'])==len(expected) and {r['tic'] for r in c['inventory']}==set(expected)
+terminal_results=read(out/'results.json');assert len(terminal_results)==2810
+assert len({r['tic'] for r in terminal_results})==2810
+for r in terminal_results:
+ t=read(out/'targets'/f"{r['tic']}.json")
+ assert set(r)=={'tic','status','error','disposition'}
+ assert all(r[k]==t.get(k) for k in r)
+records=[]
+for suffix in ['followup','coverage-followup']:
+ p=Path(f'results/qlp-faint-midradius-one-reserved-remaining-{suffix}-20261011/terminal.json');term=read(p);assert term['status']=='complete';records+=term['records']
+assert len(records)==11 and {(r['tic'],r['peak_index']) for r in records}=={(r['tic'],r['screened_peak_index']) for r in c['review']}
+for r in records:assert r['status']=='complete' and sha(Path(r['discovery_path']))==r['discovery_sha256']
+pending=[p for p in reviews if read(Path(p))['source_checks_pending']]
+assert len(pending)==0
+
+save_json(out/'checkpoint-2810-verification.json',{'script_sha256':sha(Path(__file__)),'checkpoint_sha256':sha(cp),'counts':dict(counts),'review_hashes':reviews,'error_audit_sha256':sha(out/'checkpoint-2810-errors.json'),'status':'2810 identities, source hashes and raw results; fourteen unusable inputs; eleven initial plot reviews and inconclusive reserved-sector tests verified. Terminal discovery and timing follow-up; all initial source inspections complete; physical attributions remain limited, no planet or completeness claim.'})
+print(dict(counts),len(reviews),'reviews verified')

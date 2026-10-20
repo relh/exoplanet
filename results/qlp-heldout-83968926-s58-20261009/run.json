@@ -1,0 +1,87 @@
+{
+  "status": "complete",
+  "started_utc": "2026-10-09T20:12:32.562817+00:00",
+  "frozen_sha256": "2d52bf1d72f2beb9390a8d2ffdde74ed0b519dde657b7ef1a96d3e695b716bbc",
+  "previous_spoc_check_sha256": "a52c2c0654fc582898a15e4e6c38987628fb6f9cd2d472945bca037e1ea5b32d",
+  "script_sha256": "d44f9b52359839c751b6ec043343c7a454e780b75cebd7371df08967904aeb33",
+  "policy": "Reuse original frozen ephemeris. Sector 58 SPOC was already opened. Compare QLP fixed time and explicitly exploratory 161 epoch shifts across original timing spread. No period refit, no Sector 78/85 opened. Not calibrated exclusion or independent prediction.",
+  "seed": {
+    "period": 13.525430930851124,
+    "duration": 0.133056,
+    "transit_time": 1765.9674190330486,
+    "depth": 0.0008806568037149703,
+    "depth_err": 5.4132702002806704e-05,
+    "depth_snr": 16.26848044033179,
+    "power": 133.68250390247297
+  },
+  "timing_spread_days": 0.7762605705137321,
+  "finished_utc": "2026-10-09T20:12:33.903605+00:00",
+  "data": [
+    {
+      "sector": 58,
+      "source": {
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file/?uri=mast:HLSP/qlp/s0058/0000/0000/8396/8926/hlsp_qlp_tess_ffi_s0058-0000000083968926_tess_v01_llc.fits",
+        "retrieved_utc": "2026-10-09T20:12:33.866733+00:00",
+        "sha256": "ffc2f2e651aebb745355e75a16eece6d3a12632dee691773bb4d8c7b9bca3cab",
+        "bytes": 711360,
+        "download_attempts": 1,
+        "transient_failures": []
+      },
+      "n_native_quality_points": 10997,
+      "n_clean_points": 3244,
+      "bin_minutes": 10,
+      "flux_column": "DET_FLUX",
+      "error_model": {
+        "kind": "published",
+        "usable_error_pairs": 10997
+      },
+      "star": {
+        "ticid": 83968926,
+        "sector": 58,
+        "crowdsap": null,
+        "fits_integrity": [
+          {
+            "hdu": "PRIMARY",
+            "checksum": "missing"
+          },
+          {
+            "hdu": "LIGHTCURVE",
+            "checksum": "missing"
+          }
+        ],
+        "collection": "QLP",
+        "radius": 0.7414,
+        "crowding_note": "No measured aperture-crowding value if CROWDSAP absent"
+      }
+    }
+  ],
+  "observation_query": {
+    "url": "https://mast.stsci.edu/api/v0/invoke",
+    "request": {
+      "service": "Mast.Caom.Filtered",
+      "params": {
+        "columns": "obs_id,target_name,provenance_name,sequence_number,dataURL",
+        "filters": [
+          {
+            "paramName": "target_name",
+            "values": [
+              "83968926"
+            ]
+          },
+          {
+            "paramName": "provenance_name",
+            "values": [
+              "QLP"
+            ]
+          }
+        ]
+      },
+      "format": "json",
+      "pagesize": 50000,
+      "page": 1
+    },
+    "retrieved_utc": "2026-10-09T19:55:04.237156+00:00",
+    "sha256": "7495de1a1e49902977d215d6b3f83296cd2830e6b58c1ab4bedc6b49e4e4692f",
+    "bytes": 1828
+  }
+}

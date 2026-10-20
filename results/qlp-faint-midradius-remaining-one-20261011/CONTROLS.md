@@ -1,0 +1,9 @@
+# Early search and sensitivity audit
+
+The immutable 647-target checkpoint contains 574 below threshold, 72 flagged and one error. The search is still running; this is not its terminal count. TIC59570933's sector46 product has 1,880 rows and 1,598 quality-zero rows, but no finite selected flux or error values. The empirical-error fallback therefore has no adjacent samples. Its failure is retained without a network retry or substituting reserved epochs; it is missing usable data, not a planet nondetection.
+
+The first three remaining metadata-ranked stars (TIC409374970, TIC274224034, TIC320351354) receive the same two deterministic injection sets used in the pilot. No targets are replaced based on measured variability. Original raw-flux loader arrays exactly match both detrending windows before injections. All 24 periods are within the actual grids.
+
+The 12 one-/two-Earth-radius injections recover one period with consistent timing and one non-crowding screening pass: a two-Earth-radius, 0.83-day injection into TIC274224034. No Earth-radius injection passes. The 12 three-/four-Earth-radius injections recover six periods with consistent timing but only two pass screening: 3/4 Earth radii at 5.73 days into TIC274224034. The noisier TIC320351354 yields no recovered injected period. These small deterministic tests use fixed phases/durations and are not population completeness or calibrated detection probabilities. They show that the pilot's recovery rates cannot be generalized uniformly to the remaining stars.
+
+The science algorithms and screening gates are unchanged; no new full-suite test run is claimed. The verifier checks original-source hashes, exact-loader equivalence records, injected-result hashes, bounds and the cached-data failure. The ongoing discovery and follow-up workers are separate from this completed control audit.

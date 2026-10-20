@@ -1,0 +1,80 @@
+[
+  {
+    "name": "asassn",
+    "query": "SELECT b.main_id,b.ra,b.dec,i.id FROM basic AS b JOIN ident AS i ON i.oidref=b.oid WHERE b.oid IN (SELECT oidref FROM ident WHERE id='ASASSN-V J111352.58-040620.5')",
+    "created_utc": "2026-10-12T14:30:09.668168+00:00",
+    "status": "complete",
+    "url": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?request=doQuery&lang=adql&format=csv&query=SELECT+b.main_id%2Cb.ra%2Cb.dec%2Ci.id+FROM+basic+AS+b+JOIN+ident+AS+i+ON+i.oidref%3Db.oid+WHERE+b.oid+IN+%28SELECT+oidref+FROM+ident+WHERE+id%3D%27ASASSN-V+J111352.58-040620.5%27%29",
+    "path": "data/targeting/443608653-asassn-20261012.csv",
+    "sha256": "f18d00b7515582c3644a5aaa5a5f72769bf228579234fd57138031e9077ba077",
+    "rows": []
+  },
+  {
+    "name": "tic",
+    "query": {
+      "service": "Mast.Catalogs.Filtered.Tic.Rows",
+      "params": {
+        "columns": "ID,ra,dec,GAIA,TWOMASS",
+        "filters": [
+          {
+            "paramName": "ID",
+            "values": [
+              "443608653"
+            ]
+          }
+        ]
+      },
+      "format": "json",
+      "pagesize": 100,
+      "page": 1
+    },
+    "created_utc": "2026-10-12T14:30:10.210746+00:00",
+    "status": "complete",
+    "url": "https://mast.stsci.edu/api/v0/invoke",
+    "path": "data/targeting/443608653-tic-20261012.json",
+    "sha256": "cf198a0eedd1374ddea4e3028958317539f36adf4be87ba400bab371a46934fe",
+    "response": {
+      "status": "COMPLETE",
+      "msg": "",
+      "data": [
+        {
+          "ID": 443608653,
+          "ra": 168.46917804014,
+          "dec": -4.10568435756703,
+          "GAIA": "3789876569306181120",
+          "TWOMASS": "11135259-0406204"
+        }
+      ],
+      "fields": [
+        {
+          "name": "ID",
+          "type": "string"
+        },
+        {
+          "name": "ra",
+          "type": "float"
+        },
+        {
+          "name": "dec",
+          "type": "float"
+        },
+        {
+          "name": "GAIA",
+          "type": "string"
+        },
+        {
+          "name": "TWOMASS",
+          "type": "string"
+        }
+      ],
+      "paging": {
+        "page": 1,
+        "pageSize": 100,
+        "pagesFiltered": 1,
+        "rows": 1,
+        "rowsFiltered": 1,
+        "rowsTotal": 1
+      }
+    }
+  }
+]

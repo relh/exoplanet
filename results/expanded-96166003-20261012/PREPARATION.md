@@ -1,0 +1,11 @@
+# TIC96166003: prepared sector19 training extension, not executed
+
+This is a prepared experiment only. No sector19 or59 observation was opened. The parent5456–5967 batch has a passed terminal audit; explicit coordinator review and launch remain required. Both new-sector light-curve caches are absent. History review must establish prior non-use rather than relying on cache absence alone.
+
+The script first measures earlier sector19 at both frozen discovery43/44 refined clocks, plus the unchanged original discovery clock under each detrending window. Actual timestamps determine timing spread and sensitivity; imprecise predictions remain inconclusive regardless of positive or negative depth. Both complete prediction records are saved before any fit includes19.
+
+Then19 explicitly joins43/44 as training, regardless of its nominal test outcome. The local period search retains the original seed neighborhood and original discovery baseline when determining width. Both predetermined windows and every accepted correlated period/epoch profile pair are retained, including disconnected islands. Best-duration endpoint flags are saved separately because the existing period-boundary flag does not cover duration truncation. The duration grid remains0.048/0.060/0.072day; no posthoc enlargement is performed.
+
+The expanded clocks are frozen for59, which this script never opens. Source ambiguity, box-model inadequacy, red noise and original signal-selection effects remain outside the conditional timing calculation. Adding19 to training cannot make it independent confirmation of the resulting clock.
+
+Execution requires explicit `--execute`, `--history-reviewed-unopened` and the exact coordinator-inspected terminal audit SHA. Audit provenance,512-target selection/accounting, source snapshots, current scientific-source hashes and frozen inputs are checked before retrieval. Failures persist in execution state; automatic reruns over partial output are forbidden. Preparation has passed compilation and schema inspection only. Raw/measurement/profile reconstruction and timing decisions require independent verification after actual execution, followed by coordinator review and commit before any59 test.

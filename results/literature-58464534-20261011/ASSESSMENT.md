@@ -1,0 +1,5 @@
+# Prior literature match: TIC58464534
+
+Oddo et al., [A Catalog of M&M Eclipsing Binaries with TESS](https://arxiv.org/html/2508.13941v2), includes TIC58464534 in Table4 of its eclipsing-binary catalog, with period2.800456days. This is close to twice our fitted1.400142579days (difference0.000170843day). This exact TIC match establishes prior reporting; it is not a new planet candidate. Exact eclipse epochs and our pixel-level source attribution have not been verified.
+
+The primary arXivv2 PDF is retained in ignored data with download provenance and SHA-256; the verifier checks the TIC/table row and period arithmetic. The attempted Gan2023 repository download returned403; the error is retained and that paper is not used as verified primary evidence here. The nine earlier local catalog snapshots returned no exact target matches, illustrating their incomplete coverage of published work. Literature identification changes prioritization but does not alter the frozen timing tests, which remain inconclusive.

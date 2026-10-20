@@ -1,0 +1,8 @@
+from pathlib import Path
+import json,datetime,hashlib
+p=Path(__file__).parent;src=['results/timing-402358350-discovery-20261011/frozen.json','results/expanded-402358350-20261011/frozen-for81.json'];clocks=[]
+for path in src:
+ r=json.loads(Path(path).read_text())
+ for row in r['rows']:clocks.append(dict(source=path,source_sha256=hashlib.sha256(Path(path).read_bytes()).hexdigest(),window=row['window'],best=row['best'],ranges=row['ranges']))
+r=dict(frozen_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),source_id='4318716236117290496',tic_neighbor=402358249,target_tic=402358350,clocks=clocks,policy='Authorized exact-neighbor Gaia DR3 epoch photometry only. First count/cadence/precision. All returned bands/flags preserved; primary G finite-positive flux/errors and neither photometry nor variability rejection. Constant median normalization only, no detrending or phase/period retuning for fixed tests. Gaia barycentric times TCB JD-2455197.5 convert to TDB BTJD. Measure in candidate windows vs all other phases outside1.5durations, and report distinct supported cycles plus propagated full frozen timing-profile spread. Imprecise timing or fewer2 observed event cycles yields inconclusive regardless SNR; no sparse non-detection exclusion. Separate optional exploratory LombScargle0.05-100day range only if>=30G points,50000logspaced periods; retain top10 distinct peaks,no false-alarm probability or candidateconfirmation. No additional flux source opened under this plan.',exploratory_period_min_days=.05,exploratory_period_max_days=100,exploratory_grid=50000)
+assert not (p/'epoch-plan.json').exists();(p/'epoch-plan.json').write_text(json.dumps(r,indent=2)+'\n');print(r['frozen_utc'])

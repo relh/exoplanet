@@ -1,0 +1,24 @@
+from pathlib import Path
+import json,csv,numpy as np
+from astropy.time import Time
+from exoplanet.pipeline import sha,save_json,now
+from exoplanet.followup import prediction_spread
+p=Path(__file__).parent;plan=json.loads((p/'plan.json').read_text());src=json.loads((p/'epoch-source.json').read_text());assert sha(Path(src['path']))==src['sha256'];rows=list(csv.DictReader(Path(src['path']).open()));assert all(r['source_id']==plan['gaia_source_id'] for r in rows);r=[x for x in rows if x['variability_flag_g_reject']=='false' and x['rejected_by_photometry']=='false' and all(x[k] and np.isfinite(float(x[k])) for k in ['g_transit_time','g_transit_flux','g_transit_flux_error','g_transit_mag']) and float(x['g_transit_flux'])>0 and float(x['g_transit_flux_error'])>0];tc=np.array([float(x['g_transit_time']) for x in r]);flux=np.array([float(x['g_transit_flux']) for x in r]);err=np.array([float(x['g_transit_flux_error']) for x in r]);mag=np.array([float(x['g_transit_mag']) for x in r]);me=2.5/np.log(10)*err/flux;g=plan['gaia_model'];freq=float(g['frequency']);ref=float(g['reference_time']);phase=((tc-ref)*freq)%1;shape=np.zeros(len(tc));eclipses=[]
+for i,label in [(1,'primary'),(2,'secondary')]:
+ center=float(g[f'geom_model_gaussian{i}_phase']);sigma=float(g[f'geom_model_gaussian{i}_sigma']);depth=float(g[f'geom_model_gaussian{i}_depth']);d=(phase-center+.5)%1-.5;shape+=depth*np.exp(-.5*(d/sigma)**2);duration=float(g[f'derived_{label}_ecl_duration']);inside=abs(d)<duration/2;sigmat=np.sqrt(((tc-ref)*float(g['frequency_error'])/freq)**2+(float(g[f'derived_{label}_ecl_phase_error'])/freq)**2);eclipses.append(dict(label=label,count=int(inside.sum()),indices=np.where(inside)[0].tolist(),three_sigma_timing_days_max=float(3*max(sigmat)),half_duration_days=duration/(2*freq)))
+pred=float(g['geom_model_reference_level'])+shape;X=np.column_stack([np.ones(len(tc)),shape]);coef=np.linalg.lstsq(X/me[:,None],mag/me,rcond=None)[0];cov=np.linalg.inv((X/me[:,None]).T@(X/me[:,None]));constant=np.average(mag,weights=1/me**2);chi0=np.sum(((mag-constant)/me)**2);chip=np.sum(((mag-pred)/me)**2);chif=np.sum(((mag-X@coef)/me)**2);t=Time(tc+2455197.5,format='jd',scale='tcb').tdb.jd-2457000;y=flux/np.median(flux);e=err/np.median(flux);candidate=[]
+for c in plan['candidate554']:
+ b=c['best'];dist=abs((t-b['transit_time']+b['period']/2)%b['period']-b['period']/2);inside=dist<b['duration']/2;outside=dist>1.5*b['duration'];cycles=np.unique(np.rint((t[inside]-b['transit_time'])/b['period']).astype(int));spread=prediction_spread(t,b,c['ranges']) if c['ranges'] else None;m=dict(name=c['name'],n_inside=int(inside.sum()),n_outside=int(outside.sum()),cycles=cycles.tolist(),spread_days=spread,half_duration=b['duration']/2,outcome='inconclusive' if spread is None or spread>=b['duration']/2 or len(cycles)<2 else 'timing_count_pass_only')
+ if inside.any() and outside.any():
+  depth=np.average(y[outside],weights=1/e[outside]**2)-np.average(y[inside],weights=1/e[inside]**2);error=np.sqrt(1/np.sum(1/e[inside]**2)+1/np.sum(1/e[outside]**2));m.update(depth=float(depth),formal_error=float(error),formal_snr=float(depth/error))
+ candidate.append(m)
+np.savez_compressed(p/'gaia-arrays.npz',tc=tc,t=t,mag=mag,me=me,y=y,e=e,phase=phase,shape=shape,pred=pred)
+save_json(p/'gaia-results.json',dict(created_utc=now(),raw_count=len(rows),quality_count=len(r),gaia_clock_frequency=freq,gaia_clock_period_tcb=1/freq,eclipses=eclipses,constant_chi2=float(chi0),published_model_chi2=float(chip),published_model_rms_mag=float(np.sqrt(np.mean((mag-pred)**2))),formal_mag_error_median=float(np.median(me)),template_intercept=float(coef[0]),template_amplitude=float(coef[1]),template_amplitude_error=float(np.sqrt(cov[1,1])),template_fit_chi2=float(chif),candidate_fixed_tests=candidate,limits='Published model fitted to this Gaia data: reproduction not independent validation. Covariance and catalogephemeris systematics unknown. Candidatefixedfold subject sparse phases and backwardtiming uncertainty.'))
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+fig,axs=plt.subplots(1,2,figsize=(11,4),constrained_layout=True);grid=np.linspace(0,1,2000);curve=np.full(len(grid),float(g['geom_model_reference_level']))
+for i in [1,2]:
+ d=(grid-float(g[f'geom_model_gaussian{i}_phase'])+.5)%1-.5;curve+=float(g[f'geom_model_gaussian{i}_depth'])*np.exp(-.5*(d/float(g[f'geom_model_gaussian{i}_sigma']))**2)
+axs[0].errorbar(phase,mag,yerr=me,fmt='.');axs[0].plot(grid,curve);axs[0].invert_yaxis();axs[0].set(xlabel='Published Gaia binary phase',ylabel='Gaia G magnitude',title='Exact neighbor5546242; no clock refit');axs[1].errorbar(tc,mag-pred,yerr=me,fmt='.');axs[1].axhline(0,color='gray');axs[1].set(xlabel='Gaia TCB days',ylabel='Magnitude minus published model',title='Same-data model reproduction');fig.savefig(p/'gaia-model.png',dpi=130)
+print(len(r),'chi2',chi0,chip,chif,'template',coef,'candidate',candidate)

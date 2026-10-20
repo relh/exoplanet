@@ -1,0 +1,3 @@
+# TIC 233012028: insufficient usable training coverage
+
+The original two-sector search failed with fewer than 200 clean cadences. Individual checks retain 296 clean points in Sector 25, but Sector 26 fails the unchanged preprocessing minimum after detrending and masking. Thus only one assigned sector is usable, below the two-sector recovery minimum. No alternate period search was run and reserved epochs remain unopened. Raw download hashes and original/selection/result identities were verified. This remains a data-coverage failure, not a nondetection or evidence against a planet; no thresholds were relaxed to obtain a result.

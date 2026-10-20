@@ -1,0 +1,479 @@
+[
+  {
+    "name": "official_programmatic",
+    "started_utc": "2026-10-13T23:38:19.746496+00:00",
+    "url": "https://archive.eso.org/cms/eso-data/programmatic-access.html",
+    "http_status": 200,
+    "path": "data/eso-raw-metadata-20261013/official_programmatic.html",
+    "sha256": "6eafd3aa91efab80411fb04b83e8ea4941c69b0433d87c1c254cdb118f8a4b05",
+    "status": "success",
+    "completed_utc": "2026-10-13T23:38:21.569824+00:00"
+  },
+  {
+    "name": "official_examples",
+    "started_utc": "2026-10-13T23:38:21.570835+00:00",
+    "url": "https://archive.eso.org/tap_obs/examples",
+    "http_status": 200,
+    "path": "data/eso-raw-metadata-20261013/official_examples.html",
+    "sha256": "8506ce99bc0c9e3072c3b4048c727abc4f87f4e685812d40b0d73e97210dcec7",
+    "status": "success",
+    "completed_utc": "2026-10-13T23:38:22.426107+00:00"
+  },
+  {
+    "name": "raw_schema",
+    "started_utc": "2026-10-13T23:38:22.427022+00:00",
+    "url": "https://archive.eso.org/tap_obs/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=votable&MAXREC=10000&QUERY=SELECT+column_name%2Cdatatype%2Cunit%2Cucd%2Cdescription+FROM+TAP_SCHEMA.columns+WHERE+table_name%3D%27dbo.raw%27",
+    "http_status": 200,
+    "path": "data/eso-raw-metadata-20261013/raw_schema.xml",
+    "sha256": "ab27fe29c2b849e30c9d37a5741c920e1ac96d76f305f0be25b4b1f5ada1dc79",
+    "query": "SELECT column_name,datatype,unit,ucd,description FROM TAP_SCHEMA.columns WHERE table_name='dbo.raw'",
+    "query_status": [
+      "OK"
+    ],
+    "columns": [
+      "column_name",
+      "datatype",
+      "unit",
+      "ucd",
+      "description"
+    ],
+    "rows": [
+      {
+        "column_name": "access_estsize",
+        "datatype": "long",
+        "unit": "kbyte",
+        "ucd": "phys.size;meta.file",
+        "description": "Estimated size of the downloaded file in KBytes. It is only \"estimated\" as in general, FITS headers can be patched at download time, making the file size varying with time.)"
+      },
+      {
+        "column_name": "access_url",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.ref.url",
+        "description": "A URL that can be used to download the raw file; if the file is under proprietary period, only authenticated users with the necessary access rights will be given access to it."
+      },
+      {
+        "column_name": "datalink_url",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.ref.url",
+        "description": "A URL that can be used to find the access points of the raw file itself, and of all its related files. Related files are: the calibration files necessary to reduce a science raw frame (see calSelector entries), and, if available, a (list of) calibrated product(s) generated out of it.)"
+      },
+      {
+        "column_name": "date_obs",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "time.start;obs.exposure",
+        "description": "The content of the DATE_OBS keyword exposed as a string and not a datetime field (ESO_DATEADD_SEC does not work on this column, use exp_start instead)."
+      },
+      {
+        "column_name": "dec",
+        "datatype": "double",
+        "unit": "deg",
+        "ucd": "pos.eq.dec;meta.main",
+        "description": "Declination FK5 J2000"
+      },
+      {
+        "column_name": "dec_pnt",
+        "datatype": "double",
+        "unit": "deg",
+        "ucd": "pos.eq.dec;instr.tel",
+        "description": "Pointing Declination FK5 J2000 of the telescope"
+      },
+      {
+        "column_name": "det_chip1id",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "",
+        "description": "Detector chip identification. Read from keyword DET CHIP1 ID (alias DET CHIP ID). Example: HASCI03"
+      },
+      {
+        "column_name": "det_chop_ncycles",
+        "datatype": "short",
+        "unit": "",
+        "ucd": "",
+        "description": "Number of cycles for chopping. Read from keyword DET CHOP NCYCLES. Example:  1"
+      },
+      {
+        "column_name": "det_dit",
+        "datatype": "float",
+        "unit": "s",
+        "ucd": "",
+        "description": "Detector Integration Time (Infrared instruments)."
+      },
+      {
+        "column_name": "det_expid",
+        "datatype": "short",
+        "unit": "",
+        "ucd": "",
+        "description": "Unique exposure ID number. Read from keyword DET EXP ID (aliases DET EXPO NO, DET EXP NO)."
+      },
+      {
+        "column_name": "det_ndit",
+        "datatype": "short",
+        "unit": "",
+        "ucd": "",
+        "description": "Number of exposures, each with det_dit integration time (Infrared instruments)."
+      },
+      {
+        "column_name": "dp_cat",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.code.class;obs",
+        "description": "Observation category: SCIENCE,CALIB,ACQUISITION,TECHNICAL,TEST,SIMULATION,OTHER"
+      },
+      {
+        "column_name": "dp_id",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.id;meta.dataset",
+        "description": "The main unique ESO archive file identifier"
+      },
+      {
+        "column_name": "dp_tech",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.code.class;instr.setup",
+        "description": "Mode/technique used for the observation"
+      },
+      {
+        "column_name": "dp_type",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.code.class;obs",
+        "description": "Type of observation/exposure"
+      },
+      {
+        "column_name": "ecl_lat",
+        "datatype": "double",
+        "unit": "deg",
+        "ucd": "pos.ecliptic.lat",
+        "description": "Ecliptic latitude of the observation."
+      },
+      {
+        "column_name": "ecl_lon",
+        "datatype": "double",
+        "unit": "deg",
+        "ucd": "pos.ecliptic.lon",
+        "description": "Ecliptic longitude of the observation."
+      },
+      {
+        "column_name": "exp_start",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "time.start;obs.exposure",
+        "description": "The start time of the observation (format: ISO-8601)."
+      },
+      {
+        "column_name": "exposure",
+        "datatype": "float",
+        "unit": "s",
+        "ucd": "time.duration;obs.exposure",
+        "description": "Total exposure time on target."
+      },
+      {
+        "column_name": "filter_path",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "instr.setup;instr.filter",
+        "description": "All filters.  The string is in the format <value>,<value>,... where <value> is the value of one of the keywords INS.FILT*.NAME"
+      },
+      {
+        "column_name": "gal_lat",
+        "datatype": "double",
+        "unit": "deg",
+        "ucd": "pos.galactic.lat",
+        "description": "Galactic latitude of the observation."
+      },
+      {
+        "column_name": "gal_lon",
+        "datatype": "double",
+        "unit": "deg",
+        "ucd": "pos.galactic.lon",
+        "description": "Galactic longitude of the observation."
+      },
+      {
+        "column_name": "grat_path",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "instr.setup",
+        "description": "All gratings. The string is in the format <value>, <value>,... where <value> is the value of one of the keywords INS.GRAT*.NAME."
+      },
+      {
+        "column_name": "gris_path",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "instr.setup",
+        "description": "All grisms.  The string is in the format <value>, <value>,...  where <value> is the value of one of the keywords INS.GRIS*.NAME. Example: GRIS_600B"
+      },
+      {
+        "column_name": "ins_mode",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "instr.setup",
+        "description": "Instrument mode"
+      },
+      {
+        "column_name": "instrument",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.id;instr",
+        "description": "Instrument name"
+      },
+      {
+        "column_name": "lambda_max",
+        "datatype": "double",
+        "unit": "nm",
+        "ucd": "em.wl;stat.max",
+        "description": "[nm] Maximum wavelength of the overall transmission curve (filter + detector + optics); currently available only for images."
+      },
+      {
+        "column_name": "lambda_min",
+        "datatype": "double",
+        "unit": "nm",
+        "ucd": "em.wl;stat.min",
+        "description": "[nm] Minimum wavelength of the overall transmission curve (filter + detector + optics); currently available only for images."
+      },
+      {
+        "column_name": "last_mod_date",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "time",
+        "description": "The last modification date of this record (format: ISO-8601)."
+      },
+      {
+        "column_name": "mjd_obs",
+        "datatype": "double",
+        "unit": "d",
+        "ucd": "time.start;obs",
+        "description": "Modified Julian Date (JD - 2400000.5) of the start of the observation."
+      },
+      {
+        "column_name": "ob_id",
+        "datatype": "int",
+        "unit": "",
+        "ucd": "meta.id;obs;meta.main",
+        "description": "The identifier of the ESO Observation Block, a unique numeric ID assigned by the Observation Handling System"
+      },
+      {
+        "column_name": "ob_name",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.id;obs",
+        "description": "The name of the ESO Observation Block"
+      },
+      {
+        "column_name": "object",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.id;src",
+        "description": "Target designation as given by the astronomer, though at times overwritten by the obeservatory, especially for CALIB observations. Compare with the similar field called \"target\".)"
+      },
+      {
+        "column_name": "obs_mode",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "obs.param",
+        "description": "Service or Visitor mode"
+      },
+      {
+        "column_name": "origfile",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.id;meta.file",
+        "description": "The original file name as used on the instrument workstation at the telescope. Read from keyword ORIGFILE. Example: HD75289_0012.fits"
+      },
+      {
+        "column_name": "period",
+        "datatype": "short",
+        "unit": "",
+        "ucd": "obs.proposal.cycle",
+        "description": "ESO proposal cycle"
+      },
+      {
+        "column_name": "pi_coi",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.curation;obs.observer",
+        "description": "Names of the Principal and Co-Investigators"
+      },
+      {
+        "column_name": "prog_id",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.code;obs",
+        "description": "ESO program run identification code"
+      },
+      {
+        "column_name": "prog_title",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.title;obs.proposal",
+        "description": "Title of the observing programme"
+      },
+      {
+        "column_name": "prog_type",
+        "datatype": "int",
+        "unit": "",
+        "ucd": "meta.code.class;obs.proposal",
+        "description": "Program type: 0=Normal, 1=GTO, 2=DDT, 3=ToO, 4=Large, 5=Short, 6=Calibration, 7=Monitoring MAPPING"
+      },
+      {
+        "column_name": "ra",
+        "datatype": "double",
+        "unit": "deg",
+        "ucd": "pos.eq.ra;meta.main",
+        "description": "Right Ascension FK5 J2000"
+      },
+      {
+        "column_name": "ra_pnt",
+        "datatype": "double",
+        "unit": "deg",
+        "ucd": "pos.eq.ra;instr.tel",
+        "description": "Pointing Right Ascension FK5 J2000 of the telescope"
+      },
+      {
+        "column_name": "release_date",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "time.release;obs",
+        "description": "The date at which the data become publicly available at the end of the proprietary period"
+      },
+      {
+        "column_name": "s_region",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "pos.outline;obs.field",
+        "description": "This is the field to be used for spatial queries. Example: select * from dbo.raw where contains( s_region, circle('', 56.3, 20, 1)=1  to search in a cone of 1 deg radius around ra=56.3 dec=20. In output it provides the spatial coordinates of the raw data set expressed as POSITION ra dec, as, for raw data, the footprints of the observations are currently not available."
+      },
+      {
+        "column_name": "slit_path",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "instr.setup",
+        "description": "All slits. The string is in the format <value>, <value>,... where <value> is the value of one of the keywords INS.SLIT*.NAME."
+      },
+      {
+        "column_name": "target",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.id;src",
+        "description": "Target designation (as given by the astronomer)"
+      },
+      {
+        "column_name": "tel_airm_end",
+        "datatype": "float",
+        "unit": "",
+        "ucd": "obs.airMass;time.end",
+        "description": "The airmass at the end of the observation."
+      },
+      {
+        "column_name": "tel_airm_start",
+        "datatype": "float",
+        "unit": "",
+        "ucd": "obs.airMass;time.start",
+        "description": "The airmass at the start of the observation."
+      },
+      {
+        "column_name": "tel_alt",
+        "datatype": "float",
+        "unit": "deg",
+        "ucd": "pos.az.alt;time.start",
+        "description": "The Altitude angle (deg) at the start of the observation."
+      },
+      {
+        "column_name": "tel_ambi_fwhm_end",
+        "datatype": "float",
+        "unit": "arcsec",
+        "ucd": "instr.obsty.seeing;time.end",
+        "description": "Site seeing at the end of the observation as measured by the ASM (Astronomical Site Monitor). FWHM at 0.5 um, in arcseconds."
+      },
+      {
+        "column_name": "tel_ambi_fwhm_start",
+        "datatype": "float",
+        "unit": "arcsec",
+        "ucd": "instr.obsty.seeing;time.start",
+        "description": "Site seeing at the start of the observation as measured by the ASM (Astronomical Site Monitor). FWHM at 0.5 um, in arcseconds."
+      },
+      {
+        "column_name": "tel_ambi_pres_end",
+        "datatype": "float",
+        "unit": "hPa",
+        "ucd": "phys.pressure;obs.atmos;time.end",
+        "description": "Average site barometric air pressure at the end of the observation, as measured by the ASM (Astronomical Site Monitor). Expressed in hectopascal."
+      },
+      {
+        "column_name": "tel_ambi_pres_start",
+        "datatype": "float",
+        "unit": "hPa",
+        "ucd": "phys.pressure;obs.atmos;time.start",
+        "description": "Average site barometric air pressure at the start of the observation, as measured by the ASM (Astronomical Site Monitor). Expressed in hectopascal."
+      },
+      {
+        "column_name": "tel_ambi_rhum",
+        "datatype": "float",
+        "unit": "%",
+        "ucd": "obs.atmos.humidity;arith.ratio;stat.mean",
+        "description": "Average ambient relative humidity at the observation site, as measured by the ASM (Astronomical Site Monitor). Expressed as a percentage."
+      },
+      {
+        "column_name": "tel_az",
+        "datatype": "float",
+        "unit": "deg",
+        "ucd": "pos.az.azi;time.start",
+        "description": "The Azimuth angle (deg) S=0,W=90 at the start of the observation."
+      },
+      {
+        "column_name": "telescope",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.id;instr.tel",
+        "description": "The name of the telescope."
+      },
+      {
+        "column_name": "tpl_expno",
+        "datatype": "int",
+        "unit": "",
+        "ucd": "meta.number;obs",
+        "description": "The exposure number within its template execution."
+      },
+      {
+        "column_name": "tpl_id",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.id;obs",
+        "description": "The observing template identifier, a unique ID assigned to a template, that is, to a pre-defined sequence of operations involving any combination of telescope, instrument and detector actions"
+      },
+      {
+        "column_name": "tpl_name",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.title;obs",
+        "description": "The name of the observing template."
+      },
+      {
+        "column_name": "tpl_nexp",
+        "datatype": "int",
+        "unit": "",
+        "ucd": "meta.number;obs;stat.max",
+        "description": "The total number of exposures for the given template."
+      },
+      {
+        "column_name": "tpl_seqno",
+        "datatype": "int",
+        "unit": "",
+        "ucd": "meta.code.member;obs.sequence",
+        "description": "The template sequence number within the Observing Block"
+      },
+      {
+        "column_name": "tpl_start",
+        "datatype": "char",
+        "unit": "",
+        "ucd": "meta.id;obs;time.start",
+        "description": "The start time of the execution of the observing template, exposed as a string and not as a datetime field as this is used as an identifier (ESO_DATEADD_SEC does not work on this column)."
+      }
+    ],
+    "status": "success",
+    "completed_utc": "2026-10-13T23:38:23.371060+00:00"
+  }
+]

@@ -1,0 +1,15 @@
+# TIC429034844: conditional PRF fit favors close neighbor, registration unresolved
+
+The processed sector70 pixels were evaluated at the retained joint0.466995-day clock. This is posthoc use of already opened data. The existing mission PRF fitter includes a planar background. A median out-of-event scene registers three stars; the deduplication distance was reduced from0.12 to0.01 pixel so both0.105-pixel-separated host hypotheses remain explicitly included. Catalog proper motions were propagated linearly; parallax was ignored.
+
+The43-event stack favors TIC611135702 over TIC429034844 under that registration: chi-square357.18 versus983.47, each117 degrees of freedom, amplitudes37.85 and37.03. A freely displaced source improves chi-square to263.82 and lies(−0.16350,−0.04987) pixels from the registered target. The stack/model/residual plot was inspected: a compact central residual and surrounding structure remain. These statistics are conditional on diagonal formal errors and the mission PRF; they are not calibrated host probabilities. This turn reviewed the aggregate fit, not every individual event at the revised clock.
+
+Matched-model injections at each host are recovered100/100 times under independent formal pixel noise. Injection into41 real off-phase stacks recovers each injected host41/41 times; true-event windows were masked. These controls preserve some empirical image structure but overlap and use the same PRF for injection/recovery. They do not test PRF mismatch or uncertainty in registering the scene.
+
+A17-point registration sensitivity grid, from−0.2 to+0.2 pixel along the pair direction, refits nonnegative scene fluxes at each position. The neighbor wins through+0.1 pixel; the target wins at+0.125 and larger. The unweighted scene squared residual is1811.87 at the original alignment,1903.88 at+0.1 and2109.71 at+0.125. Those values are not a likelihood or confidence interval. Flux redistribution in an unresolved scene allows other alignments; no calibrated registration-error bound excludes the host-switching region. Thus passing the fixed-template controls cannot establish a unique host.
+
+Disposition: conditional image evidence now favors the close neighbor, strengthening contamination as an alternative to a planet around TIC429034844. The source remains unresolved because PRF and scene-registration error are uncalibrated. No binary validation, mass, or planet discovery follows. Further tests should address alignment/model mismatch or obtain independent source information, rather than repeat fixed-template injections.
+
+[Aggregate fit](prf-fits.png) · [Fits and synthetic controls](fits.json) · [Empirical controls](empirical-controls.json) · [Registration sensitivity](registration-sensitivity.json) · [Verification](verification.json).
+
+Raw pixels and all four downloaded mission-model hashes are retained in models.json. Existing fitting routines were reused; all49 repository tests passed. Original discovery/held-sector timing results remain unchanged.

@@ -1,0 +1,1 @@
+Initial analyzer completed sector64 numerical fits but JSON serialization failed on a NumPy boolean before writing the report. Converted only the event-eligibility boolean to built-in bool and reran the unchanged frozen scientific procedure. No ephemeris/mask/aperture changes.

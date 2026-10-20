@@ -1,0 +1,527 @@
+{
+  "n_rows": 137,
+  "columns": [
+    {
+      "name": "r_cntr",
+      "dtype": "float64",
+      "unit": "None",
+      "description": null
+    },
+    {
+      "name": "object_id",
+      "dtype": "int64",
+      "unit": "None",
+      "description": "Global object ID in master table associated with this observation."
+    },
+    {
+      "name": "object_id_local",
+      "dtype": "int64",
+      "unit": "None",
+      "description": "Object ID in this (image,CCD) tuple. Not globally unique."
+    },
+    {
+      "name": "image_id",
+      "dtype": "int64",
+      "unit": "None",
+      "description": "Unique image ID as used by the Science Data Pipeline"
+    },
+    {
+      "name": "ccd",
+      "dtype": "int16",
+      "unit": "None",
+      "description": "CCD on which the object was detected (1-32)"
+    },
+    {
+      "name": "filter",
+      "dtype": "<U256",
+      "unit": "None",
+      "description": "SkyMapper photometric filter (u, v, g, r, i, z)"
+    },
+    {
+      "name": "ra_img",
+      "dtype": "float64",
+      "unit": "deg",
+      "description": "ICRS Right Ascension of the object on this image"
+    },
+    {
+      "name": "decl_img",
+      "dtype": "float64",
+      "unit": "deg",
+      "description": "ICRS Declination of the object on this image"
+    },
+    {
+      "name": "x_img",
+      "dtype": "float32",
+      "unit": "pix",
+      "description": "CCD x-pixel coordinate of the object on this image"
+    },
+    {
+      "name": "y_img",
+      "dtype": "float32",
+      "unit": "pix",
+      "description": "CCD y-pixel coordinate of the object on this image"
+    },
+    {
+      "name": "flags",
+      "dtype": "int16",
+      "unit": "None",
+      "description": "Flags raised by Source Extractor"
+    },
+    {
+      "name": "nimaflags",
+      "dtype": "int32",
+      "unit": "None",
+      "description": "Number of flagged pixels from bad, saturated, and crosstalk pixel mask"
+    },
+    {
+      "name": "imaflags",
+      "dtype": "int32",
+      "unit": "None",
+      "description": "OR-combined flagged pixel types within isophotal radius from bad, saturated, and crosstalk pixel mask"
+    },
+    {
+      "name": "background",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Mean background level in counts"
+    },
+    {
+      "name": "flux_max",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Peak count above background of the brightest object pixel"
+    },
+    {
+      "name": "mu_max",
+      "dtype": "float32",
+      "unit": "ABmag/arcsec2",
+      "description": "ZP-corrected peak surface brightness of object above background"
+    },
+    {
+      "name": "class_star",
+      "dtype": "float32",
+      "unit": "None",
+      "description": "Source Extractor stellarity index (between 0=not star and 1=star)"
+    },
+    {
+      "name": "a",
+      "dtype": "float32",
+      "unit": "pix",
+      "description": "Length of object semi-major axis in pixels"
+    },
+    {
+      "name": "e_a",
+      "dtype": "float32",
+      "unit": "pix",
+      "description": "Error in semi-major axis"
+    },
+    {
+      "name": "b",
+      "dtype": "float32",
+      "unit": "pix",
+      "description": "Length of object semi-minor axis in pixels"
+    },
+    {
+      "name": "e_b",
+      "dtype": "float32",
+      "unit": "pix",
+      "description": "Error in semi-minor axis"
+    },
+    {
+      "name": "pa",
+      "dtype": "float32",
+      "unit": "deg",
+      "description": "Object ellipse position angle on sky (E of N, -90..+90 deg)"
+    },
+    {
+      "name": "e_pa",
+      "dtype": "float32",
+      "unit": "deg",
+      "description": "Error in position angle"
+    },
+    {
+      "name": "elong",
+      "dtype": "float32",
+      "unit": "None",
+      "description": "Object elongation (a/b)"
+    },
+    {
+      "name": "fwhm",
+      "dtype": "float32",
+      "unit": "pix",
+      "description": "Object full width at half maximum on detector"
+    },
+    {
+      "name": "radius_petro",
+      "dtype": "float32",
+      "unit": "None",
+      "description": "Radius of Petrosian ellipse in units of a and b"
+    },
+    {
+      "name": "radius_kron",
+      "dtype": "float32",
+      "unit": "None",
+      "description": "Radius of Kron ellipse in units of a and b"
+    },
+    {
+      "name": "radius_frac20",
+      "dtype": "float32",
+      "unit": "pix",
+      "description": "Radius of circular aperture enclosing 20 per cent of total (Kron) flux"
+    },
+    {
+      "name": "radius_frac50",
+      "dtype": "float32",
+      "unit": "pix",
+      "description": "Radius of circular aperture enclosing 50 per cent of total (Kron) flux (i.e. half-light radius)"
+    },
+    {
+      "name": "radius_frac90",
+      "dtype": "float32",
+      "unit": "pix",
+      "description": "Radius of circular aperture enclosing 90 per cent of total (Kron) flux"
+    },
+    {
+      "name": "chi2_psf",
+      "dtype": "float32",
+      "unit": "None",
+      "description": "Reduced Chi-squared of PSF fit"
+    },
+    {
+      "name": "flux_psf",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts under PSF fit"
+    },
+    {
+      "name": "e_flux_psf",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in PSF counts"
+    },
+    {
+      "name": "mag_psf",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected PSF magnitude"
+    },
+    {
+      "name": "e_mag_psf",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in PSF magnitude"
+    },
+    {
+      "name": "flux_petro",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts within Petrosian ellipse"
+    },
+    {
+      "name": "e_flux_petro",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in Petrosian flux"
+    },
+    {
+      "name": "mag_petro",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected Petrosian magnitude"
+    },
+    {
+      "name": "e_mag_petro",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in Petrosian magnitude"
+    },
+    {
+      "name": "flux_kron",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts within Kron ellipse"
+    },
+    {
+      "name": "e_flux_kron",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in Kron flux"
+    },
+    {
+      "name": "mag_kron",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected Kron magnitude"
+    },
+    {
+      "name": "e_mag_kron",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in Kron magnitude"
+    },
+    {
+      "name": "flux_ap02",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts within 2 arcsec diameter aperture centred on object"
+    },
+    {
+      "name": "e_flux_ap02",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in 2 arcsec aperture flux"
+    },
+    {
+      "name": "mag_apc02",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected magnitude within 2 arcsec diameter aperture, corrected for PSF losses"
+    },
+    {
+      "name": "e_mag_apc02",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in 2 arcsec aperture magnitude"
+    },
+    {
+      "name": "flux_ap03",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts within 3 arcsec diameter aperture centred on object"
+    },
+    {
+      "name": "e_flux_ap03",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in 3 arcsec aperture flux"
+    },
+    {
+      "name": "mag_apc03",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected magnitude within 3 arcsec diameter aperture, corrected for PSF losses"
+    },
+    {
+      "name": "e_mag_apc03",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in 3 arcsec aperture magnitude"
+    },
+    {
+      "name": "flux_ap04",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts within 4 arcsec diameter aperture centred on object"
+    },
+    {
+      "name": "e_flux_ap04",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in 4 arcsec aperture flux"
+    },
+    {
+      "name": "mag_apc04",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected magnitude within 4 arcsec diameter aperture, corrected for PSF losses"
+    },
+    {
+      "name": "e_mag_apc04",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in 4 arcsec aperture magnitude"
+    },
+    {
+      "name": "flux_ap05",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts within 5 arcsec diameter aperture centred on object"
+    },
+    {
+      "name": "e_flux_ap05",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in 5 arcsec aperture flux"
+    },
+    {
+      "name": "mag_apc05",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected magnitude within 5 arcsec diameter aperture, corrected for PSF losses"
+    },
+    {
+      "name": "e_mag_apc05",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in 5 arcsec aperture magnitude"
+    },
+    {
+      "name": "flux_ap06",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts within 6 arcsec diameter aperture centred on object"
+    },
+    {
+      "name": "e_flux_ap06",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in 6 arcsec aperture flux"
+    },
+    {
+      "name": "mag_apc06",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected magnitude within 6 arcsec diameter aperture, corrected for PSF losses"
+    },
+    {
+      "name": "e_mag_apc06",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in 6 arcsec aperture magnitude"
+    },
+    {
+      "name": "flux_ap08",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts within 8 arcsec diameter aperture centred on object"
+    },
+    {
+      "name": "e_flux_ap08",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in 8 arcsec aperture flux"
+    },
+    {
+      "name": "mag_apc08",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected magnitude within 8 arcsec diameter aperture, corrected for PSF losses"
+    },
+    {
+      "name": "e_mag_apc08",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in 8 arcsec aperture magnitude"
+    },
+    {
+      "name": "flux_ap10",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts within 10 arcsec diameter aperture centred on object"
+    },
+    {
+      "name": "e_flux_ap10",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in 10 arcsec aperture flux"
+    },
+    {
+      "name": "mag_apc10",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected magnitude within 10 arcsec diameter aperture, corrected for PSF losses"
+    },
+    {
+      "name": "e_mag_apc10",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in 10 arcsec aperture magnitude"
+    },
+    {
+      "name": "flux_ap15",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts within 15 arcsec diameter aperture centred on object"
+    },
+    {
+      "name": "e_flux_ap15",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in 15 arcsec aperture flux"
+    },
+    {
+      "name": "mag_apr15",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected magnitude within 15 arcsec diameter aperture, NOT corrected for PSF losses"
+    },
+    {
+      "name": "e_mag_apr15",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in 15 arcsec aperture magnitude"
+    },
+    {
+      "name": "flux_ap20",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts within 20 arcsec diameter aperture centred on object"
+    },
+    {
+      "name": "e_flux_ap20",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in 20 arcsec aperture flux"
+    },
+    {
+      "name": "mag_apr20",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected magnitude within 20 arcsec diameter aperture, NOT corrected for PSF losses"
+    },
+    {
+      "name": "e_mag_apr20",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in 20 arcsec aperture magnitude"
+    },
+    {
+      "name": "flux_ap30",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Total counts within 30 arcsec diameter aperture centred on object"
+    },
+    {
+      "name": "e_flux_ap30",
+      "dtype": "float32",
+      "unit": "ct",
+      "description": "Error in 30 arcsec aperture flux"
+    },
+    {
+      "name": "mag_apr30",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "ZP-corrected magnitude within 30 arcsec diameter aperture, NOT corrected for PSF losses"
+    },
+    {
+      "name": "e_mag_apr30",
+      "dtype": "float32",
+      "unit": "mag",
+      "description": "Error in 30 arcsec aperture magnitude"
+    },
+    {
+      "name": "use_in_clipped",
+      "dtype": "int16",
+      "unit": "None",
+      "description": "Flag indicating whether this observation was used in computing the clipped mean magnitudes in the master table"
+    },
+    {
+      "name": "img_qual",
+      "dtype": "int16",
+      "unit": "None",
+      "description": "Quality level of this image from 1=best to 3=worst"
+    },
+    {
+      "name": "x_mosaic",
+      "dtype": "float32",
+      "unit": "pix",
+      "description": "Mosaic x-pixel coordinate of the object on this image"
+    },
+    {
+      "name": "y_mosaic",
+      "dtype": "float32",
+      "unit": "pix",
+      "description": "Mosaic y-pixel coordinate of the object on this image"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# Sector 27 pilot: complete with no eligible leads
+
+All 100 pilot targets have usable searches: 72 below threshold and 28 flagged. Neither follow-up policy found an eligible lead. Final checkpoint checks frozen targets, raw hashes and absence of reserved-epoch caches. Short/long controls have four/seven period-and-phase recoveries, with three gate passes each; all injections lie inside the grid. All eight trials on one control star were missed. This sparse, uneven sensitivity cannot exclude planets or establish completeness. Extend to the remaining 356 frozen targets with unchanged gates; retain all failures and rejected peaks.

@@ -1,0 +1,44 @@
+{
+  "url": "https://mast.stsci.edu/api/v0/invoke",
+  "request": {
+    "service": "Mast.Catalogs.Filtered.Tic.Rows",
+    "params": {
+      "columns": "ID,ra,dec,Tmag,rad,Teff,d,contratio,disposition,duplicate_id",
+      "filters": [
+        {
+          "paramName": "rad",
+          "values": [
+            {
+              "min": 0.81,
+              "max": 1.1
+            }
+          ]
+        },
+        {
+          "paramName": "Tmag",
+          "values": [
+            {
+              "min": 6,
+              "max": 12
+            }
+          ]
+        },
+        {
+          "paramName": "d",
+          "values": [
+            {
+              "min": 0,
+              "max": 120
+            }
+          ]
+        }
+      ]
+    },
+    "format": "json",
+    "pagesize": 100000,
+    "page": 1
+  },
+  "path": "data/targeting/nearby-solar-radius-20261011.json",
+  "sha256": "6f22cee5ac2dc2c1c66d66e29c012000b68e69c71ed43ff851d4d6534d70b1e9",
+  "retrieved_utc": "2026-10-11T20:16:10.428804+00:00"
+}

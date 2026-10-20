@@ -1,0 +1,22 @@
+{
+  "frozen_utc": "2026-10-11T23:28:56.547795+00:00",
+  "frozen_sha256": "ee5608e9a22a677a28ce32d3a60f5c036fa8108a71bc4c389ec859a6e1f58bbd",
+  "intended_sectors": [
+    54,
+    81
+  ],
+  "opening_gate": "Parent campaign terminal audit must succeed and coordinator must explicitly launch future run. This script never opens sectors54/81. Verify cache/history and freeze file hashes immediately before retrieval.",
+  "primary": "Use1.5day refined best period/epoch/duration unchanged in both sectors, primary flattenwindow1.5. Save fixed original discovery clock comparison. Use2.5day own refinedclock/flatten only as predetermined sensitivity; do not choose larger SNR.",
+  "timing": "Evaluate existing prediction_spread using actual cleaned timestamps; precise only if spread<duration/2, profile not touching period boundary, and training supports>=3events.",
+  "decision_order": [
+    "No usable data/total measurement: insufficient_coverage (retain error if retrieval/preprocessing failed)",
+    "Imprecise prediction: timing_prediction_inconclusive, regardless of nominal depth",
+    "Precise and SNR>=5 and at least2 events withSNR>=2: recovered_at_frozen_ephemeris_requires_further_vetting",
+    "Precise and expected formalSNR>=5 and observedSNR<2: not_recovered_despite_expected_sensitivity",
+    "Otherwise insufficient_evidence"
+  ],
+  "expected_snr": "Training BLS depth divided by fixed-depth measurement error in new sector",
+  "forbidden": "No new timing/period/duration optimization or selecting a favorable profile pair as primary. Do not change81clock after seeing54 under this protocol.",
+  "profiles": "Any saved-profile envelope or maximum reported later is exploratory/conditional and separate from nominal result; no calibrated significance.",
+  "scope": "Success is repeatability at a conditional clock, not identification of host or planet. Ambiguous pixel source and shared instrumental systematics remain. Failed gates and both detrending outcomes retained. If a different plan trains on54 to predict81, freeze it separately before81 and preserve this original40/41 prediction."
+}

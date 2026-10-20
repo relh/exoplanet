@@ -1,0 +1,7 @@
+{
+ "scope":"No change to planned models, seeds or draw counts.",
+ "reason":"Measured million-draw resident memory remains roughly1–2GB; systemavailablememory8–13GB. Coordinator authorizes one small run alongside a single million-draw run to reduce elapsed time.",
+ "ownership":"Stop the waiting bounded_batch and replay_hashes coordinators, leaving their active million-draw child and already-started known-planet control intact. One new final coordinator owns two disjoint tracks: main track waits for803million then executes402million; side track waits forknownplanet then executes all100k noise/control cases and required provenance replays. No other coordinator may dispatch these jobs.",
+ "limits":"At most two probability processes: one million-draw job and one100kjob; each2Numba and1OpenBLASthreads. Side track starts a newjob only with>=6GB available memory. Existing computations are not interrupted.",
+ "completion":"Write execution-complete.json only after both tracks finish, everyplannedrun exists, and all adoptedruns capture inputhashes. Summary cannot becomplete beforethismarker."
+}

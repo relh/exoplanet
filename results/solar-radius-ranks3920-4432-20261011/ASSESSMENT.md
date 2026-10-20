@@ -1,0 +1,5 @@
+# Completed frozen ranks3920–4431
+
+512 attempts completed:340 below threshold,168 flagged,4 screening passes and zero errors. All1128 raw discovery products pass the terminal integrity audit. The four passes have linked reviews: TIC159873548 and231968820 match known rotational variables; TIC313548505 has a broad processing-sensitive feature; TIC5546257 has strong but timing-inconclusive later-sector evidence and unresolved source attribution.
+
+TIC5546257 sector62 was opened after a frozen expanded-training prediction but before the original queue terminal audit. That violated the queue's reserved-cache absence assertion and stopped the queue after this batch completed. The explicit supplemental audit verifies this sole exception with chronology, raw hash and the follow-up verifier. No original target record or frozen prediction was changed. The interruption is retained in queue-audit-interruption.json. Remaining ranks4432 onward resume under a separate frozen plan; completed work is not rerun.

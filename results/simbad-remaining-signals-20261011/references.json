@@ -1,0 +1,44 @@
+[
+  {
+    "label": "identifiers",
+    "query": "SELECT oidref,id FROM ident WHERE oidref IN (30823552,24982167)",
+    "status": "success",
+    "url": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?request=doQuery&lang=adql&format=csv&query=SELECT+oidref%2Cid+FROM+ident+WHERE+oidref+IN+%2830823552%2C24982167%29",
+    "path": "data/targeting/simbad-two-identifiers-20261011.csv",
+    "sha256": "20cc8112bce7ee9d1b964c525ad17a794ded497172ee6750a20388c26a96383e",
+    "rows": [
+      {
+        "oidref": "24982167",
+        "id": "Gaia DR3 6254811248843788416"
+      },
+      {
+        "oidref": "30823552",
+        "id": "Gaia DR3 6865254022910168320"
+      }
+    ]
+  },
+  {
+    "label": "references",
+    "query": "SELECT h.oidref,r.bibcode,r.doi,r.title,r.abstract FROM has_ref AS h JOIN ref AS r ON h.oidbibref=r.oidbib WHERE h.oidref IN (30823552,24982167)",
+    "status": "success",
+    "url": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?request=doQuery&lang=adql&format=csv&query=SELECT+h.oidref%2Cr.bibcode%2Cr.doi%2Cr.title%2Cr.abstract+FROM+has_ref+AS+h+JOIN+ref+AS+r+ON+h.oidbibref%3Dr.oidbib+WHERE+h.oidref+IN+%2830823552%2C24982167%29",
+    "path": "data/targeting/simbad-two-references-20261011.csv",
+    "sha256": "55b13e07f779a8c11e8479a92a43dc074fee4756e86d4e00d8a45b0bb509c00d",
+    "rows": [
+      {
+        "oidref": "24982167",
+        "bibcode": "2021A&A...649A...6G",
+        "doi": "10.1051/0004-6361/202039498",
+        "title": "Gaia Early Data Release 3. The Gaia Catalogue of Nearby Stars.",
+        "abstract": "\\\\{\\em Aims.} We produce a clean and well-characterised catalogue of objects within 100pc of the Sun from the Gaia Early Data Release 3. We characterise the catalogue through comparisons to the full data release, external catalogues, and simulations. We carry out a first analysis of the science that is possible with this sample to demonstrate its potential and best practices for its use. \\\\{\\em Methods.} Theselection of objects within 100pc from the full catalogue used selected training sets, machine-learning procedures, astrometric quantities, and solution quality indicators to determine a probability that the astrometric solution is reliable. The training set construction exploited the astrometric data, quality flags, and external photometry. For all candidates we calculated distance posterior probability densities using Bayesian procedures and mock catalogues to define priors. Any object with reliable astrometry and a non-zero probability of being within 100pc is included in the catalogue. \\\\{\\em Results.} We have produced a catalogue of 331 312 objects that we estimate contains at least 92% of stars of stellar type M9 within 100pc of the Sun. We estimate that 9% of the stars in this catalogue probably lie outside 100pc, but when the distance probability function is used, a correct treatment of this contamination is possible. We produced luminosity functions with a high signal-to-noise ratio for the main-sequence stars, giants, and white dwarfs. We examined in detail the Hyades cluster, the white dwarf population, and wide-binary systems and produced candidate lists for all three samples. We detected local manifestations of several streams, superclusters, and halo objects, in which we identified 12 members of Gaia Enceladus. We present the first direct parallaxes of five objects in multiple systems within 10pc of the Sun. \\\\{\\em Conclusions.} We provide the community with a large, well-characterised catalogue of objects in the solar neighbourhood. This is a primary benchmark for measuring and understanding fundamental parameters and descriptive functions in astronomy."
+      },
+      {
+        "oidref": "30823552",
+        "bibcode": "2021ApJ...917...23K",
+        "doi": "10.3847/1538-4357/ac0251",
+        "title": "Stars with photometrically young Gaia luminosities around the solar system (SPYGLASS). I. Mapping Young stellar structures and their star formation histories.",
+        "abstract": "Young stellar associations hold a star formation record that can persist for millions of years, revealing the progression of star formation long after the dispersal of the natal cloud. To identify nearby young stellar populations that trace this progression, we have designed a comprehensive framework for the identification of young stars and use it to identify {\\sim}3 x 10^4^ candidate young stars within a distance of 333 pc using Gaia DR2. Applying the HDBSCAN clustering algorithm to this sample, we identify 27 top-level groups, nearly half of which have little to no presence in previous literature. Ten of these groups have visible substructure, including notable young associations such as Orion, Perseus, Taurus, and Sco-Cen. We provide a complete subclustering analysis of all groups with substructure, using age estimates to reveal each region's star formation history. The patterns we reveal include an apparent star formation origin for Sco-Cen along a semicircular arc, as well as clear evidence for sequential star formation moving away from that arc with a propagation speed of {\\sim}4 km s^-1^ ({\\sim}4 pc Myr^-1^). We also identify earlier bursts of star formation in Perseus and Taurus that predate current, kinematically identical active star-forming events, suggesting that the mechanisms that collect gas can spark multiple generations of star formation, punctuated by gas dispersal and cloud regrowth. The large spatial scales and long temporal scales on which we observe star formation offer a bridge between the processes within individual molecular clouds and the broad forces guiding star formation at galactic scales."
+      }
+    ]
+  }
+]

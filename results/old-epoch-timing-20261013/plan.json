@@ -1,0 +1,17 @@
+{
+  "frozen_utc": "2026-10-13T23:44:57.528987+00:00",
+  "scope": "Metadata-only backward clock propagation; no flux, network, ephemeris fitting, or new observations",
+  "input": "results/followup-planning-20261013/targets.json",
+  "input_sha256": "0be8182daabb8bbdde624484ca0b484d76fde1fc65db988f5ab2b17d15bd47dc",
+  "epochs_tdb": [
+    "2004-01-01",
+    "2006-01-01",
+    "2008-01-01",
+    "2009-01-01"
+  ],
+  "profiles": "Every clock_profiles and historical_profiles row and every saved period/epoch profile pair; no selection",
+  "cycle_rule": "Choose nearest primary nominal event to each calendar TDB epoch. Align row epoch to primary reference epoch using nearest integer cycles at that reference, then propagate the identical event index without wrapping historical predictions toward the desired date. Align each profile pair to its own row reference epoch first. Also retain independently nearest row event index as a diagnostic.",
+  "envelope": "Minimum/maximum propagated selected profile midpoint, enlarged by three times saved conditional_epoch_floor_days. Not a confidence interval.",
+  "gate": "Per-row maximum absolute displacement of every profile midpoint from that row nominal event plus three epoch floors must be strictly less than half its saved duration. Preserve failed historical gates separately; do not replace clocks.",
+  "interpretation": "Gate pass alone is insufficient for interpreting any non-detection; actual archive timestamps, time standards, sample coverage, precision, blend response, and physical model adequacy remain untested."
+}

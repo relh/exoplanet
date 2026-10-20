@@ -1,0 +1,5 @@
+import json,numpy as np,matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from pathlib import Path
+O=Path(__file__).parent;r=sorted(json.loads((O/'results.json').read_text())['rows'],key=lambda v:v['sector']);fig,ax=plt.subplots(1,2,figsize=(11,4),layout='constrained');x=np.arange(len(r));dep=np.array([v['full']['depth_ppm'] for v in r]);white=np.array([v['full']['white_error_ppm'] for v in r]);adj=np.array([v['full']['adjusted_error_ppm'] for v in r]);ax[0].errorbar(x,dep,yerr=adj,fmt='o',capsize=5,label='Time-averaging adjusted');ax[0].errorbar(x+.1,dep,yerr=white,fmt='.',capsize=3,label='Conditional white');ax[0].set(ylabel='Fixed-clock depth (ppm)',xticks=x,xticklabels=[v['sector'] for v in r],xlabel='TESS sector');ax[0].legend();ax[1].bar(x,[v['full']['beta'] for v in r]);ax[1].axhline(1,color='black',lw=1);ax[1].set(ylabel='Maximum beta (floor 1)',xticks=x,xticklabels=[v['sector'] for v in r],xlabel='TESS sector',ylim=(0,1.7));fig.suptitle('TIC 80387959: correlated-noise sensitivity, not planet validation');fig.savefig(O/'noise-diagnostic.png',dpi=160)

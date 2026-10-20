@@ -1,0 +1,1 @@
+Post-hoc source check at the frozen Sector86 QLP ephemeris. Same photons as discovery; not independent validation. Missing SPOC products are errors, not null measurements. Inspect pixel morphology before interpreting automated centroids.

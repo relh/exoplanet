@@ -1,0 +1,13 @@
+# TIC411696721: known rotational variable with broad residual minima
+
+Deprioritize this screening pass as a likely new planet around the named target. The exact SIMBAD identifier chain links TIC411696721 = HD241724 = Gaia DR3 3393787504083851136. The VSX cone row names that same Gaia source and classifies it ROT. Its period field is blank: this is an exact known-variable identity, not a catalog confirmation of our measured period.
+
+The automated original pass is retained: period14.34793737days, box duration0.18day, depth585.1ppm, formal SNR13.01, four supported events and no screening flags. Alternate2.5-day detrending finds nearly the same period but depth1383.7ppm, a2.365-fold increase. Neither formal SNR nor this agreement establishes a transit.
+
+The inspected discovery-only plot shows percent-level, smooth, multi-day minima in corrected flux from both sectors43/44. Detrending leaves a broad depression extending roughly a day around the selected clock, substantially beyond the0.18-day search box. The deeper alternate reduction broadens the feature further. This morphology plus exact rotational-variable identity makes residual stellar variability the favored interpretation of this searched signal. We have not established its detailed physical cause or excluded additional planets around the star.
+
+No new timing fit, added-sector search, pixel download or generic follow-up was performed. Sector32 and reserved sector71 remain unopened. This feature does not currently warrant opening them for frozen planet validation after the batch audit; reconsider only if a distinct narrow component or new discriminating evidence changes the interpretation. Internal false-positive interpretation here is not an official TOI disposition.
+
+Files: discovery.json preserves the exact original result; query.py/results.json and identity.py/identity.json preserve catalog queries, timestamps, raw-cache paths, URLs and hashes. morphology.py/plan.json use the unchanged discovery clock and predeclared0.1-day bins for two existing detrending windows; morphology.png was visually inspected. photometry.npz and morphology.json preserve processed samples and all bin measurements.
+
+verify.py checks both FITS hashes/identities, exact catalog identity and ROT match, absent32/71 caches, four reconstructed processed series and160 weighted bins with independently accumulated arithmetic. It does not rerun the full period search, calibrate false-positive probabilities or validate the stellar classification independently. Catalog errors would be explicit failures, not nonmatches. No global scientific code changed.

@@ -1,0 +1,23 @@
+"""Verify catalog provenance without treating catalog nonmatches as exclusions."""
+from pathlib import Path
+import json
+from exoplanet.pipeline import sha, save_json, now
+
+out=Path(__file__).parent
+read=lambda p:json.loads(p.read_text())
+plan=read(out/'plan.json')
+assert sha(Path('results/neighbors-361980197-20261011/neighbors.json'))==plan['neighbors_sha256']
+for p,h in plan['image_analysis_hashes'].items():assert sha(Path(p))==h
+inventory=[]
+for table in ['dr2_neighbourhood','gaia_source','vari_classifier_result','vari_eclipsing_binary']:
+    raw=Path(f'data/catalogs/gaia-361980197-neighbors-{table}-20261011.csv')
+    source=read(out/f'{table}-source.json')
+    assert sha(raw)==source['sha256'] and raw.stat().st_size==source['bytes']
+    inventory.append({'table':table,'raw_sha256':sha(raw),'json_sha256':sha(out/f'{table}.json'),'source_sha256':sha(out/f'{table}-source.json')})
+assert len(read(out/'vari_classifier_result.json'))==1
+assert read(out/'vari_classifier_result.json')[0]['best_class_name']=='SOLAR_LIKE'
+assert len(read(out/'vari_eclipsing_binary.json'))==0
+assert len(read(out/'dr2_neighbourhood.json'))==4 and len(read(out/'gaia_source.json'))==4
+assert plan['script_sha256']==sha(out/'query.py')
+save_json(out/'verification.json',{'utc':now(),'script_sha256':sha(Path(__file__)),'inventory':inventory,'limits':'Five TIC entries map to four unique Gaia sources; one SOLAR_LIKE target classification, no eclipsing-binary rows. Catalog nonmatches do not exclude variability or prove novelty.'})
+print('Verified Gaia provenance and catalog evidence')

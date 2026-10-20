@@ -1,0 +1,11 @@
+# TIC 235596071: likely neighboring-source contamination
+
+Training sectors [79, 80] select seed period4.80156843days. Native refinement gives 4.80153612days, duration0.039680days, depth7691±402ppm (formal selected fit error), with 11 individually supported events. Original flags retained: crowding_or_missing_crowding. Screening or diagnostic admission is not planet validation.
+
+The inspected fold has a primary dip and a strong off-phase dip. The selected off-phase feature is at phase0.656608, depth9146±660ppm, supported by10of10measured events; the native primary fit is7691±402ppm with11supported events. This favors review for an eclipsing system or contaminating variable, not a planet claim. Selected significances are uncalibrated; exact variable and host remain unresolved.
+
+Sector25: timing_prediction_inconclusive, spread0.5810days; Sector40: timing_prediction_inconclusive, spread0.4245days. Inconclusive timing neither confirms nor reliably rejects the ephemeris. Source-image and Gaia checks below favor neighboring-source contamination. No host or novelty established; no credible new planet claim or external submission.
+
+Raw TESScut and processed TESS-SPOC maps for sectors 79/80 were all visually inspected. They show a compact dip displaced from the target toward TIC 235596068/235596066. Raw maps include 6/5 events and offsets 2.507/2.656 pixels; processed maps include 6/5 events and target offsets 2.501/2.735 pixels. The nearest processed catalog source is TIC 235596068 (0.256/0.148 pixels), but its close companion TIC 235596066 (0.268/0.159 pixels) is unresolved. These are descriptive moments, not calibrated PRF confidence; catalog positions were not proper-motion propagated. Reductions share photons. This supports likely contamination, without identifying the variable uniquely or confirming an eclipsing binary.
+
+[Source verification](source_review.json) checks raw files, frozen fit, neighbors and result/plot hashes. [Gaia lookup](../../gaia-235596071-neighbors-20261011/results.json) selected the target and every catalog source within one pixel of either processed moment: four DR2-to-DR3 mappings, four source rows, two SOLAR_LIKE classifier entries and zero eclipsing-binary entries. Provenance hashes verified. A catalog nonmatch does not exclude eclipsing variability or establish novelty.

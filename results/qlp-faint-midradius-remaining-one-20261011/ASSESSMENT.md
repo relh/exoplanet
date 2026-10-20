@@ -1,0 +1,11 @@
+# Completed single-sector search
+
+All5716 frozen targets completed. Counts:4984 below threshold,727 flagged,5 unusable selected light curves (5711 usable). Both watchers exited successfully:12 original/alternate-policy fits and10 coverage diagnostics. All22 initial discovery plots were inspected and have assessments. All44 reserved-sector tests conclude timing_prediction_inconclusive; this neither confirms nor excludes the signals. One initial source check remains pending (the already reported TIC58464534 signal), and completed source checks do not mean full physical vetting.
+
+TIC377129640 and58464534 have prior literature reports;101404423 favors contamination from a cataloged eclipsing binary,169623350 and443761618 favor neighbor-region contamination,268685988 has background-dominated raw images. No securely attributed new planet candidate. The remaining source queue is explicit in terminal-verification.json. No workers were restarted; discovery55707/original47847/coverage32471 each returned exit0.
+
+The final fifth failure,TIC15820624sector43, has1722 rows/1266 quality-zero samples but no finite selected flux/errors. Allfive failures are data-quality cases, not nondetections; no reserved-sector substitution or network retry. Original failures remain preserved.
+
+The verifier reconciles5716 unique identities and summary/target statuses against the frozen plan and immutable checkpoint, checks downloaded raw hashes, independently reconciles both eligibility queues, checks every current review artifact hash and five error audits. Its first run counted null dispositions instead of error statuses in the compact terminal summary; corrected fallback preserves unchanged target results and finalcounts. This is verification plumbing, not a change to scientific algorithms. No new full-suite test claim. Injection controls remain limited small-sample sensitivity checks, not survey completeness.
+
+Next prioritize source and literature checks for surviving periodic signals (including binary/alias vetting of429034844 and the remaining unvetted source queue), preserving the inconclusive timing predictions and all diagnostic flags. Continue the broader investigation; this completed batch does not complete the overall goal.

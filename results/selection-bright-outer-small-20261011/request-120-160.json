@@ -1,0 +1,38 @@
+{
+  "service": "Mast.Catalogs.Filtered.Tic.Rows",
+  "params": {
+    "columns": "ID,ra,dec,Tmag,rad,Teff,d,contratio,disposition,duplicate_id",
+    "filters": [
+      {
+        "paramName": "rad",
+        "values": [
+          {
+            "min": 0.15,
+            "max": 0.6
+          }
+        ]
+      },
+      {
+        "paramName": "Tmag",
+        "values": [
+          {
+            "min": 6,
+            "max": 12
+          }
+        ]
+      },
+      {
+        "paramName": "d",
+        "values": [
+          {
+            "min": 120,
+            "max": 160
+          }
+        ]
+      }
+    ]
+  },
+  "format": "json",
+  "pagesize": 100000,
+  "page": 1
+}

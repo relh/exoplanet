@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-10-11T20:17:48.872124+00:00",
+  "inputs": {
+    "results/nearby-solar-radius-inventory-20261011/opportunities.json": "ea09431c35ff5e7f452464d618f691e3e860570e86e272cf95abd10b263431dc",
+    "data/catalogs/toi.csv": "26f5ce70b6118a3b0f1212a9728f7501c9dab9d6eccb6a908104e7ebe3220be2",
+    "data/catalogs/confirmed.csv": "a37a6cb35285753e2d6fa5490fff38ea717a4c3868f6d9b7ae189804e2d52dd6",
+    "data/targeting/ctoi.csv": "1059ac9235aa11d4bf914153ddc0278431709f090607497325a9b7c208911bb4",
+    "data/targeting/eb.csv": "97e81f6c01716a431379ab6bd37d1182b611a485107110e0eba830f817ba7a8f"
+  },
+  "catalogs": [
+    {
+      "name": "TOI",
+      "path": "data/catalogs/toi.csv",
+      "sha256": "26f5ce70b6118a3b0f1212a9728f7501c9dab9d6eccb6a908104e7ebe3220be2",
+      "unique_ids": 7826
+    },
+    {
+      "name": "confirmed",
+      "path": "data/catalogs/confirmed.csv",
+      "sha256": "a37a6cb35285753e2d6fa5490fff38ea717a4c3868f6d9b7ae189804e2d52dd6",
+      "unique_ids": 4546
+    },
+    {
+      "name": "CTOI",
+      "path": "data/targeting/ctoi.csv",
+      "sha256": "1059ac9235aa11d4bf914153ddc0278431709f090607497325a9b7c208911bb4",
+      "unique_ids": 4935
+    },
+    {
+      "name": "archived EB",
+      "path": "data/targeting/eb.csv",
+      "sha256": "97e81f6c01716a431379ab6bd37d1182b611a485107110e0eba830f817ba7a8f",
+      "unique_ids": 4578
+    }
+  ],
+  "n_input": 16581,
+  "counts": {
+    "contamination_or_missing": 1635,
+    "no_adjacent_training_pair": 7534,
+    "known_exact_tic": 408
+  },
+  "n_eligible": 7004,
+  "n_pilot": 16,
+  "selection_script_sha256": "82ddbb045ab030f843031c8569078dfedcbfe25407ee0f4d0af8430050a8a767",
+  "policy": "Existing adjacent <=55 training selection, max3; latest ordinary sector56..107 reserved. Contamination<=0.2. Rank radius^2 *10^(.2*(Tmag-10))/sqrt(training sectors). Exact TIC catalog exclusions only. Cached catalogs are not a complete novelty check; positional/VSX checks required for signals. No stellar-temperature cut in this expanded-radius pool."
+}

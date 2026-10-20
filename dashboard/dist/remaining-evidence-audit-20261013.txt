@@ -1,0 +1,45 @@
+# Remaining evidence: two bounded archive checks and an observation dependency
+
+Neither signal has decisive evidence of a planetary or nonplanetary origin. The retained results justify independent observations, but do not yet justify saying that every potentially useful public archive has been searched. The ESO raw-observation check identified here is complete with no matches. SuperWASP remains a specific unqueried route; metadata should establish plausible utility before any flux access.
+
+This is a read-only scientific review of existing reports plus official archive documentation accessed on 13 October 2026. No target catalog query, spectrum, image or light curve was retrieved. The documentation links establish available query routes, not target coverage. No running candidate investigation was identified in the process inspection; unrelated jobs were left untouched.
+
+## Reviewed actions and remaining routes
+
+| Priority | Bounded action | Potential discriminant | Required gate and stopping condition |
+|---|---|---|---|
+| 1 | Completed: query ESO **raw observational metadata** for both target positions, retaining instruments, dates, exposure times and access restrictions | Previously unlisted repeated spectra could test a stellar companion; suitable high-resolution images could constrain blends | Verify exact pointing/fiber or slit association, public availability and useful instrument mode. Freeze a separate analysis before opening observations. A nonmatch ends this route, not the candidate. |
+| 2 | Query NASA Exoplanet Archive **SuperWASP time-series metadata** around both fields | A long independent baseline might recover a deep contaminant event or constrain recurrence; potentially useful for 402358350 timing | Require associated source, sampling and expected precision. Propagate every saved clock to the old epochs. Broad blended photometry cannot independently assign the host; an enlarged-window period search must be exploratory and preserve a test subset. |
+| 3 | Establish actual telescope access and instrument performance for resolved photometry | A repeated event localized to the primary or a neighbor would remove a central ambiguity | Suitable unsaturated exposures, demonstrated source separation and correlated-noise sensitivity, adequate timing coverage, and independent review. No booking or outreach without authorization. |
+
+The coordinator has now assigned the [ESO raw metadata check](../eso-raw-metadata-20261013/plan.json) and a separate [CHEOPS public-pointing metadata check](../cheops-metadata-20261013/plan.json). The ESO target queries now return two schema-valid empty tables; [independent review](REVIEW.md) confirms the limited pointing-cone interpretation, and a positive service control returns three correctly positioned SN-1987A observations. CHEOPS target queries return zero entries, while a matching coordinate-only WASP-189 control returns eight visits. A separate [standard-library HTML-parser review](cheops-review.json) reproduces both empty result tables and all eight control rows, checking 16 raw hashes; the producer’s verifier passes 53 checks. Neither plan alone establishes target coverage or usable observations. Do not duplicate those queries. SuperWASP remains a conditional unqueried lead.
+
+The table records the original priority order; completed actions should not be repeated without a changed scope or release. It does not imply that either archive is likely to contain decisive data. Resolved observations remain the scientifically preferred measurement.
+
+### Why the first route is genuinely distinct
+
+The [previous spectroscopy screen](../web-spectroscopy-20261012/ASSESSMENT.md) queried processed `ivoa.ObsCore` spectrum products within 120 arcseconds and checked a dated HARPS RVBank index. It explicitly did not exhaust raw observations. ESO provides a separate [raw observational query interface](https://archive.eso.org/eso/eso_archive_main.html), and its [programmatic guide](https://archive.eso.org/programmatic/) distinguishes a raw HARPS exposure from a processed spectrum. Inspect the live TAP schema rather than assume column names. A cone of the same declared radius can screen target pointings; it is not a complete search for serendipitous imaging coverage.
+
+A repeat-spectrum detection would not automatically resolve the dip: spectral velocity variation needs phase, amplitude, line-profile and source-consistency checks. Imaging can supply companion constraints only with a measured contrast limit. A single ordinary spectrum is low priority because [RAVE already supplies one normal target observation for 80387959](../web-80387959-20261012/ASSESSMENT.md), and its agreement with an aggregate Gaia velocity has not excluded binaries.
+
+### Why SuperWASP is conditional, not a replacement for resolved photometry
+
+The official [NASA archive description](https://exoplanetarchive.ipac.caltech.edu/docs/SuperWASPMission.html) covers the first 2004–2008 release and both survey hemispheres. Its [API documentation](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html) identifies `superwasptimeseries`; the [single-object instructions](https://exoplanetarchive.ipac.caltech.edu/docs/SuperWASPUsage.html) allow coordinate/radius searches. None establishes a match for these candidates. Download-script text, if supplied, must not be executed; approved individual URLs would need their own manifest.
+
+This older baseline greatly extends the extrapolation of the present clocks. [Current timing profiles](../followup-planning-20261013/ASSESSMENT.md) are heuristic local profiles, not confidence intervals; 402358350 already fails its timing gate. Neither a missing point at a nominal phase nor an optimized old-data peak would be independent validation. Nearby sources can share an aperture, and a several-hundred-ppm blended dip may be below empirical precision. Proceed to flux only if metadata and a predeclared experiment offer a plausible new discriminant. Unknown precision is not proof that useful sensitivity is impossible; it is a reason to require a bounded calibration and sensitivity check before interpreting any absence.
+
+## Work that should not be repeated
+
+- [LCO archive observations](../lco-archive-metadata-20261013/ASSESSMENT.md): the nine science frames miss the event; two opened frames saturate both 80387959 and 80387965. Downloading the other seven does not repair event coverage. Apparent 402358350 spectroscopy points to an unrelated star.
+- [ASAS-SN service access](../strongest-external-access-20261012/ASSESSMENT.md): the functioning alternative has an interactive CAPTCHA, while the already-failed API lacks new evidence of recovery. Access failure is not an astronomical non-detection. Even access would require a blending/sensitivity experiment.
+- [402358350 ZTF/Gaia availability](../external-coverage-402358350-20261011/ASSESSMENT.md) and [resolved-neighbor tests](../resolved-followup-402-20261013/ASSESSMENT.md): no secure target series was identified; sparse neighbor folds fail timing or sensitivity gates. Re-selecting a favorable clock is not ephemeris recovery.
+- [80387959 SkyMapper](../skymapper-80387959-20261010/ASSESSMENT.md), [NSC](../nsc-80387959-q3c-20261010/ASSESSMENT.md) and the [additional neighbor test](../resolved-followup-803-20261013/ASSESSMENT.md): no repeated source-attributed event with adequate sensitivity. Existing samples are inspected evidence, not fresh holdouts.
+- [Source-model controls](../strongest-host-identifiability-20261012/ASSESSMENT.md) fail on some known hosts. Another favorable fit to the same pixels does not supply the missing calibration. Further TRICERATOPS weights cannot add unmodeled variability or source information.
+
+## External dependency if the bounded checks fail
+
+For 80387959, obtain repeated resolved time series covering the preserved timing envelope, primary and viable neighbors, with exposures that avoid the demonstrated saturation problem. The [five-site calculation](../site-visibility-20261013/ASSESSMENT.md) is not a secured observing allocation: only one nominal full LCO one-meter track survives, with insufficient conservative mount margin. Other sites or an explicitly revised baseline rule would require a new instrument-specific plan.
+
+For 402358350, obtain an independently sampled interval adequate to recover its event timing before treating a short non-detection as meaningful. Its current full observing envelopes are roughly 18 hours, and the tested five-site network does not cover them completely. A new clock fitted to those observations must remain distinct from the prediction tested on them.
+
+Primary-star localization alone still requires suitable unresolved-companion constraints before planetary validation. A neighbor eclipse must quantitatively account for the TESS dip before a nonplanetary explanation is accepted. No existing result meets either candidate's full goal-completion condition. This audit supports the two bounded metadata checks; it does not authorize reopening completed queues, claiming global archive exhaustion, or contacting an observer.

@@ -1,0 +1,13 @@
+# TIC459244300: known rotational variable and broad, processing-sensitive dimming
+
+Deprioritize the9.0423-day screening peak as a new-planet lead. The target is an exact identifier match to a known rotational variable, and the discovery fold is broad and strongly dependent on detrending. Neither finding proves that the star has no planets; the screened signal does not currently justify additional-sector opening or extensive image follow-up.
+
+The original two-sector15/16 search formally passes its screening gates: depth595.8ppm, SNR12.09, four supported events, little odd/even difference and no strong half-phase secondary. Its event depths are reasonably consistent. These favorable diagnostics remain in `discovery.json`; the screening result is not overwritten. The strongest sinusoid has about80% of the box likelihood power and the inverted search about58%, leaving variability concerns despite passing thresholds.
+
+The inspected plot shows a smooth negative feature extending well beyond the selected0.18-day box, toward roughly a day. The alternative2.5-day detrending search produces1222.5ppm, over twice the primary depth, with period9.0353days. Both unchanged-clock reconstructions show broad wings and substantial baseline structure. A stable period family under two filters does not make this morphology a transit, and the long maximum-duration box can select part of stellar variability.
+
+The60-arcsec VSX query returns **Gaia DR3 1608577509913577472**, classified **ROT**, with catalog period8.318days. The exact TIC row supplies Gaia DR2 identifier1608577509913577472; the Gaia DR2–DR3 neighborhood table returns a single row mapping to the same DR3 identifier. Thus this is an exact identity match, not merely a neighboring variable. The catalog period differs from9.0423days; this review does not claim an exact period match or a demonstrated physical decomposition of the light curve.
+
+The exact SIMBAD TIC query succeeds with zero identifier rows. That absence is retained; it is not silently replaced by a guessed identity. Exact TIC queries of TOI and confirmed-planet tables also return zero rows. These limited nonmatches do not establish novelty, and no numerical planet probability is calculated.
+
+`verification.json` checks the original discovery record and raw FITS identities/hashes, two processed arrays, independently recalculated fixed-clock total/event depths, catalog response parses/hashes and exact TIC→DR2→DR3→VSX linkage. The plot was visually inspected. Only cached training15/16 photometry was opened; additional22/23/49/50/76 and reserved77 light-curve caches remain absent. No generic follow-up, added sectors or pixels were requested. All source/model limitations and successful screening evidence are preserved.

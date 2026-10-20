@@ -1,0 +1,110 @@
+"""Freeze untouched Sector 4 targets using metadata and prior access only."""
+from pathlib import Path
+from collections import Counter
+import json,re
+from exoplanet.pipeline import save_json,sha,now
+out=Path(__file__).parent;base=Path('results/qlp-faint-pool-coverage-20261010')
+assert not (out/'selected.json').exists()
+run=json.loads((base/'run.json').read_text());assert run['status']=='complete' and run['n_errors']==0
+poolp=Path(run['pool_path']);assert sha(poolp)==run['pool_sha256']
+pool=json.loads(poolp.read_text())
+prior_paths=[base/'selected-four.json',Path('results/qlp-faint-sector98-selection-20261010/selected.json'),Path('results/qlp-faint-sector104-selection-20261010/selected.json'),Path('results/qlp-faint-sector100-selection-20261010/selected.json'),Path('results/qlp-faint-sector99-selection-20261010/selected.json'),Path('results/qlp-faint-sector101-selection-20261010/selected.json'),Path('results/qlp-faint-sector102-selection-20261010/selected.json'),Path('results/qlp-faint-sector103-selection-20261010/selected.json')]
+prior_paths.append(Path('results/qlp-faint-sector97-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector70-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector72-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector52-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector76-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector60-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector17-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector28-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector7-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector86-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector75-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector50-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector69-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector27-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector58-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector55-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector87-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector91-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector40-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector35-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector56-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector11-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector51-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector71-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector31-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector90-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector92-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector21-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector73-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector61-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector37-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector57-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector53-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector93-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector22-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector5-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector41-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector95-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector3-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector30-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector23-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector13-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector29-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector9-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector81-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector80-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector74-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector49-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector44-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector82-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector42-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector33-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector32-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector12-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector67-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector25-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector79-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector77-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector24-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector89-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector83-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector59-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector54-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector43-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector78-selection-20261010/selected.json'))
+prior_paths.append(Path('results/qlp-faint-sector36-selection-20261010/selected.json'))
+prior=set()
+for p in prior_paths:prior.update(r['tic'] for r in json.loads(p.read_text()))
+cached=set()
+for folder,pattern in [('data/qlp',r'(\d+)-s.*\.fits'),('data/lightcurves',r's.*-(\d+)\.fits')]:
+    for p in Path(folder).glob('*.fits'):
+        m=re.fullmatch(pattern,p.name)
+        if m:cached.add(int(m[1]))
+obs={};sources=[]
+for q in json.loads((base/'queries.json').read_text()):
+    assert q['status']=='complete'
+    p=Path(f"data/qlp-coverage-faint-20261010/chunk-{q['offset']}.json")
+    assert sha(p)==q['evidence']['sha256'];r=json.loads(p.read_text())
+    assert len(r['data'])==r['paging']['rowsFiltered']
+    sources.append({'path':str(p),'sha256':sha(p)})
+    for row in r['data']:obs.setdefault(int(row['target_name']),{}).setdefault(int(row['sequence_number']),[]).append(row)
+selected=[];counts=Counter()
+for target in pool:
+    tic=target['tic'];products=obs.get(tic,{})
+    if tic in prior:counts['prior_selections']+=1;continue
+    if 4 not in products:counts['no_sector4']+=1;continue
+    if any(len({r['dataURL'] for r in rs})!=1 for rs in products.values()):counts['ambiguous_product']+=1;continue
+    held=sorted(s for s in products if abs(s-4)>=8)
+    if len(held)<2:counts['fewer_than_two_reserved_sectors']+=1;continue
+    if tic in cached:counts['previous_photometry_cache']+=1;continue
+    selected.append(dict(target,sectors=sorted(products),training_sectors=[4],heldout_sectors=held,
+                         qlp_products={str(s):rs[0] for s,rs in products.items()},estimate_missing_errors=True))
+save_json(out/'selected.json',selected)
+save_json(out/'audit.json',{'utc':now(),'script_sha256':sha(Path(__file__)),'pool_sha256':sha(poolp),
+    'prior_selections':{str(p):sha(p) for p in prior_paths},'n_prior_distinct':len(prior),
+    'n_cached_tics':len(cached),'n_pool':len(pool),'n_selected':len(selected),
+    'exclusions':dict(counts),'sources':sources,'selected_sha256':sha(out/'selected.json'),
+    'policy':'Metadata-only Sector4 selection, preserving existing radius/noise ranking and dated catalog exclusions. Exclude every prior selection enumerated and hashed above, and any cached QLP/SPOC photometry. Require two reserved sectors at least eight sector numbers away. No photometry opened. New to this search is not proof of novelty or underexploration.'})
+print('selected',len(selected),'excluded',dict(counts))

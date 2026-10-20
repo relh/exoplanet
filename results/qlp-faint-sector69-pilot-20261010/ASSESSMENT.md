@@ -1,0 +1,3 @@
+# Sector 69 pilot: 99 usable searches, no eligible leads
+
+The frozen 100-star pilot completed: 84 below threshold, 15 flagged and one unusable QLP product (TIC 369397242). A separate same-epoch SPOC recovery returned HTTP 404; all other epochs remain reserved. Both follow-up policies ended with empty inventories. Final checkpoint verifies frozen targets, raw hashes and reserved cache absence. Short/long deterministic controls and reconstructed grid bounds are documented separately; sensitivity is uneven, especially for smaller planets. Proceed to the remaining 412 targets with unchanged gates, retaining original failures and limited sensitivity. No planet candidate or completeness claim.

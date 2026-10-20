@@ -1,0 +1,54 @@
+{
+  "script_sha256": "7bab41d1bd19bd154b6a00d224234a7ce200462cedecbff2ff3f2b62912c4eeb",
+  "rows": [
+    {
+      "name": "gaia",
+      "url": "https://gea.esac.esa.int/tap-server/tap/sync",
+      "params": {
+        "REQUEST": "doQuery",
+        "LANG": "ADQL",
+        "FORMAT": "csv",
+        "QUERY": "select source_id,ra,dec,has_epoch_photometry,phot_variable_flag,phot_g_mean_mag,pmra,pmdec from gaiadr3.gaia_source where source_id=6865254022910168320"
+      },
+      "started_utc": "2026-10-11T23:20:02.220336+00:00",
+      "http_status": 200,
+      "source": {
+        "url": "https://gea.esac.esa.int/tap-server/tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=select+source_id%2Cra%2Cdec%2Chas_epoch_photometry%2Cphot_variable_flag%2Cphot_g_mean_mag%2Cpmra%2Cpmdec+from+gaiadr3.gaia_source+where+source_id%3D6865254022910168320",
+        "path": "data/coverage-review-241928959-20261011/gaia.response",
+        "sha256": "530625e368bed1479521abff4597ecfcd894b2a64df07778a6515ff808be8db1",
+        "bytes": 209,
+        "retrieved_utc": "2026-10-11T23:20:08.867739+00:00"
+      },
+      "rows": [
+        {
+          "source_id": "6865254022910168320",
+          "ra": "297.9869341015965",
+          "dec": "-21.503148391605208",
+          "has_epoch_photometry": "false",
+          "phot_variable_flag": "NOT_AVAILABLE",
+          "phot_g_mean_mag": "13.830237",
+          "pmra": "-18.96925659013484",
+          "pmdec": "4.725612330442532"
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "name": "asassn-http-schema",
+      "url": "http://asassn-lb01.ifa.hawaii.edu:9006/get_schema",
+      "params": null,
+      "started_utc": "2026-10-11T23:20:08.868071+00:00",
+      "status": "error",
+      "error": "ConnectionError: HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_schema (Caused by NewConnectionError(\"HTTPConnection(host='asassn-lb01.ifa.hawaii.edu', port=9006): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+    },
+    {
+      "name": "asassn-https-schema",
+      "url": "https://asassn-lb01.ifa.hawaii.edu:9006/get_schema",
+      "params": null,
+      "started_utc": "2026-10-11T23:20:09.907725+00:00",
+      "status": "error",
+      "error": "ConnectionError: HTTPSConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_schema (Caused by NewConnectionError(\"HTTPSConnection(host='asassn-lb01.ifa.hawaii.edu', port=9006): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+    }
+  ],
+  "policy": "Metadata only; ASAS-SN schema reachability is not target coverage. Errors are not nonmatches."
+}

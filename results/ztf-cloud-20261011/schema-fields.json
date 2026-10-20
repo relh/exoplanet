@@ -1,0 +1,157 @@
+{
+  "raw_sha256": "8f21caeabdb1c2a81a026dcfa92b2134ab58d0ccd05f34d041572fb0e57b4e40",
+  "fields": [
+    {
+      "name": "_healpix_29",
+      "type": "int64",
+      "metadata": {
+        "unit": "",
+        "description": "HEALPix order 29 pixel index."
+      }
+    },
+    {
+      "name": "_healpix_19",
+      "type": "int64",
+      "metadata": {
+        "unit": "",
+        "description": "HEALPix order 19 pixel index."
+      }
+    },
+    {
+      "name": "_healpix_9",
+      "type": "int32",
+      "metadata": {
+        "unit": "",
+        "description": "HEALPix order 9 pixel index."
+      }
+    },
+    {
+      "name": "objectid",
+      "type": "int64",
+      "metadata": {
+        "unit": "",
+        "description": "Unique Object Identifier. This is the \"oid\" that is returned by queries on the Objects Table. This ID can be used to retrieve additional metadata for an Object or lightcurve."
+      }
+    },
+    {
+      "name": "filterid",
+      "type": "int8",
+      "metadata": {
+        "unit": "",
+        "description": "Filter for the lightcurve photometry: 1 => g; 2 => r; 3 => i."
+      }
+    },
+    {
+      "name": "fieldid",
+      "type": "int16",
+      "metadata": {
+        "unit": "",
+        "description": "The survey Field Identifier. Lightcurves in DR24 are spread across 1,286 fields. This identifier can be used to retrieve additional archive metadata."
+      }
+    },
+    {
+      "name": "rcid",
+      "type": "int8",
+      "metadata": {
+        "unit": "",
+        "description": "The readout-channel Identifier (or CCD-Quadrant index) that contains the object. The rcid runs from 0 to 63 over the ZTF focal plane (https://irsa.ipac.caltech.edu/data/ZTF/docs/common/ztf_focal_plane.jpg). In combination with fieldid, this can be used to retrieve additional archive metadata."
+      }
+    },
+    {
+      "name": "objra",
+      "type": "float",
+      "metadata": {
+        "unit": "deg",
+        "description": "Object Right Ascension from the input Reference Image (seed) catalog (https://irsa.ipac.caltech.edu/data/ZTF/docs/releases/dr24/ztf_release_notes_dr24.pdf) corresponding to the fieldID, rcid, and filterid [decimal degrees]."
+      }
+    },
+    {
+      "name": "objdec",
+      "type": "float",
+      "metadata": {
+        "unit": "deg",
+        "description": "Object Declination from the input Reference Image (seed) catalog (https://irsa.ipac.caltech.edu/data/ZTF/docs/releases/dr24/ztf_release_notes_dr24.pdf) corresponding to the fieldid, rcid, and filterid [decimal degrees]."
+      }
+    },
+    {
+      "name": "nepochs",
+      "type": "int64",
+      "metadata": {
+        "unit": "",
+        "description": "The number of observation epochs in the lightcurve for this object, included in this data release only."
+      }
+    },
+    {
+      "name": "lightcurve",
+      "type": "struct<hmjd: list<element: double>, mag: list<element: float>, magerr: list<element: float>, clrcoeff: list<element: float>, catflags: list<element: int32>>",
+      "metadata": {
+        "unit": "",
+        "description": "Struct holding light curve colummns: hmjd, mag, magerr, clrcoeff, catflags"
+      }
+    },
+    {
+      "name": "Norder",
+      "type": "uint8",
+      "metadata": {
+        "unit": "",
+        "description": "Partition column. HEALPix order."
+      }
+    },
+    {
+      "name": "Dir",
+      "type": "uint64",
+      "metadata": {
+        "unit": "",
+        "description": "Partition column. Directory level, equal to 10_000 * floor[Npix / 10_000]."
+      }
+    },
+    {
+      "name": "Npix",
+      "type": "uint64",
+      "metadata": {
+        "unit": "",
+        "description": "Partition column. HEALPix pixel index."
+      }
+    },
+    {
+      "name": "hmjd",
+      "type": "list<element: double>",
+      "metadata": {
+        "unit": "",
+        "description": "Heliocentric-based Modified Julian Date [days] corresponding to the middle of each exposure and approximate position of the object. The HMJD is derived from \"HJD - 2400000.5\" where HJD is the Heliocentric Julian Date. HMJD is double precision truncated to 5 decimal places in order to resolve high-cadence observations."
+      }
+    },
+    {
+      "name": "mag",
+      "type": "list<element: float>",
+      "metadata": {
+        "unit": "",
+        "description": "Calibrated magnitude for a source with color g - r = 0 in the AB photometric system. See Cautionary Note #12 in Section 10 (https://irsa.ipac.caltech.edu/data/ZTF/docs/releases/dr24/ztf_release_notes_dr24.pdf)."
+      }
+    },
+    {
+      "name": "magerr",
+      "type": "list<element: float>",
+      "metadata": {
+        "unit": "",
+        "description": "Corresponding 1-\u03c3 uncertainty in mag estimate; excludes the (usually small) uncertainty associated with the calibration zeropoint and possible systematics relative to external photometry catalogs (for example PS1)."
+      }
+    },
+    {
+      "name": "clrcoeff",
+      "type": "list<element: float>",
+      "metadata": {
+        "unit": "",
+        "description": "Linear color coefficient term from photometric calibration that can be applied to the mag estimate if you know the AB g - r color of your source. See Cautionary Note #12 in Section 10 (https://irsa.ipac.caltech.edu/data/ZTF/docs/releases/dr24/ztf_release_notes_dr24.pdf)."
+      }
+    },
+    {
+      "name": "catflags",
+      "type": "list<element: int32>",
+      "metadata": {
+        "unit": "",
+        "description": "Photometric/image quality flags encoded as bits (Section 9b, https://irsa.ipac.caltech.edu/data/ZTF/docs/releases/dr24/ztf_release_notes_dr24.pdf). In particular, you will always want to exclude observation epochs affected by clouds and/or the moon. These epochs have catflags = 32768 (decimal bit 15)."
+      }
+    }
+  ]
+}

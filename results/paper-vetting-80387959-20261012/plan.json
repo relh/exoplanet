@@ -1,0 +1,57 @@
+{
+  "created_utc": "2026-10-12T20:22:25.894406+00:00",
+  "target": 80387959,
+  "duration_days": 0.092736,
+  "sectors": [
+    10,
+    36,
+    37,
+    63,
+    90,
+    100
+  ],
+  "inputs": [
+    {
+      "path": "results/strongest-80387959-shape-20261012/s10-primary.npz",
+      "sha256": "e8969d8af03969c7713e972e60605c08d8bdae9846ec9b7cef6b5ae82ad7f4cd"
+    },
+    {
+      "path": "results/strongest-80387959-shape-20261012/s100-primary.npz",
+      "sha256": "48f9b14baaf3d55105c17731d4d31540dc77c6dd19ff98d3cbeb54ff01a6fb20"
+    },
+    {
+      "path": "results/strongest-80387959-shape-20261012/s36-primary.npz",
+      "sha256": "1c2b6860401f7e29e7240aaf51f8684a879eaf0030752348c1cc99f91fc1edf9"
+    },
+    {
+      "path": "results/strongest-80387959-shape-20261012/s37-primary.npz",
+      "sha256": "b70531b0aaaeedc3ae2473f4e58d0c395aa5bd902d5d30649324542c6a592b90"
+    },
+    {
+      "path": "results/strongest-80387959-shape-20261012/s63-primary.npz",
+      "sha256": "d8b37d1f644c0c3b6ff7cd6dfa9c939bfded6c9df8d0728ef00f2d1f5cdd52f8"
+    },
+    {
+      "path": "results/strongest-80387959-shape-20261012/s90-primary.npz",
+      "sha256": "08cddb744b9f1118daaac54a15d6a1119efec65969deaee18cfb43f17e66ccf1"
+    }
+  ],
+  "method": "Pont2006-inspired time-averaging of joint box+event-baseline residuals. White reference generated and refitted at same timestamps/errors/design. No new clock/duration/flux access. Diagnostic uncertainty sensitivity, not calibrated coverage or FAP.",
+  "widths_duration": [
+    0.5,
+    1,
+    2
+  ],
+  "offset_fractions": [
+    0,
+    0.5
+  ],
+  "gap_cadences": 1.5,
+  "min_bins": 8,
+  "white_simulations": 2000,
+  "seed": 80387959,
+  "beta": "max(1, observed RMS of bin means / RMS of same statistic over white residual simulations); take maximum over all declared widths and offsets. Formal white errors retain original residual-scale floor. Global beta rescales conditional depth error.",
+  "bins": "Equal-count bins N=round(width/cadence), min2; split at event boundary or gap>1.5 median cadence. Offset floor(offset*N) independently per segment; discard incomplete bins. Never bridge gaps. Residuals include in-transit points with fitted box removed.",
+  "event_influence": "Refit each single-event omission; recompute all betas and inflated errors.",
+  "tests": "Noiseless zero and +/-1000ppm injection recovery on every design. Deterministic 200-replicate iid and AR1(phi=.85) simulations on representative sector90 with resets per contiguous segment; evaluate beta response and fixed-depth error scatter. All failures retained."
+}

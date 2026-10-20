@@ -1,0 +1,20 @@
+from pathlib import Path
+import json,collections
+from exoplanet.pipeline import sha,save_json,now
+p=Path(__file__).parent;root=Path('results');pool=root/'weak-seed-pilot-20261011/eligible.json';eligible=json.loads(pool.read_text());batches=[(0,8,'weak-seed-pilot-20261011','weak-seed-review-20261011'),(8,32,'weak-seed-ranks8-32-20261011','weak-seed-ranks8-32-review-20261011'),(32,64,'weak-seed-ranks32-64-20261011','weak-seed-ranks32-64-review-20261011'),(64,128,'weak-seed-ranks64-128-20261011','weak-seed-ranks64-128-review-20261011'),(128,256,'weak-seed-ranks128-256-20261011','weak-seed-ranks128-256-review-20261011'),(256,384,'weak-seed-ranks256-384-20261011','weak-seed-ranks256-384-review-20261011'),(384,512,'weak-seed-ranks384-512-20261011','weak-seed-ranks384-512-review-20261011'),(512,689,'weak-seed-ranks512-689-20261011','weak-seed-ranks512-689-review-20261011')];seen=set();summary=[];flags=[]
+for start,end,batch,review in batches:
+ b=root/batch;v=root/review;run=json.loads((b/'run.json').read_text());verification=json.loads((b/'verification.json').read_text());selected=json.loads((b/'selected.json').read_text());assert run['status']=='complete' and verification['status']=='passed';assert selected==eligible[start:end];assert not seen.intersection(x['tic'] for x in selected);seen.update(x['tic'] for x in selected)
+ rows=[json.loads(q.read_text()) for q in (b/'targets').glob('*.json')];assert {x['tic'] for x in rows}=={x['tic'] for x in selected};local={x['tic'] for x in rows if x.get('local_review_flag')};reviewed=json.loads((v/'diagnostics.json').read_text())['rows'];assert local=={x['tic'] for x in reviewed};assert json.loads((v/'verification.json').read_text())['status']=='passed'
+ for r in rows:
+  for sec in r['selection']['target']['heldout_sectors']:
+   raw=Path(f"data/lightcurves/s{sec:04d}-{r['tic']}.fits")
+   if raw.exists():
+    assert (r['tic'],sec)==(469309982,64)
+    follow=root/'followup-469309982-20261011';h=json.loads((follow/'heldout.json').read_text());pl=json.loads((follow/'heldout-plan.json').read_text());assert json.loads((follow/'heldout-verification.json').read_text())['status']=='passed';assert sha(raw)==h['source']['sha256'] and sha(follow/'frozen.json')==pl['frozen_sha256'];assert pl['created_utc']<h['source']['retrieved_utc']
+ for tic in sorted(local):
+  source=b/'targets'/f'{tic}.json';report=v/'ASSESSMENT.md';extra=root/'prf-motion-469309982-20261011/ASSESSMENT.md' if tic==469309982 else root/'dominant-event-387338903-20261011/ASSESSMENT.md' if tic==387338903 else root/'dominant-event-392071108-20261011/ASSESSMENT.md' if tic==392071108 else None
+  flags.append(dict(tic=tic,source=str(source),source_sha256=sha(source),review=str(report),review_sha256=sha(report),additional_source_review=str(extra) if extra else None,additional_source_review_sha256=sha(extra) if extra else None,current_assessment='unresolved; positive but timing-inconclusive reserved evidence' if tic==469309982 else 'deprioritized; physical cause not fully established'))
+ summary.append(dict(start=start,end=end,path=str(b),n_targets=len(rows),n_local_flags=len(local),n_errors=run['n_errors'],run_sha256=sha(b/'run.json'),verification_sha256=sha(b/'verification.json'),review_verification_sha256=sha(v/'verification.json')))
+assert len(seen)==689 and len(flags)==23
+save_json(p/'audit.json',dict(created_utc=now(),script_sha256=sha(Path(__file__)),pool_sha256=sha(pool),n_distinct_revisited_stars=len(seen),n_local_flags=len(flags),batches=summary,flags=flags,reserved_unopened_except_verified_followups=True,verified_followups=[dict(tic=469309982,sector=64,report='results/followup-469309982-20261011/ASSESSMENT.md',report_sha256=sha(root/'followup-469309982-20261011/ASSESSMENT.md'))],limits='Accounting of completed weak-seed ranks only. No rerun of photometry here; source verifiers separately reproduce fits. These stars already count in the main campaign. Judgments are not ground truth or calibrated completeness. Running batches omitted.'))
+print(len(seen),len(flags))

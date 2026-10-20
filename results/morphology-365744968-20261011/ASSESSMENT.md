@@ -1,0 +1,11 @@
+# TIC 365744968: activity alternative strengthened
+
+All three sector panels were inspected, each showing aperture flux, pipeline-selected flux, and the existing loader with1.5/3-day flattening windows. Period and epoch remain exactly those frozen in the discovery fit. All data were already opened: this is posthoc morphology analysis, not independent blind confirmation.
+
+Sector98 aperture photometry shows broad repeating modulation, a broad minimum around the fitted transit phase, and large positive excursions. Pipeline processing removes most broad modulation; a shallow central residual remains under both flattening windows. Those windows both start from DET_FLUX, so their similarity does not test robustness against the upstream QLP processing. The residual could reflect incomplete removal of stellar variability; these plots do not demonstrate that mechanism or exclude an embedded transit.
+
+Sector32 aperture photometry also shows broad modulation and large brightenings. Its fixed fold has a broad central minimum that is substantially reduced in KSPSAP_FLUX. Sector6 has broad, changing modulation, with a maximum near the same nominal phase under the extrapolated clock. Processed older folds do not establish a repeated narrow dip. Original large timing uncertainty still prevents a fixed-phase absence from excluding a planet. Brightenings are visually flare-like but are not independently classified or localized here.
+
+Together with the verified young-star identity, these observations strengthen stellar activity as an alternative and weaken a clean isolated-transit interpretation. The source remains unresolved; no likely new planet or rotation-period measurement is claimed. Avoid inferring a radius from the selected box depth. Next, deprioritize expensive source-model variants unless additional information distinguishes an embedded transit from activity; continue other unvetted signals.
+
+[Sector6](sector-6.png) · [Sector32](sector-32.png) · [Sector98](sector-98.png). Input/raw/source/plot hashes and independent bin reconstructions for all six unflattened curves passed verification. No scientific search algorithm changed; these are visualizations of existing products and preprocessing.

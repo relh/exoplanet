@@ -1,0 +1,26 @@
+[
+  {
+    "name": "simbad-ref-join",
+    "url": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+r.bibcode+FROM+has_ref+h+JOIN+ref+r+ON+h.oidbibref%3Dr.oidbib+WHERE+h.oidref%3D30823552",
+    "status": 200,
+    "path": "data/web-241928959-20261012/simbad-ref-join.response",
+    "sha256": "6edd84eee162bb3bc650c82cf5020587049ce4d3674a9f5665c87fbab6f91e49",
+    "query": "SELECT r.bibcode FROM has_ref h JOIN ref r ON h.oidbibref=r.oidbib WHERE h.oidref=30823552"
+  },
+  {
+    "name": "binary-tables",
+    "url": "https://tapvizier.cds.unistra.fr/TAPVizieR/tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+table_name%2Cdescription+FROM+TAP_SCHEMA.tables+WHERE+table_name+LIKE+%27%25506%2F2269%25%27",
+    "status": 200,
+    "path": "data/web-241928959-20261012/binary-tables.response",
+    "sha256": "ce38146447205ef6637c8dd0428c78dc2feb4cac12a0f04b2841a41e4294c2cb",
+    "query": "SELECT table_name,description FROM TAP_SCHEMA.tables WHERE table_name LIKE '%506/2269%'"
+  },
+  {
+    "name": "wds-cone",
+    "url": "https://tapvizier.cds.unistra.fr/TAPVizieR/tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+100+%2A+FROM+%22B%2Fwds%2Fwds%22+WHERE+1%3DCONTAINS%28POINT%28%27ICRS%27%2CRAdeg%2CDEdeg%29%2CCIRCLE%28%27ICRS%27%2C297.987022155552%2C-21.5031691342776%2C0.0166666667%29%29",
+    "status": 400,
+    "path": "data/web-241928959-20261012/wds-cone.response",
+    "sha256": "dfb7b2ed19c37b1f231e2d03836f28891843a3fabe65428138b12bb39a472314",
+    "query": "SELECT TOP 100 * FROM \"B/wds/wds\" WHERE 1=CONTAINS(POINT('ICRS',RAdeg,DEdeg),CIRCLE('ICRS',297.987022155552,-21.5031691342776,0.0166666667))"
+  }
+]

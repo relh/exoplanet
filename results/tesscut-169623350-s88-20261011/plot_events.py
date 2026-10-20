@@ -1,0 +1,17 @@
+from pathlib import Path
+import json,numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from exoplanet.pipeline import sha,save_json
+out=Path(__file__).parent;a=json.loads((out/'analysis.json').read_text());maps=np.load(out/'images.npz')['event_differences'];plots=[]
+assert len(maps)==len(a['event_numbers'])
+neighbor=next(s for s in a['neighbors'] if s['tic']==169623369)
+for start in range(0,len(maps),6):
+ fig,axes=plt.subplots(2,3,figsize=(12,8),constrained_layout=True)
+ for ax,n,im in zip(axes.flat,a['event_numbers'][start:start+6],maps[start:start+6]):
+  c=ax.imshow(im,origin='lower');fig.colorbar(c,ax=ax,shrink=.8);ax.plot(*a['target_xy'],'rx',label='target');ax.plot(neighbor['x'],neighbor['y'],'wo',mfc='none',label='169623369');ax.set_title(f'Raw event {n}');ax.legend(fontsize=7)
+ for ax in list(axes.flat)[len(maps[start:start+6]):]:ax.set_visible(False)
+ p=out/f'events-{start//6+1}.png';fig.savefig(p,dpi=120);plt.close(fig);plots.append(str(p))
+save_json(out/'event-plots.json',{'script_sha256':sha(Path(__file__)),'inputs':{n:sha(out/n) for n in ['analysis.json','images.npz']},'plots':{p:sha(Path(p)) for p in plots},'limits':'Unmodified individual differences; separate scales, not calibrated individual event significance.'})
+print(len(maps), 'events',len(plots),'plots')

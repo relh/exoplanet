@@ -1,0 +1,9 @@
+# Frozen QLP sector 90 / 86 experiment
+
+The parent coverage metadata newly surfaced sector90 for TIC469309982 and86 for TIC96166003. No matching FITS or sidecar was found in existing cache. Coordinator review of this thread, GOAL and CHECKED found no prior flux access, and no search queue is active. This is a **no-record-of-prior-access finding**, not proof about every possible external session. No protected session files were modified.
+
+The immutable plan hashes exact metadata products, historical clocks/profiles and all scientific source files before retrieval. Existing epochs have all already been opened. For469, both9/10/36/37 refinements and the original seed are retained. For961, both expanded19/43/44 and discovery43/44 clock families and the original seed are retained. Seed-only comparisons have no uncertainty profile and cannot pass a timing recovery gate. Season-out retrospective refits are not substituted for these historical primary and comparison ephemerides.
+
+Native QLP cadence, quality0, published positive errors and existing flux-column selection are fixed. The same1.5/2.5day detrending and fixed-ephemeris weighted measurements apply to all clocks. No phase/period optimization or new uncertainty tuning occurs. Sensitivity uses each historical fitted depth and new formal measurement error, with shared-reduction/systematic limitations. Primary clock is chosen before opening either epoch.
+
+Exact preparation plan SHA: `7cf30d2eee3101420d24dab3302a282634b695a1662a08278e0ea632a1450299`. Coordinator authorized execution after reviewing current-thread access history; numerical outcomes are not known when this document is written. Runner requires the matching hash, history-review switch, unchanged inputs/source and absent cache, and retains any failure without automatic partial retry.

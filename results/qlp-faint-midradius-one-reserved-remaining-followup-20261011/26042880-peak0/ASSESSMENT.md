@@ -1,0 +1,15 @@
+# TIC26042880: repeated dimming favors neighboring-source contamination
+
+Discovery-sector91 has three supported events. The original-seed plot was inspected: rounded/V-like repeated depressions with a large observing gap, rather than an Earth-size claim. Native refinement givesP5.659883283days, duration0.1584days and box depth0.00598161±0.00022979(formal). These are diagnostic fit values, not physical radius estimates.
+
+Reserved sector51 was absent from cache when timing was frozen. Its timing spread is1.548534days, much larger than the event duration, and its prediction test is inconclusive. The negative fixed-window depth is neither confirmation nor exclusion. The original discovery flags and frozen clock remain unchanged.
+
+All four usable raw sector91 event images(0,2,3,4) and the stack were inspected. Events0/2/3 show a compact positive feature near TIC26042876, approximately three pixels from the target; the target itself has no comparable dimming. Event4 has a large positive field offset(~270–280 flux units), with a residual in the same neighboring region. The weighted stack's2.425-pixel moment offset is biased by that background and is not a calibrated host position. The nearest catalog entry to it is26042876(0.732pixel), followed by185284109(0.840pixel). Contamination is strongly favored over a target-host transit; unique assignment within the neighboring scene still requires modeling.
+
+Inside quality-zero counts are69/69/68/68, with baseline274/274/274/178. All inside exposures are quality zero. These four image windows are not four independently supported QLP transits. Raw FFI and QLP use the same photons. The requested processed sector91 target-pixel URL returned404, retained with stderr and child status; that is not a nondetection or proof all processed products are absent.
+
+The TIC cone returned58 entries. Gaia lookup selected all14 entries within3pixels of the raw moment; all had identifiers and returned14 mappings/14 sources. The sole classifier row is for the target itself, Gaia6331686937187793792, SOLAR_LIKE score0.34559634. No eclipsing-binary rows were returned. These results do not identify the neighboring dimming's cause or exclude uncataloged eclipses. Exact-TIC web searches returned no results; this is not novelty evidence.
+
+[Discovery plot](discovery.png) · [Stack](../../tesscut-26042880-s91-20261011/difference.png) · [All four maps](../../tesscut-26042880-s91-20261011/events-1.png) · [Coverage](../../tesscut-26042880-s91-20261011/coverage.json) · [Gaia results](../../gaia-26042880-scene-20261011/results.json) · [Source verification](source_review.json).
+
+Disposition: target-host planet interpretation strongly disfavored by repeated off-target dimming. Initial source inspection complete; neighboring-source physical classification unresolved. No likely new planet claimed. ZIP/FITS, frozen inputs, catalog/download hashes, event gates and plot provenance passed verification. Existing science algorithms reused; no new full-suite claim.

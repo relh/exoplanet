@@ -1,0 +1,9 @@
+# TIC241928959: target-region dimming, unresolved close blend
+
+All five usable raw event images show a compact dimming feature near the target; the stack moment is0.192pixel from its catalog position. Raw ZIP/FITS hashes, fit and neighbor hashes, and every difference array were independently reconstructed. Event3 has14 inside samples all quality2048 and no usable baseline; it remains excluded under unchanged gates. The other five have13–14 quality-zero inside samples. Event6 is stronger than the others. These are the same sector92 photons as the QLP discovery, not independent confirmation.
+
+The discovery fit is3.534643days; native training refinement gives3.532593days and1.099% depth. Neither refinement nor the image moment establishes a planet. TIC241928961 is about0.50pixel away and3.31magnitudes fainter. An illustrative equal-throughput two-star model requires a24.3% eclipse on that neighbor to explain the depth. The model ignores other sources and actual aperture throughput; it establishes a viable alternative, not an identified host. A calibrated source fit or higher-resolution evidence is still needed.
+
+296 TIC neighbors were returned. The45 selected GaiaDR2 identifiers within three pixels of the raw moment map through51 rows to45 DR3 sources; no returned classifier or eclipsing-binary rows. All CSV/JSON hashes and mapped identities reconciled. Exact TIC matches were absent in the checked TOI, confirmed, CTOI and archived sectors1–26 EB lists. None of these nonmatches establishes novelty or excludes variability.
+
+The exact processed TESS-SPOC sector92 target-pixel URL returned404; no claim about all other products follows. Stack and all five individual event images were visually reviewed. Initial raw source inspection is complete, but close-blend, physical classification and independent-epoch checks remain unresolved. This is an exploratory signal, not a credible new planet candidate.

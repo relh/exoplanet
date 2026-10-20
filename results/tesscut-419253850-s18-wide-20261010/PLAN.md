@@ -1,0 +1,1 @@
+Post-hoc source diagnostic: widen Sector 18 TESScut to 21 by 21 pixels because the positive difference source reaches the right edge of the original cutout. Retain the exact Sector 17 frozen period, epoch and duration. This uses already-opened Sector 18 photons, not an independent validation. Original cutout and outputs remain unchanged.
