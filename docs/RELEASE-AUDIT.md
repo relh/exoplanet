@@ -1,6 +1,6 @@
 # Publication cleanup — 20 October 2026
 
-**Sensitive-content cleanup is ready for the owner’s final visibility change.** The research, scientific findings, author attribution and ordinary project provenance remain intact. The repository is left private for the owner to make public; no candidate submission or external outreach is performed.
+**Sensitive-content cleanup and publication verification passed.** The research, scientific findings, author attribution and ordinary project provenance remain intact. The owner authorized publication after verification. No candidate submission or external outreach is performed.
 
 ## What was removed
 
@@ -11,7 +11,7 @@ A sanitized copy of all 678 existing commits was prepared and checked, removing 
 - The private dashboard listener address from every historical text version, including a bare JSON listener field.
 - Credential, signature and related authentication query parameters from saved signed archive URLs, including nested ZIP copies. Scientific object identities, metadata and raw-content hashes remain.
 
-All 678 original commits and their sanitized equivalents are retained in the private research archive. The public release starts from a clean current snapshot, with all current research files preserved and no original history attached. Thirty-six historical blobs changed during the audit. [release-history-redactions.json](release-history-redactions.json) records the categories and original/sanitized SHA-256 and Git object hashes. [release-commit-map.txt](release-commit-map.txt) maps the original commits to the publication history. The [initial audit](RELEASE-AUDIT-INITIAL.md) remains a historical record of the problems before cleanup.
+All 678 original commits and their sanitized equivalents are retained in the private research archive. The public release starts from a clean current snapshot, with all current research files preserved and no original history attached. Thirty-six historical blobs changed during the audit. [release-history-redactions.json](release-history-redactions.json) records the categories and original/sanitized SHA-256 and Git object hashes. [release-commit-map.txt](release-commit-map.txt) maps the original commits to the sanitized private history. The [initial audit](RELEASE-AUDIT-INITIAL.md) remains a historical record of the problems before cleanup.
 
 ## Attribution and provenance retained
 
@@ -21,7 +21,7 @@ Original project code and documentation use the [MIT license](../LICENSE). [DATA
 
 ## Original research archive
 
-Before any transformation, a complete private Git bundle was created and successfully verified. Its SHA-256 is recorded in the redaction manifest. The original remote repository is retained as a separate private archive. The publication repository is newly created at the familiar project URL from the sanitized current snapshot, rather than exposing the old repository’s retained, unreachable objects. A GitHub internal template copy avoids retransmitting the large scientific archive over the constrained upload link. The archive remains private. The release repository also remains private until the owner changes its visibility.
+Before any transformation, a complete private Git bundle was created and successfully verified. Its SHA-256 is recorded in the redaction manifest. The original remote repository is retained as a separate private archive. The publication repository is newly created at the familiar project URL from the sanitized current snapshot, rather than exposing the old repository’s retained, unreachable objects. The files were transferred in verified batches and assembled into an independent root commit. Its Git tree exactly matches the audited local snapshot (`264117dd493bc0ee043fc943c631685c7d7d7f61`). Original sensitive blob IDs and the original main commit return 404 in the new repository. The original archive remains private. A failed temporary template copy is separate from the publication repository.
 
 No raw research download, observation, scientific array or figure was deleted. Measurements, numerical JSON values outside the omitted process fields, physical conclusions, failures and source-data hashes are unchanged. The original frozen bytes remain in the private archive. Existing historical hash fields continue to refer to those original bytes; the redaction map supplies the sanitized equivalent when such a file was edited. **Sanitized plans are not newly frozen experiments.** Historical verifiers that require exact original text bytes may need that translation or the private original; they must not silently claim a new pre-access freeze.
 
@@ -37,4 +37,4 @@ Transform verification passed 7,462 checks of original/replacement hashes, uncha
 
 This is a targeted secrets and operational-privacy cleanup, not an anonymity exercise or a blanket certification of all scientific or redistribution claims. Figure pixels were not exhaustively OCR-reviewed. Ignored raw caches, local private backups and protected agent histories are not part of the publication repository. They remain untouched and must not be uploaded. No live user credential was identified in the audited findings; expired signed URLs were nevertheless stripped.
 
-**The final public/private button is reserved to the owner.**
+**The owner explicitly authorized the final visibility change after these checks.**

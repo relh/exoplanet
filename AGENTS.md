@@ -1,8 +1,8 @@
 # Repository guidance
 
 Before changes, run `git status --short --branch` and `git fetch origin`.
-Never implicitly merge or rebase work. The user controls the final visibility
-change; keep the repository private until they choose to make it public.
+Never implicitly merge or rebase work. The owner authorized the audited public
+release; keep raw caches, private backups and original sensitive history private.
 See `docs/RELEASE-AUDIT.md` for the publication cleanup and retained provenance.
 
 Retain research evidence; raw downloads belong in ignored `data/`, with URLs and

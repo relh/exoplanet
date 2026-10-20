@@ -1,6 +1,6 @@
 # Scientific status and resumption
 
-**The original searches and planned vetting are complete. The decisive-evidence objective remains scientifically incomplete and blocked on observing access or outreach authorization.** Six signals retain internal ambiguous planetary candidate (APC) assessments; no securely attributed new planet was established. Scientific state: 13 October 2026. The research is prepared for public release after the [privacy cleanup](docs/RELEASE-AUDIT.md); the user controls the visibility change.
+**The original searches and planned vetting are complete. The decisive-evidence objective remains scientifically incomplete and blocked on observing access or outreach authorization.** Six signals retain internal ambiguous planetary candidate (APC) assessments; no securely attributed new planet was established. Scientific state: 13 October 2026. The [release audit](docs/RELEASE-AUDIT.md) records the publication cleanup and private original-history archive.
 
 Use [README.md](README.md) for the shortlist, [CHECKED-RESULTS.md](CHECKED-RESULTS.md) for evidence, and [CODE-ORGANIZATION.md](CODE-ORGANIZATION.md) for implementation and data-access rules. Historical reports can contain superseded next steps.
 
@@ -80,4 +80,4 @@ Complete the [data-opening preflight](CODE-ORGANIZATION.md#before-opening-additi
 
 Update existing candidate rows and link detailed measurements, aliases, failures and limitations. Keep source identity, planet plausibility and novelty separate. Qualitative priorities and agent agreement are not calibrated probabilities or scientific validation. The [model-feasibility review](results/probability-feasibility-20261011/ASSESSMENT.md) records additional assumptions and missing constraints.
 
-Before closing an extension, reconcile attempts, passes and errors, verify adopted results, update the index and synchronize private main. Record actual process state if interrupted. Preserve raw evidence and protected agent histories. [README-HISTORY.md](README-HISTORY.md) and [GOAL_PROGRESS.md](GOAL_PROGRESS.md) are historical snapshots, not restart instructions. [External leads and method inspirations](results/user-posts-20261010/NOTES.md), including HD 32564, remain distinct from our findings.
+Before closing an extension, reconcile attempts, passes and errors, verify adopted results, update the index and synchronize main. Record actual process state if interrupted. Preserve raw evidence and protected agent histories. [README-HISTORY.md](README-HISTORY.md) and [GOAL_PROGRESS.md](GOAL_PROGRESS.md) are historical snapshots, not restart instructions. [External leads and method inspirations](results/user-posts-20261010/NOTES.md), including HD 32564, remain distinct from our findings.

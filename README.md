@@ -78,4 +78,4 @@ Experiments retain their original plans, data sources and checks. The [evidence 
 
 This work uses [NASA TESS](https://heasarc.gsfc.nasa.gov/docs/tess/data-products.html), [TESS-SPOC/MAST](https://archive.stsci.edu/hlsp/tess-spoc) and other surveys credited in each experiment. The [HD 32564 radial-velocity analysis](results/rv-hd32564-20261010/ASSESSMENT.md) reproduces an external lead and is separate from the TESS candidate search.
 
-Sensitive operational details have been removed from the publication history; see the [release audit](docs/RELEASE-AUDIT.md). Original code and documentation use the [MIT license](LICENSE); [survey data and third-party material retain their own terms](docs/DATA-SOURCES.md). No candidate has been submitted or announced as a discovery.
+Sensitive operational details have been removed from the publication snapshot; see the [release audit](docs/RELEASE-AUDIT.md). Original code and documentation use the [MIT license](LICENSE); [survey data and third-party material retain their own terms](docs/DATA-SOURCES.md). No candidate has been submitted or announced as a discovery.
