@@ -17,6 +17,14 @@ Failed checks and negative findings remain in the evidence index. Neither lead
 passed the reported TRICERATOPS validation thresholds. Cleanup does not alter
 any scientific claim, create new blind holdouts, or resume research queues.
 
+Extracted pixel FITS copies may also be removed when they match, byte for byte,
+a FITS member of a retained local ZIP. Inspect archive members without extracting
+them; accept only simple FITS filenames, not paths or arbitrary archive contents.
+Verify the retained ZIP against its download provenance and compare streaming
+SHA-256 of the extracted file and member. Keep the ZIP and its provenance because
+staged cutout URLs can expire. This is local deduplication, not reliance on an
+ephemeral download URL. Decline deletion of any active or recently modified file.
+
 ## Retirement criteria and reproduction
 
 For each removed file, preserve its adjacent `.fits.json` provenance document
