@@ -49,3 +49,21 @@ continue following the data-access preflight in CODE-ORGANIZATION.md.
 
 This is storage maintenance only. No scientific algorithms, predictions,
 measurements, or publication claims were changed and no scientific tests rerun.
+
+## Completed batch
+
+The summary was pushed at `8510058b2d8862b6cb60af92e04835e2481fee5b`
+before downloaded-file retirement. The extracted-copy policy was pushed at
+`e571d1608f2132547eef01a3514cbc7a4ef220cf` before local deduplication.
+
+- Removed 129,089 downloaded FITS files across the three scoped cache directories:
+  59,205,210,112 allocated bytes before removal. Each matched its retained source
+  URL, byte count and SHA-256 provenance, with live-reader checks.
+- Removed 318 extracted FITS copies matching members of retained ZIPs:
+  11,430,031,360 allocated bytes before removal.
+- Retained the ZIPs, all provenance JSON, research results, reports, private
+  backups and agent archival data. Two invalid ZIPs were left untouched.
+
+Allocated totals do not establish isolated filesystem savings: concurrent writes
+and shared storage can change observed free space. No bulk data was downloaded,
+and no study, training job, or scientific analysis was resumed.
